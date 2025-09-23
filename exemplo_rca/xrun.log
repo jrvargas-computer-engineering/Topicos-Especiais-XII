@@ -1,0 +1,30 @@
+xrun(64): 23.09-s013: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s013: Started on Sep 16, 2025 at 15:04:24 -03
+xrun
+	-access +rwc
+	-gui
+	tb/tb_rca_Nbits.v
+	rtl/rca_Nbits.v
+file: tb/tb_rca_Nbits.v
+	module worklib.tb_rca_NBits:v
+		errors: 0, warnings: 0
+file: rtl/rca_Nbits.v
+	module worklib.half_adder:v
+		errors: 0, warnings: 0
+	module worklib.full_adder:v
+		errors: 0, warnings: 0
+  output unsigned [N-1:0] S;
+                  |
+xmvlog: *E,EXPSMC (rtl/rca_Nbits.v,30|18): expecting a semicolon (';') [12.3.2(IEEE)].
+  output unsigned [N-1:0] S;
+                    |
+xmvlog: *E,EXPSMC (rtl/rca_Nbits.v,30|20): expecting a semicolon (';') [12.3.2(IEEE)].
+	module worklib.rca_Nbits:v
+		errors: 2, warnings: 0
+endmodule; 
+         |
+xmvlog: *E,EXPMPA (rtl/rca_Nbits.v,60|9): expecting the keyword 'module', 'macromodule' or 'primitive'[A.1].
+	Total errors/warnings found outside modules and primitives:
+		errors: 1, warnings: 0
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun(64)	23.09-s013: Exiting on Sep 16, 2025 at 15:04:25 -03  (total: 00:00:01)
