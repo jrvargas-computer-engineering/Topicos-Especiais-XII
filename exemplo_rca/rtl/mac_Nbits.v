@@ -18,7 +18,7 @@ module rca_Nbits(A, B, S, Cout);
     input signed [N-1:0] A, B;
     output signed [N-1:0] S;
     output Cout;
-    wire [(N-1):0] carry;
+    wire [N-1:0] carry;
 	
   	half_adder HA(
         .a(A[0]),
@@ -56,7 +56,7 @@ module multiplication #(
 
     input signed [N-1:0] W;
     input signed [N-1:0] X;
-    output signed [(2*N)-1:0] outmult;
+    output signed [(2*N):0] outmult;
     assign outmult = W * X;
 endmodule
 
@@ -72,8 +72,8 @@ module AC #(
    
     reg signed [(N-1):0] ACout;
 
-	always @ (posedge clk or posedge rst) begin // <-- CORRETO
-	    if(rst) begin
+	always @ (posedge clk or negedge rst) begin // <-- CORRETO
+	    if(!rst) begin
     	    ACout <= 0; 
     	end
     	else if (en) begin
@@ -87,24 +87,36 @@ endmodule
 
 
 module mac_Nbits #(
-    parameter WIDTH = 8
+    parameter WIDTH = 8,
+    parameter WIDTH_MAC = 2*WIDTH
     )(clk, rst, en, w, x, out);
 
     input clk, rst, en; 
-    input signed [WIDTH-1:0 ]w, x;
-    output [(2*WIDTH)-1:0] out; 
+    input signed [WIDTH-1:0]w, x;
+
+    /*
+    saida especificada
+    */
+    output [(WIDTH_MAC)-1:0] out; 
 
 
     /* 
     multiplicacao dobra os bits
+    aumenta um bit para combinar com o rca
     */
-    wire signed [(2*WIDTH)-1:0] mult_wire; 
+
+    
+    //WIDTH_MAC + 1
+    wire signed [(WIDTH_MAC):0] mult_wire; 
+    
     /*
     soma aumenta 1 bit
     */
-    wire signed [(2*WIDTH):0] sum_wire;
+    //WIDTH_MAC + 1
+    wire signed [(WIDTH_MAC):0] sum_wire;
 
-    wire signed [(2*WIDTH):0] ac_wire;
+    //WIDTH_MAC + 1
+    wire signed [(WIDTH_MAC):0] ac_wire;
 
     multiplication #(
         .N(WIDTH)
@@ -115,16 +127,16 @@ module mac_Nbits #(
     );
 
     rca_Nbits #(
-      .N((2*WIDTH))
+      .N((WIDTH_MAC + 1))
     ) rca (
-        .A(mult_wire),
+        .A(mult_wire), //para ser 2N + 1
         .B(ac_wire),
         .S(sum_wire),
         .Cout()
     );
 
     AC #(
-      .N((2*WIDTH))
+      .N((WIDTH_MAC + 1))
     ) acumulator (
         .en(en),
         .clk(clk),
