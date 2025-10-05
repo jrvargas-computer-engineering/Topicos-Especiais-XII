@@ -63,36 +63,36 @@ module tb_mac_Nbits;
     w  = -3;
     x  = 2;
     en = 1;
-    #10;
+    #11;
     check(-6, "Primeiro ciclo");
 
     // 2\303\202\302\272 ciclo: w=5, x=-4
     w = 5;
     x = -4;
-    #10;
+    #11;
     check(-26, "Segundo ciclo");
 
     // Caso 2: Reset ativo durante a opera\303\203\302\247\303\203\302\243o ---------
     rst = 1;
     en  = 0;
-    #10;
+    #6;
     check(0, "Teste reset");
     rst = 0;  // libera reset
     en  = 1;
-    #5;
+    #6;
     // Realizando uma soma qualquer antes do pr\303\203\302\263ximo caso
     w = 6;
     x = -8;
-    #10;
+    #11;
     // Caso 3: enable desligado (n\303\203\302\243o acumula) ---------
     en = 0;
-    #5;
+    #6;
     w = -8;
     x = -4;
 
-    #40;
+    #41;
     check(-48, "Teste Enable");
-    #20;
+    #21;
     $finish;
   end
 
