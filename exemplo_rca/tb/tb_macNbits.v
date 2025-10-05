@@ -12,7 +12,7 @@ module tb_mac_Nbits;
 
   // DUT
   mac_Nbits #(
-      .N(TB_WIDTH)
+      .WIDTH(TB_WIDTH)
   ) dut (
       .clk(clk),
       .rst(rst),
