@@ -6,3 +6,8 @@
 
 # Define clock "clk" with a period of 10 ns (100 MHz)
 create_clock -name clock -period 10 [get_ports clk]
+
+
+#no arquivo contraints 
+#create_clock -name clock -period 10 [get_ports clkz]
+
