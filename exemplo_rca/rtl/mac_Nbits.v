@@ -1,3 +1,6 @@
+`timescale 1ns / 1ps
+
+
 module half_adder(a, b, s, cout);
     input a,b;
     output s, cout;
