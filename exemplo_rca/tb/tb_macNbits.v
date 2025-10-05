@@ -15,7 +15,7 @@ module tb_mac_Nbits;
       .WIDTH(TB_WIDTH)
   ) dut (
       .clk(clk),
-      .rst(rst),
+      .rst(!rst),
       .en (en),
       .w  (w),
       .x  (x),
