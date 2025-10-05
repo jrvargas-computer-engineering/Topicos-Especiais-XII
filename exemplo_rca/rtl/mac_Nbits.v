@@ -148,7 +148,7 @@ module mac_Nbits #(
         .out(ac_wire)
     );
 
-    assign out = ac_wire; 
+    assign out = ac_wire[WIDTH_MAC:1]; 
 endmodule
 
 
