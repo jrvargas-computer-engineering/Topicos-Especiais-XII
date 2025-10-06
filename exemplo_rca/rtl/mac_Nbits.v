@@ -3,35 +3,25 @@
 module mac_Nbits #(
     parameter WIDTH = 8,
     parameter WIDTH_MAC = 2*WIDTH
-    )(clk, rst, en, w, x, out);
+)(
+    input clk,
+    input rst,
+    input en,
+    input  signed [WIDTH-1:0] w,
+    input  signed [WIDTH-1:0] x,
+    output       [(WIDTH_MAC)-1:0] out
+);
 
-    input clk, rst, en; 
-    input signed [WIDTH-1:0]w, x;
+    // Multiplicação dobra os bits
+    wire signed [(WIDTH_MAC):0] mult_wire;
 
-    /*
-    saida especificada
-    */
-    output [(WIDTH_MAC)-1:0] out; 
-
-
-    /* 
-    multiplicacao dobra os bits
-    aumenta um bit para combinar com o rca
-    */
-
-    
-    //WIDTH_MAC + 1
-    wire signed [(WIDTH_MAC):0] mult_wire; 
-    
-    /*
-    soma aumenta 1 bit
-    */
-    //WIDTH_MAC + 1
+    // Soma aumenta 1 bit
     wire signed [(WIDTH_MAC):0] sum_wire;
 
-    //WIDTH_MAC + 1
+    // Acumulador (soma anterior)
     wire signed [(WIDTH_MAC):0] ac_wire;
 
+    // Instâncias
     multiplication #(
         .N(WIDTH)
     ) mult (
@@ -43,7 +33,7 @@ module mac_Nbits #(
     rca_Nbits #(
         .N((WIDTH_MAC + 1))
     ) rca (
-        .A(mult_wire), //para ser 2N + 1
+        .A(mult_wire),
         .B(ac_wire),
         .S(sum_wire),
         .Cout()
@@ -54,14 +44,24 @@ module mac_Nbits #(
     ) acumulator (
         .en(en),
         .clk(clk),
-        .rst(rst), 
+        .rst(rst),
         .in(sum_wire),
         .out(ac_wire)
     );
 
-    assign out = ac_wire[WIDTH_MAC:1]; 
+    assign out = ac_wire[WIDTH_MAC:1];
+
+    // ==================================================
+    // DEBUG SECTION
+    // ==================================================
+    always @(posedge clk) begin
+        $display("\n[MAC] t=%0t | en=%b rst=%b", $time, en, rst);
+        $display("   W       = %0b (%0d)", w, w);
+        $display("   X       = %0b (%0d)", x, x);
+        $display("   mult    = %0b (%0d)", mult_wire, mult_wire);
+        $display("   ac_in   = %0b (%0d)", ac_wire, ac_wire);
+        $display("   sum     = %0b (%0d)", sum_wire, sum_wire);
+        $display("   out     = %0b (%0d)", out, out);
+    end
+
 endmodule
-
-
-
-
