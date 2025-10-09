@@ -15,7 +15,7 @@ module tb_neuron_Nbits;
       .WIDTH(TB_WIDTH)
   ) dut (
       .clk(clk),
-      .rst(!rst),
+      .rst(rst),
       .en (en),
       .W  (w),
       .X  (x),

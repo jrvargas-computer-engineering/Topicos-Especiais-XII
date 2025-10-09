@@ -1,1 +1,12 @@
 s1(16Sep2025:15:04:24):  xrun -access +rwc -gui tb/tb_rca_Nbits.v rtl/rca_Nbits.v 
+s2(06Oct2025:01:10:20):  xrun -f neuron_filelist.f 
+s3(06Oct2025:01:22:06):  xrun -f neuron_filelist.f 
+s4(06Oct2025:01:26:03):  xrun -f neuron_filelist.f 
+s5(06Oct2025:01:34:38):  xrun -f neuron_filelist.f 
+s6(06Oct2025:01:35:32):  xrun -f neuron_filelist.f 
+s7(06Oct2025:01:36:25):  xrun -f neuron_filelist.f 
+s8(06Oct2025:01:39:41):  xrun -f neuron_filelist.f 
+s9(06Oct2025:01:42:41):  xrun -f neuron_filelist.f 
+s10(07Oct2025:12:52:28):  xrun -f neuron_filelist.f 
+s11(07Oct2025:12:58:08):  xrun -f neuron_filelist.f 
+s12(07Oct2025:14:21:12):  xrun -f neuron_filelist.f 

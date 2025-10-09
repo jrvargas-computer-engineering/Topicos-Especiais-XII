@@ -50,7 +50,7 @@ module mac_Nbits #(
     );
 
     assign out = ac_wire[WIDTH_MAC:1];
-
+  // assign out = ac_wire;
     // ==================================================
     // DEBUG SECTION
     // ==================================================

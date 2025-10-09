@@ -1,6 +1,6 @@
-set DESIGN neuron_Nbits
+set DESIGN neuron_intra_Nbits
 
-set FILES neuron_Nbits.v
+set FILES neuron_intra_Nbits.v
 
 set_db init_hdl_search_path ../rtl
 
@@ -42,9 +42,9 @@ syn_opt
 
 # Gera reports para o pior caso
 # set_analysis_view -setup worst_view -hold worst_view
- report_area > reports_ss/report_area_opt.rpt
- report_timing > reports_ss/report_timing_opt.rpt
- report_power > reports_ss/report_power_opt.rpt
+ report_area > reports_ss/N_inputs_16/N_64/N_inputs_8/N_64/N_inputs_4/N_64/N_inputs_16/N_16/N_inputs_8/N_16/N_inputs_4/N_16/N_inputs_16/N_8/N_inputs_8/N_8/N_inputs_4/N_8/report_area_opt.rpt
+ report_timing > reports_ss/N_inputs_16/N_64/N_inputs_8/N_64/N_inputs_4/N_64/N_inputs_16/N_16/N_inputs_8/N_16/N_inputs_4/N_16/N_inputs_16/N_8/N_inputs_8/N_8/N_inputs_4/N_8/report_timing_opt.rpt
+ report_power > reports_ss/N_inputs_16/N_64/N_inputs_8/N_64/N_inputs_4/N_64/N_inputs_16/N_16/N_inputs_8/N_16/N_inputs_4/N_16/N_inputs_16/N_8/N_inputs_8/N_8/N_inputs_4/N_8/report_power_opt.rpt
  report_gates -power > reports/${DESIGN}_gates_power.log
  report_dp > reports/${DESIGN}_datapath_incr.log
  report_messages > reports/${DESIGN}_messages.log

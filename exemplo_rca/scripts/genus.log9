@@ -1,0 +1,542 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[00:36:01.196433] Configured Lic search path (23.02-s003): 5280@pgmicro01.ufrgs.br
+
+Version: 23.12-s086_1, built Wed Jul 24 15:05:35 PDT 2024
+Options: -batch -files synth_script.tcl 
+Date:    Thu Oct 09 00:36:01 2025
+Host:    cadmicro-el8-02.inf.ufrgs.br (x86_64 w/Linux 4.18.0-553.58.1.el8_10.x86_64) (32cores*64cpus*2physical cpus*QEMU Virtual CPU version 2.5+ 16384KB) (198008280KB)
+PID:     1040146
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[00:36:01.237531] Periodic Lic check successful
+[00:36:01.237539] Feature usage summary:
+[00:36:01.237539] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (15 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source synth_script.tcl
+#@ Begin verbose source ./synth_script.tcl
+@file(synth_script.tcl) 1: set DESIGN neuron_intra_Nbits
+@file(synth_script.tcl) 3: set FILES neuron_intra_Nbits.v
+@file(synth_script.tcl) 5: set_db init_hdl_search_path ../rtl
+  Setting attribute of root '/': 'init_hdl_search_path' = ../rtl
+@file(synth_script.tcl) 7: set_db syn_generic_effort high
+  Setting attribute of root '/': 'syn_generic_effort' = high
+@file(synth_script.tcl) 8: set_db syn_map_effort high
+  Setting attribute of root '/': 'syn_map_effort' = high
+@file(synth_script.tcl) 9: set_db syn_opt_effort high
+  Setting attribute of root '/': 'syn_opt_effort' = high
+@file(synth_script.tcl) 13: read_libs { /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_extvdd1v0.lib /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib }
+
+Reading library /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib
+  Message Summary for Library all 3 libraries:
+  ********************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 49
+  Appending library. [LBR-3]: 1
+  ********************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_multibitsDFF.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Ignoring unsupported lu_table_template. [LBR-403]
+        : Ignoring lu_table_template index type (input_voltage).
+        : LBR-403 is issued when an unsupported lu_table_template is encountered by GENUS.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_extvdd1v0.lib'.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+@file(synth_script.tcl) 15: read_physical -lef { /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef }
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CON' in macro 'ACHCONX2' is not found in the database.
+        : A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro section. Review the LEF files specified in the lef_library attribute to see if the layer is not defined or is defined after the macro definition which refers to the layer in its pin section.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'A' in macro 'ACHCONX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'B' in macro 'ACHCONX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CI' in macro 'ACHCONX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VSS' in macro 'ACHCONX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VDD' in macro 'ACHCONX2' is not found in the database.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ACHCONX2' references a site 'CoreSite' that has not been defined.
+        : The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the lef_library attribute to see if the site does not exist or is specified after the one that defines the macro.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VSS' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VDD' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CI' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'A' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'B' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CO' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'S' in macro 'ADDFHX1' is not found in the database.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFHX1' references a site 'CoreSite' that has not been defined.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'S' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CO' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'B' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'A' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CI' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VDD' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VSS' in macro 'ADDFHX2' is not found in the database.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFHX2' references a site 'CoreSite' that has not been defined.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-148'.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFHX4' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFHXL' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFX1' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFX2' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFX4' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFXL' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDHX1' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDHX2' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDHX4' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDHXL' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X1' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X2' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X4' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X6' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X8' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2XL' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND3X1' references a site 'CoreSite' that has not been defined.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-2040'.
+Error   : LEF File Interface. [PHYS-100] [read_physical]
+        : File '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef' contains an error on or near line '55372'.
+        : Check the LEF file and rerun the command.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2X1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2X2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4X1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4X2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF2RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF2RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF4RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF4RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF2RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF2RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF4RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF4RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_HV' has no resistance value.
+        : If this is the expected behavior, this message can be ignored.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_2x1_HV_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_2x1_HV_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_1x2_HV_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_1x2_HV_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_M_NH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_M_SH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_2x1_VH_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_2x1_VH_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_1x2_VH_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_1x2_VH_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M4_M3_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M4_M3_VV' has no resistance value.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-129'.
+
+  According to lef_library, there are total 11 routing layers [ V(5) / H(6) ]
+
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL1 cannot be found in library.
+        : Ensure that the proper library files are available and have been imported.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL16 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL2 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL32 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL4 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL64 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL8 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISOH_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISOH_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISOL_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISOL_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISONH_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISONH_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISONL_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISONL_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHLX1_FROM cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHLX1_TO cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSLH_ISOH_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSLH_ISOH_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSLH_ISOL_X1_FROM_OFF cannot be found in library.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-279'.
+@file(synth_script.tcl) 17: read_hdl -sv $FILES
+@file(synth_script.tcl) 19: elaborate $DESIGN
+  Libraries have 330 usable logic and 163 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'neuron_intra_Nbits' from file '../rtl/neuron_intra_Nbits.v'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'neuron_intra_Nbits' with default parameters value.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'neuron_intra_Nbits'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       1 |       0 |        0.13 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       0 |       0 |        0.11 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: neuron_intra_Nbits, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: neuron_intra_Nbits, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: neuron_intra_Nbits, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: neuron_intra_Nbits, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       0 |       0 |        0.00 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(synth_script.tcl) 21: read_sdc ../constraints/constraints.sdc
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      1 , failed      0 (runtime  0.01)
+ "get_ports"                - successful      1 , failed      0 (runtime  0.01)
+read_sdc completed in 00:00:00 (hh:mm:ss)
+@file(synth_script.tcl) 23: init_design
+Started checking and loading power intent for design neuron_intra_Nbits...
+==========================================================================
+No power intent for design 'neuron_intra_Nbits'.
+Completed checking and loading power intent for design neuron_intra_Nbits (runtime:0.00s memory_usage:0.00M peak_memory:0.00M).
+===============================================================================================================================
+#
+# Reading SDC ../constraints/constraints.sdc for view: (constraint_mode:default_emulate_constraint_mode)
+#
+Warning : Replacing existing clock definition. [TIM-101]
+        : The clock name is 'clock'
+        : A new clock has been defined with the same name as an existing clock.
+Info    : Replacing an existing timing exception with another. [TIM-304]
+        : Existing timing exception is 'path_groups/clock'.
+        : Existing exception had a name conflict with the newly created exception. The exception created at a later time is maintained.
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      1 , failed      0 (runtime  0.00)
+ "get_ports"                - successful      1 , failed      0 (runtime  0.00)
+read_sdc completed in 00:00:00 (hh:mm:ss)
+  Setting attribute of root '/': 'read_qrc_tech_file_rc_corner' = true
+@file(synth_script.tcl) 25: syn_generic
+stamp 'PBS_Generic-Start' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:33(00:00:31) |  00:00:00(00:00:00) |   0.0(  0.0) |    0:36:33 (Oct09) |  668.2 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+
+Stage: pre_early_cg
+-----------------------------------------------
+| Transform | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------
+-----------------------------------------------
+Mapping ChipWare ICG instances in neuron_intra_Nbits
+Found 0 unmapped ChipWare ICG instances
+Mapped 0 of 0 ChipWare ICG instances
+##Generic Timing Info: typical gate delay  144.4 ps   std_slew:   15.1 ps   std_load:  0.5 fF  for library domain _default_
+Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: neuron_intra_Nbits, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.001s)
+
+Stage: pre_to_gen_setup
+-----------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        0.00 | 
+-----------------------------------------------------
+Running DP early constant propagation (netlist neuron_intra_Nbits)...
+Running DP early redundancy removal
+Completed DP early redundancy removal on neuron_intra_Nbits (runtime = 0.9s)
+Multi-threaded constant propagation [4|0] ...
+Info    : Replacing the synchronous part of an always feeding back flip-flop with a logic constant. [GLO-45]
+        : The instance is 'Out_reg[63]'. The constant is '0'.
+        : To prevent this optimization, set 'optimize_constant_feedback_seqs' root attribute to 'false'. The instance attribute 'optimize_constant_feedback_seq' controls this optimization. 
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'Out_reg[63]'.
+        : To prevent this optimization, set the 'optimize_constant_0_flops' root attribute to 'false' or 'optimize_constant_0_seq' instance attribute to 'false'. You can also see the complete list of deleted sequential with command "report sequential -deleted" (on Reason "constant0").
+...done running DP early constant propagation (32 seconds CPU time, netlist neuron_intra_Nbits).
+Info    : Deleting instances not driving any primary outputs. [GLO-34]
+        : Deleting 1 sequential instance.
+        : Optimizations such as constant propagation or redundancy removal could change the connections so a hierarchical instance does not drive any primary outputs anymore. To see the list of deleted hierarchical instances, set the 'information_level' attribute to 2 or above. If the message is truncated set the message attribute 'truncate' to false to see the complete list. To prevent this optimization, set the 'delete_unloaded_insts' root/subdesign attribute to 'false' or 'preserve' instance attribute to 'true'.
+qor: dump_pre_qor for neuron_intra_Nbits (ptr: 0x7f3ffd8c8080,pid: 1040146)
+Current PLE settings:
+
+Aspect ratio        : 1.000
+Shrink factor       : 1.000
+Scale of res/length : 1.000
+Scale of cap/length : 1.000
+Net derating factor : 1.000
+Thermal factor      : 1.000
+Via Resistance      : 0.000 ohm (from default)
+Site size           : 1.055 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       lef_library
+------------------------------------------------
+Metal1          H         0.00        0.000412  
+Metal2          V         1.00        0.000416  
+Metal3          H         1.00        0.000416  
+Metal4          V         1.00        0.000416  
+Metal5          H         1.00        0.000416  
+Metal6          V         1.00        0.000416  
+Metal7          H         1.00        0.000416  
+Metal8          V         1.00        0.000416  
+Metal9          H         1.00        0.000416  
+Metal10         V         1.00        0.000444  
+Metal11         H         1.00        0.000444  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       lef_library
+-------------------------------------------------
+Metal1          H         0.00         1.226667  
+Metal2          V         1.00         0.755000  
+Metal3          H         1.00         0.755000  
+Metal4          V         1.00         0.755000  
+Metal5          H         1.00         0.755000  
+Metal6          V         1.00         0.755000  
+Metal7          H         1.00         0.755000  
+Metal8          V         1.00         0.267500  
+Metal9          H         1.00         0.267500  
+Metal10         V         1.00         0.097273  
+Metal11         H         1.00         0.095455  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+Metal1          H         0.00         0.060000  
+Metal2          V         1.00         0.080000  
+Metal3          H         1.00         0.080000  
+Metal4          V         1.00         0.080000  
+Metal5          H         1.00         0.080000  
+Metal6          V         1.00         0.080000  
+Metal7          H         1.00         0.080000  
+Metal8          V         1.00         0.080000  
+Metal9          H         1.00         0.080000  
+Metal10         V         1.00         0.220000  
+Metal11         H         1.00         0.220000  
+
+Info    : Synthesizing. [SYNTH-1]
+        : Synthesizing 'neuron_intra_Nbits' to generic gates using 'high' effort.
+Running Synthesis Turbo Flow Version 3.
+Info    : Enabling Partition Based Synthesis. [PBS-1]
+        : Starting distributed generic optimization.
+Info    : Attempting to launch a super-threading server. [ST-120]
+        : Attempting to Launch server 1 of 8.
+        : The tool is entering super-threading mode and is launching a CPU server process.  This is enabled by the root attribute 'super_thread_servers' or 'auto_super_thread'.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_0' is process '1040872' on this host.
+        : The tool is entering super-threading mode and has established a connection with a CPU server process.  This is enabled by the root attributes 'super_thread_servers' or 'auto_super_thread'.
+     Generating lib_script file: /home/inf01185/juliana.vargas/Documents/Topicos-Especiais-XII/exemplo_rca/scripts/.pbs_cadmicro-el8-02.inf.ufrgs.br_1040146/lib_script
+Start partitioning.  Summary: MEM {curr: 1.9G, peak: 2.0G, phys curr: 1.3G, phys peak: 1.3G}
+Start partitioning design neuron_intra_Nbits for generic optimization.
+Total generic instances for partitioning: 393987
+	Generic partition 0: size 393987
+Done partitioning.  Summary: RT {elapsed: 0s, ST: 0s}, MEM {curr: 1.9G, peak: 2.0G, phys curr: 1.3G, phys peak: 1.3G}
+Start creating partition netlists.  Summary: MEM {curr: 1.9G, peak: 2.0G, phys curr: 1.3G, phys peak: 1.3G}
+Done creating partition netlists.  Summary: RT {elapsed: 3s, ST: 3s}, MEM {curr: 1.9G, peak: 2.0G, phys curr: 1.5G, phys peak: 1.5G}
+Start budgeting timing for partitions.  Summary: MEM {curr: 1.9G, peak: 2.0G, phys curr: 1.5G, phys peak: 1.5G}
+Done budgeting timing for partitions.  Summary: RT {elapsed: 11s, ST: 13s}, MEM {curr: 2.2G, peak: 2.2G, phys curr: 1.8G, phys peak: 1.8G}
+Start deriving partition netlists.  Summary: MEM {curr: 2.2G, peak: 2.2G, phys curr: 1.8G, phys peak: 1.8G}
+The inst 'pbs_genopt_0' is selected as pbs candidate. The instance cnt is: '393987'.
+Done deriving partition netlists.  Summary: RT {elapsed: 27s, ST: 26s}, MEM {curr: 2.3G, peak: 2.3G, phys curr: 1.9G, phys peak: 1.9G}
+Wait for super-thread servers to finish loading libraries.
+Start super thread servers forking.  Summary: MEM {curr: 2.0G, peak: 2.3G, phys curr: 1.9G, phys peak: 1.9G}
+                  Library loading done successfully on server 'localhost_1_0'.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_1' is forked process '1041529' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_2' is forked process '1041531' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_3' is forked process '1041533' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_4' is forked process '1041535' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_5' is forked process '1041537' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_6' is forked process '1041540' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_7' is forked process '1041542' on this host.
+Done super thread servers forking.  Summary: RT {elapsed: 1s, ST: 0s}, MEM {curr: 2.0G, peak: 2.3G, phys curr: 1.9G, phys peak: 1.9G}
+        Distributing super-thread jobs: {pbs_genopt_0 ./.pbs_cadmicro-el8-02.inf.ufrgs.br_1040146/pbs_genopt_0.etf}
+          Sending 'pbs_genopt_0 ./.pbs_cadmicro-el8-02.inf.ufrgs.br_1040146/pbs_genopt_0.etf' to server 'localhost_1_6'...
+            Sent 'pbs_genopt_0 ./.pbs_cadmicro-el8-02.inf.ufrgs.br_1040146/pbs_genopt_0.etf' to server 'localhost_1_6'.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 401s, ST: 128s, FG: 128s, CPU: 103.6%}, MEM {curr: 1.9G, peak: 2.3G, phys curr: 3.3G, phys peak: 5.4G}, SYS {load: 3.7, cpu: 64, total: 188.8G, free: 43.9G}

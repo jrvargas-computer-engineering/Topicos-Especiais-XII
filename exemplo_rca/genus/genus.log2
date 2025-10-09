@@ -1,0 +1,462 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[22:52:25.196497] Configured Lic search path (23.02-s003): 5280@pgmicro01.ufrgs.br
+
+Version: 23.12-s086_1, built Wed Jul 24 15:05:35 PDT 2024
+Options: 
+Date:    Wed Oct 08 22:52:25 2025
+Host:    cadmicro-el8-02.inf.ufrgs.br (x86_64 w/Linux 4.18.0-553.58.1.el8_10.x86_64) (32cores*64cpus*2physical cpus*QEMU Virtual CPU version 2.5+ 16384KB) (198008280KB)
+PID:     986229
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[22:52:25.324585] Periodic Lic check successful
+[22:52:25.848882] Feature usage summary:
+[22:52:25.848882] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (0 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (15 seconds elapsed).
+
+WARNING: This version of the tool is 441 days old.
+@genus:root: 1> set DESIGN neuron_intra_Nbits
+neuron_intra_Nbits
+@genus:root: 2> 
+@genus:root: 2> set FILES neuron_intra_Nbits.v
+neuron_intra_Nbits.v
+@genus:root: 3> 
+@genus:root: 3> set_db init_hdl_search_path ../rtl
+  Setting attribute of root '/': 'init_hdl_search_path' = ../rtl
+1 ../rtl
+@genus:root: 4> 
+@genus:root: 4> set_db syn_generic_effort high
+  Setting attribute of root '/': 'syn_generic_effort' = high
+1 high
+@genus:root: 5> set_db syn_map_effort high
+  Setting attribute of root '/': 'syn_map_effort' = high
+1 high
+@genus:root: 6> set_db syn_opt_effort high
+  Setting attribute of root '/': 'syn_opt_effort' = high
+1 high
+@genus:root: 7> 
+@genus:root: 7> #set_db timing_report_unconstrained true
+@genus:root: 8> 
+@genus:root: 8> read_libs { /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_extvdd1v0.lib /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib }
+
+Reading library /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib
+  Message Summary for Library all 3 libraries:
+  ********************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 49
+  Appending library. [LBR-3]: 1
+  ********************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_multibitsDFF.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Ignoring unsupported lu_table_template. [LBR-403]
+        : Ignoring lu_table_template index type (input_voltage).
+        : LBR-403 is issued when an unsupported lu_table_template is encountered by GENUS.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_extvdd1v0.lib'.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+@genus:root: 9> 
+@genus:root: 9> read_physical -lef { /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef }
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CON' in macro 'ACHCONX2' is not found in the database.
+        : A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro section. Review the LEF files specified in the lef_library attribute to see if the layer is not defined or is defined after the macro definition which refers to the layer in its pin section.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'A' in macro 'ACHCONX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'B' in macro 'ACHCONX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CI' in macro 'ACHCONX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VSS' in macro 'ACHCONX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VDD' in macro 'ACHCONX2' is not found in the database.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ACHCONX2' references a site 'CoreSite' that has not been defined.
+        : The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the lef_library attribute to see if the site does not exist or is specified after the one that defines the macro.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VSS' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VDD' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CI' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'A' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'B' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CO' in macro 'ADDFHX1' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'S' in macro 'ADDFHX1' is not found in the database.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFHX1' references a site 'CoreSite' that has not been defined.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'S' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CO' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'B' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'A' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'CI' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VDD' in macro 'ADDFHX2' is not found in the database.
+Error   : Undefined pin layer detected. [PHYS-148] [read_physical]
+        : The layer 'Metal1' referenced in pin 'VSS' in macro 'ADDFHX2' is not found in the database.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFHX2' references a site 'CoreSite' that has not been defined.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-148'.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFHX4' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFHXL' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFX1' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFX2' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFX4' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDFXL' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDHX1' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDHX2' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDHX4' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'ADDHXL' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X1' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X2' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X4' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X6' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2X8' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND2XL' references a site 'CoreSite' that has not been defined.
+Warning : Macro references undefined site. [PHYS-2040]
+        : Macro 'AND3X1' references a site 'CoreSite' that has not been defined.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-2040'.
+Error   : LEF File Interface. [PHYS-100] [read_physical]
+        : File '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef' contains an error on or near line '55372'.
+        : Check the LEF file and rerun the command.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2X1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2X2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4X1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4X2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF2RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF2RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF4RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF4RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF2RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF2RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF4RX1' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF4RX2' is already defined. Ignoring this definition in file '/pdk/cadence/gpdk045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef'.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_HV' has no resistance value.
+        : If this is the expected behavior, this message can be ignored.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_2x1_HV_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_2x1_HV_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_1x2_HV_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_1x2_HV_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_M_NH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_M_SH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_2x1_VH_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_2x1_VH_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_1x2_VH_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_1x2_VH_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M4_M3_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M4_M3_VV' has no resistance value.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-129'.
+
+  According to lef_library, there are total 11 routing layers [ V(5) / H(6) ]
+
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL1 cannot be found in library.
+        : Ensure that the proper library files are available and have been imported.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL16 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL2 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL32 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL4 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL64 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL8 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISOH_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISOH_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISOL_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISOL_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISONH_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISONH_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISONL_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHL_ISONL_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHLX1_FROM cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSHLX1_TO cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSLH_ISOH_X1_FROM_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSLH_ISOH_X1_TO_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell LSLH_ISOL_X1_FROM_OFF cannot be found in library.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-279'.
+@genus:root: 10> 
+@genus:root: 10> read_hdl -sv $FILES
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File 'neuron_intra_Nbits.v'.
+        : The specified file could not be opened.  Check the value of the init_hdl_search_path attribute.
+1
+@genus:root: 11> 
+@genus:root: 11> elaborate $DESIGN
+  Libraries have 330 usable logic and 163 usable sequential lib-cells.
+Error   : Could not find an HDL design. [CDFG-210] [elaborate]
+        : The design is 'neuron_intra_Nbits'.
+        : This error may happen if you read a set of files, and you try to elaborate a design which description is not part of the files read. To fix this, check the name of the design you want to elaborate, or check if you have read all the expected RTL files.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+1
+@genus:root: 12> 
+@genus:root: 12> read_sdc ../constraints/constraints.sdc
+Design not exist for read_sdc
+@genus:root: 13> 
+@genus:root: 13> init_design
+Error: no design has been loaded
+@genus:root: 14> 
+@genus:root: 14> syn_generic
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_gen
+1
+@genus:root: 15> 
+@genus:root: 15> report_area > reports/report_area_generic.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::area::report_area]
+        : There is no design here.
+        : A design must first be read in with 'read_hdl' command and elaborated with 'elaborate' command.
+Failed on find_unique_design
+@genus:root: 16> report_timing > reports/report_timing_generic.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [report_timing]
+        : No elaborated designs in memory
+Nothing to report
+1
+@genus:root: 17> report_power > reports/report_power_generic.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::power::report_power]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 18> 
+@genus:root: 18> syn_map
+#------------------------------------------------------------------------------------
+# Root attributes for category: opt
+#------------------------------------------------------------------------------------
+# Feature                           | Attribute                | Value            
+#------------------------------------------------------------------------------------
+# Power optimization effort         | design_power_effort      | none (default)   
+# Do not use qbar sequential pins   | dont_use_qbar_seq_pins   | false (default)  
+#------------------------------------------------------------------------------------
+
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_map
+1
+@genus:root: 19> 
+@genus:root: 19> report_area > reports/report_area_map.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::area::report_area]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 20> report_timing > reports/report_timing_map.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [report_timing]
+        : No elaborated designs in memory
+Nothing to report
+1
+@genus:root: 21> report_power > reports/report_power_map.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::power::report_power]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 22> 
+@genus:root: 22> #foreach cg [vfind / -cost_group *] {
+@genus:root: 23> #  report_timing -cost_group [list $cg] > reports/${DESIGN}_[vbasename $cg]_post_map.rpt
+@genus:root: 24> #}
+@genus:root: 25> 
+@genus:root: 25> syn_opt
+Warning : The selected flow setting will be removed in a future release. [SYNTH-33]
+        : The use of 'syn_opt' for logical only optimization will be obsolete in a future release.
+	Transition to 'syn_opt -logical' or 'syn_opt -spatial'.
+
+        : Contact Cadence support to understand current flows.
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_opt
+1
+@genus:root: 26> 
+@genus:root: 26> # Gera reports para o pior caso
+@genus:root: 27> # set_analysis_view -setup worst_view -hold worst_view
+@genus:root: 28> report_area > reports_ss/report_area_opt.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::area::report_area]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 29> report_timing > reports_ss/report_timing_opt.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [report_timing]
+        : No elaborated designs in memory
+Nothing to report
+1
+@genus:root: 30> report_power > reports_ss/report_power_opt.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::power::report_power]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 31> report_gates -power > reports/${DESIGN}_gates_power.log
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::gates::report_gates]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 32> report_dp > reports/${DESIGN}_datapath_incr.log
+Beginning report datapath command
+Error   : Invalid combination of options supplied to report datapath. [RPT_DP-105] [::report::dp::report_datapath]
+        : Specify a unique design
+        : The options specified while invoking report datapath command are not compatible. Remove the conflicting options and execute report datapath again.
+Incorrect usage of command line options
+@genus:root: 33> report_messages > reports/${DESIGN}_messages.log
+@genus:root: 34> write_snapshot -outdir reports -tag final
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [write_snapshot]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 35> report_summary -directory reports
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [summary_table]
+Failed to find a design!
+@genus:root: 36> 
+@genus:root: 36> #Outputs
+@genus:root: 37> write_hdl > outputs/mac_netlist.v
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [write_hdl]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 38> write_sdc > outputs/mac_netlist_constraints.sdc
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [write_sdc]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 39> #write_sdf -timescale ns -nonegchecks -recrem split -edges check_edge  -setuphold split > outputs/delays.sdf
+@genus:root: 40> #write_scandef > outputs/scan_chain.def
+@genus:root: 41> #write_design -innovus -base_name ../innovus/${DESIGN}
+@genus:root: 42> 
+@genus:root: 42> 
+@genus:root: 42> 
+@genus:root: 42> 
+@genus:root: 42> 
+@genus:root: 42> 

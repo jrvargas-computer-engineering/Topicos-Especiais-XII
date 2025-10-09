@@ -5,8 +5,13 @@
 -XLMODE
 ./xcelium.d/run.lnx8664.23.09.d
 -RUNMODE
-tb/tb_rca_Nbits.v
 rtl/rca_Nbits.v
+rtl/mult_Nbits.v
+rtl/AC_Nbits.v
+rtl/mac_Nbits.v
+rtl/ReLu_Nbits.v
+rtl/neuron_Nbits.v
+tb/tb_neuronNbits.sv
 -CDSLIB
 ./xcelium.d/run.lnx8664.23.09.d/cdsrun.lib
 -HDLVAR

@@ -1,0 +1,11 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+/home/inf01185/juliana.vargas/Documents/Topicos-Especiais-XII/exemplo_rca/rtl/rca_Nbits.v
+/home/inf01185/juliana.vargas/Documents/Topicos-Especiais-XII/exemplo_rca/rtl/mult_Nbits.v
+/home/inf01185/juliana.vargas/Documents/Topicos-Especiais-XII/exemplo_rca/rtl/AC_Nbits.v
+/home/inf01185/juliana.vargas/Documents/Topicos-Especiais-XII/exemplo_rca/rtl/mac_Nbits.v
+/home/inf01185/juliana.vargas/Documents/Topicos-Especiais-XII/exemplo_rca/rtl/ReLu_Nbits.v
+/home/inf01185/juliana.vargas/Documents/Topicos-Especiais-XII/exemplo_rca/rtl/neuron_Nbits.v
+/home/inf01185/juliana.vargas/Documents/Topicos-Especiais-XII/exemplo_rca/tb/tb_neuronNbits.sv

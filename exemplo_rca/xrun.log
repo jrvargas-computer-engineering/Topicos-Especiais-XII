@@ -1,30 +1,142 @@
 xrun(64): 23.09-s013: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s013: Started on Sep 16, 2025 at 15:04:24 -03
+TOOL:	xrun(64)	23.09-s013: Started on Oct 07, 2025 at 14:21:11 -03
 xrun
-	-access +rwc
-	-gui
-	tb/tb_rca_Nbits.v
-	rtl/rca_Nbits.v
-file: tb/tb_rca_Nbits.v
-	module worklib.tb_rca_NBits:v
-		errors: 0, warnings: 0
-file: rtl/rca_Nbits.v
-	module worklib.half_adder:v
-		errors: 0, warnings: 0
-	module worklib.full_adder:v
-		errors: 0, warnings: 0
-  output unsigned [N-1:0] S;
-                  |
-xmvlog: *E,EXPSMC (rtl/rca_Nbits.v,30|18): expecting a semicolon (';') [12.3.2(IEEE)].
-  output unsigned [N-1:0] S;
-                    |
-xmvlog: *E,EXPSMC (rtl/rca_Nbits.v,30|20): expecting a semicolon (';') [12.3.2(IEEE)].
-	module worklib.rca_Nbits:v
-		errors: 2, warnings: 0
-endmodule; 
-         |
-xmvlog: *E,EXPMPA (rtl/rca_Nbits.v,60|9): expecting the keyword 'module', 'macromodule' or 'primitive'[A.1].
-	Total errors/warnings found outside modules and primitives:
-		errors: 1, warnings: 0
-xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
-TOOL:	xrun(64)	23.09-s013: Exiting on Sep 16, 2025 at 15:04:25 -03  (total: 00:00:01)
+	-f neuron_filelist.f
+		rtl/rca_Nbits.v
+		rtl/mult_Nbits.v
+		rtl/AC_Nbits.v
+		rtl/mac_Nbits.v
+		rtl/ReLu_Nbits.v
+		rtl/neuron_Nbits.v
+		tb/tb_neuronNbits.sv
+Loading snapshot worklib.tb_neuron_Nbits:sv .................... Done
+xcelium> source /tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
+            File: ./tb/tb_neuronNbits.sv, line = 51, pos = 12
+           Scope: tb_neuron_Nbits
+            Time: 0 FS + 0
+
+[AC] t=0 | RESET ativo -> ACout zerado
+[ReLU] t=0 | reluIn=0 (0) -> reluOut=x (x)
+[ReLU] t=0 | reluIn=0 (0) -> reluOut=0 (0)
+[AC] t=5000 | RESET ativo -> ACout zerado
+
+[MAC] t=5000 | en=0 rst=0
+   W       = 0 (0)
+   X       = 0 (0)
+   mult    = 0 (0)
+   ac_in   = 0 (0)
+   sum     = 0 (0)
+   out     = 0 (0)
+[AC] t=15000 | en=1 | in=11111111111111010 (-6) -> ACout=0 (0)
+
+[MAC] t=15000 | en=1 rst=1
+   W       = 11111101 (-3)
+   X       = 10 (2)
+   mult    = 11111111111111010 (-6)
+   ac_in   = 0 (0)
+   sum     = 11111111111111010 (-6)
+   out     = 0 (0)
+[ReLU] t=15000 | reluIn=1111111111111101 (-3) -> reluOut=0 (0)
+OK (Primeiro ciclo n): valor = 0 (t = 21000)
+[AC] t=25000 | en=1 | in=11111111111100110 (-26) -> ACout=11111111111111010 (-6)
+
+[MAC] t=25000 | en=1 rst=1
+   W       = 101 (5)
+   X       = 11111100 (-4)
+   mult    = 11111111111101100 (-20)
+   ac_in   = 11111111111111010 (-6)
+   sum     = 11111111111100110 (-26)
+   out     = 1111111111111101 (65533)
+[ReLU] t=25000 | reluIn=1111111111110011 (-13) -> reluOut=0 (0)
+OK ( Segundo ciclo n): valor = 0 (t = 32000)
+[AC] t=32000 | RESET ativo -> ACout zerado
+[ReLU] t=32000 | reluIn=0 (0) -> reluOut=0 (0)
+[AC] t=35000 | RESET ativo -> ACout zerado
+
+[MAC] t=35000 | en=0 rst=0
+   W       = 0 (0)
+   X       = 0 (0)
+   mult    = 0 (0)
+   ac_in   = 0 (0)
+   sum     = 0 (0)
+   out     = 0 (0)
+OK (     Teste reset): valor = 0 (t = 43000)
+[AC] t=45000 | en=1 | in=0 (0) -> ACout=0 (0)
+
+[MAC] t=45000 | en=1 rst=1
+   W       = 0 (0)
+   X       = 0 (0)
+   mult    = 0 (0)
+   ac_in   = 0 (0)
+   sum     = 0 (0)
+   out     = 0 (0)
+[AC] t=55000 | en=1 | in=10000000 (128) -> ACout=0 (0)
+
+[MAC] t=55000 | en=1 rst=1
+   W       = 1000000 (64)
+   X       = 10 (2)
+   mult    = 10000000 (128)
+   ac_in   = 0 (0)
+   sum     = 10000000 (128)
+   out     = 0 (0)
+[ReLU] t=55000 | reluIn=1000000 (64) -> reluOut=0 (0)
+OK (Primeiro ciclo p): valor = 0 (t = 65000)
+[AC] t=65000 | en=1 | in=100000000 (256) -> ACout=10000000 (128)
+
+[MAC] t=65000 | en=1 rst=1
+   W       = 1000000 (64)
+   X       = 10 (2)
+   mult    = 10000000 (128)
+   ac_in   = 10000000 (128)
+   sum     = 100000000 (256)
+   out     = 1000000 (64)
+[ReLU] t=65000 | reluIn=10000000 (128) -> reluOut=0 (0)
+[AC] t=75000 | en=1 | in=110000000 (384) -> ACout=100000000 (256)
+
+[MAC] t=75000 | en=1 rst=1
+   W       = 1000000 (64)
+   X       = 10 (2)
+   mult    = 10000000 (128)
+   ac_in   = 100000000 (256)
+   sum     = 110000000 (384)
+   out     = 10000000 (128)
+[ReLU] t=75000 | reluIn=11000000 (192) -> reluOut=0 (0)
+xmsim: *E,ERRSEV (./tb/tb_neuronNbits.sv,35): (time 76 NS).
+tb_neuron_Nbits.check
+( Segundo ciclo p): esperado = 1, obtido = 0 (t = 76000)
+[AC] t=85000 | en=0 | mantém ACout=110000000 (384)
+
+[MAC] t=85000 | en=0 rst=1
+   W       = 1000 (8)
+   X       = 100 (4)
+   mult    = 100000 (32)
+   ac_in   = 110000000 (384)
+   sum     = 110100000 (416)
+   out     = 11000000 (192)
+xmsim: *E,ERRSEV (./tb/tb_neuronNbits.sv,35): (time 93 NS).
+tb_neuron_Nbits.check
+(    Teste Enable): esperado = 1, obtido = 0 (t = 93000)
+[AC] t=95000 | en=0 | mantém ACout=110000000 (384)
+
+[MAC] t=95000 | en=0 rst=1
+   W       = 1000 (8)
+   X       = 100 (4)
+   mult    = 100000 (32)
+   ac_in   = 110000000 (384)
+   sum     = 110100000 (416)
+   out     = 11000000 (192)
+[AC] t=105000 | en=0 | mantém ACout=110000000 (384)
+
+[MAC] t=105000 | en=0 rst=1
+   W       = 1000 (8)
+   X       = 100 (4)
+   mult    = 100000 (32)
+   ac_in   = 110000000 (384)
+   sum     = 110100000 (416)
+   out     = 11000000 (192)
+Simulation complete via $finish(1) at time 114 NS + 0
+./tb/tb_neuronNbits.sv:110     $finish;
+xcelium> exit
+TOOL:	xrun(64)	23.09-s013: Exiting on Oct 07, 2025 at 14:21:12 -03  (total: 00:00:01)

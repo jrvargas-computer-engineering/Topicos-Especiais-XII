@@ -2,8 +2,5 @@
 // File created by:  xrun
 // Do not modify this file
 //
--access
-+rwc
--gui
-tb/tb_rca_Nbits.v
-rtl/rca_Nbits.v
+-f
+neuron_filelist.f
