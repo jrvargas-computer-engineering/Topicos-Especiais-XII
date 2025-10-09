@@ -1,0 +1,14 @@
+N_inputs_16:
+arquivo;area;power;timing
+N_16;Cell-Count: 7482 | Cell-Area: 5814.257 | Net-Area: 6404.562 | Total-Area: 12218.818;Leakage: 5.25343e-07 | Internal: 4.26086e-04 | Switching: 6.40711e-04 | Total: 1.06732e-03;Setup: 128 | Required Time: 9872 | Launch Clock: 0 | Data Path: 1557 | Slack: 8315
+N_8;Cell-Count: 2054 | Cell-Area: 1672.637 | Net-Area: 1757.440 | Total-Area: 3430.077;Leakage: 1.45848e-07 | Internal: 1.18944e-04 | Switching: 1.67130e-04 | Total: 2.86220e-04;Setup: 126 | Required Time: 9874 | Launch Clock: 0 | Data Path: 934 | Slack: 8940
+N_inputs_4:
+arquivo;area;power;timing
+N_16;Cell-Count: 1961 | Cell-Area: 1523.268 | Net-Area: 1641.416 | Total-Area: 3164.684;Leakage: 1.36692e-07 | Internal: 1.22201e-04 | Switching: 1.57780e-04 | Total: 2.80118e-04;Setup: 128 | Required Time: 9872 | Launch Clock: 0 | Data Path: 1558 | Slack: 8315
+N_64;Cell-Count: 29610 | Cell-Area: 22349.272 | Net-Area: 24450.322 | Total-Area: 46799.595;Leakage: 1.99697e-06 | Internal: 1.76531e-03 | Switching: 2.71409e-03 | Total: 4.48140e-03;Setup: 129 | Required Time: 9871 | Launch Clock: 0 | Data Path: 3201 | Slack: 6670
+N_8;Cell-Count: 551 | Cell-Area: 449.217 | Net-Area: 452.821 | Total-Area: 902.038;Leakage: 3.79815e-08 | Internal: 3.29667e-05 | Switching: 3.56684e-05 | Total: 6.86731e-05;Setup: 126 | Required Time: 9874 | Launch Clock: 0 | Data Path: 934 | Slack: 8940
+N_inputs_8:
+arquivo;area;power;timing
+N_16;Cell-Count: 3842 | Cell-Area: 2959.240 | Net-Area: 3229.891 | Total-Area: 6189.131;Leakage: 2.65142e-07 | Internal: 2.22744e-04 | Switching: 3.16499e-04 | Total: 5.39508e-04;Setup: 128 | Required Time: 9872 | Launch Clock: 0 | Data Path: 1558 | Slack: 8315
+N_64;Cell-Count: 63935 | Cell-Area: 46909.575 | Net-Area: 51277.352 | Total-Area: 98186.927;Leakage: 4.18780e-06 | Internal: 3.74055e-03 | Switching: 5.76436e-03 | Total: 9.50910e-03;Setup: 129 | Required Time: 9871 | Launch Clock: 0 | Data Path: 3201 | Slack: 6670
+N_8;Cell-Count: 1050 | Cell-Area: 853.632 | Net-Area: 891.984 | Total-Area: 1745.616;Leakage: 7.44323e-08 | Internal: 6.44752e-05 | Switching: 8.36221e-05 | Total: 1.48172e-04;Setup: 126 | Required Time: 9874 | Launch Clock: 0 | Data Path: 934 | Slack: 8940
