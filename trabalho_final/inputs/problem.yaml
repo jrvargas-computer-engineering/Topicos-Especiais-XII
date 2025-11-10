@@ -1,0 +1,24 @@
+# Salve como: inputs/problem.yaml
+problem:
+  version: 0.4
+  shape:
+    name: FullyConnected
+    # 1. Lista todas as dimensões
+    dimensions: [K, M, N]
+    
+    # 2. Define os tensores (data spaces)
+    data_spaces:
+    - name: Weights
+      projection: 
+      - [ [K], [M] ]
+    - name: Inputs
+      projection: 
+      - [ [N], [K] ]
+    - name: Outputs
+      projection: 
+      - [ [N], [M] ] 
+      read_write: True
+  instance:
+    K: 100  # Dimensão de entrada
+    M: 35   # Dimensão de saída
+    N: 1    # Tamanho do Batch

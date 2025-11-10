@@ -1,0 +1,81 @@
+digraph DSE_Workflow {
+    rankdir=LR;
+    node [shape=box, style=filled, fillcolor="#e8e8e8", fontname="Arial"];
+
+    // Nó inicial
+    Alvo [label=<<B>DEFINIÇÃO DA <BR/>APLICAÇÃO ALVO</B>>];
+
+    // Subgraph "model"
+    subgraph cluster_model {
+        label="Treinamento e Dataset";
+        style=dashed;
+
+        Dataset [label=<<B>DEFINIÇÃO <BR/>DO DATASET</B>>];
+        Training_1 [label="Treinamento e Teste \n(Baseline)"];
+        Dataset_2 [label="Resizing do Dataset"];
+        Training_2 [label="Treinamento\ncom novo Dataset"];
+        Validation [label="Validação do modelo"];
+        Model [label=<<B>DEFINICAO DO<BR/>MODELO</B>>];
+
+        // força ordem vertical (sem rankdir)
+        Dataset -> Training_1 [constraint=false];
+        Training_1 -> Dataset_2 [constraint=false];
+        Dataset_2 -> Training_2 [constraint=false];
+        Training_2 -> Validation [constraint=false];
+        Validation -> Model [constraint=false];
+    }
+
+    subgraph cluster_timeloop {
+        label="Timeloop/Accelergy";
+        style=dashed;
+        Timeloop [label=<<B>DSE</B><BR/>(Timeloop + Accelergy) <BR/> Número de PEs;<BR/> Tamanho do Buffer; <BR/> Largura de Barramento;>  ];
+        Estimativas_1[label="Análise das \nestimativas \n de Energia e Área"]
+        Arq_Alvo [label=<<B>SELEÇÃO DAS <BR/> ARQUITETURAS ALVO</B>>]
+
+        Timeloop-> Estimativas_1 [constraint=false];
+        Estimativas_1-> Arq_Alvo [constraint=false];
+    }
+
+    Metrics [label=<<B>SELEÇÃO DE<BR/>PARÂMETROS</B><BR/>(Energia, Acurácia, Área)>];
+    
+    subgraph cluster_maxpy{
+        label="MaxPy";
+        style=dashed;
+
+        RTL [label=<<B>DESCRIÇÃO RTL<BR/>DA ARQUITETURA ALVO</B>>];
+        MaxPy [label=<<B>DSE </B><BR/> (MaxPy) <BR/> Blocos e Operadores>];
+        Estimativas_2[label="Análise das \nestimativas \n de Energia e Área"]
+        RTL_Alvo[label=<<B>SELEÇÃO<BR/>DOS RTLs ALVO</B>>];  
+        
+        RTL -> MaxPy[constraint=false];         
+        MaxPy -> Estimativas_2[constraint=false]; 
+        Estimativas_2->RTL_Alvo[constraint=false];     
+    }
+
+    subgraph cluster_sintese{
+        label="Síntese";
+        style=dashed;
+        
+        Synthesis [label=<<B>TESTBENCH<BR/>E SÍNTESE</B>>];
+        Tradeoff [label="Análise de Trade-offs"];
+
+        Synthesis->Tradeoff[constraint=false]; 
+    }
+
+    // conexões principais
+    Alvo -> Dataset;
+    Model -> Metrics;
+    Metrics -> Timeloop;
+    Arq_Alvo -> RTL; 
+    RTL_Alvo -> Synthesis; 
+    Tradeoff -> Timeloop [
+        constraint=false,
+        color=red
+    ];
+    Tradeoff -> MaxPy [
+        constraint=false,
+        color=red
+    ]
+    
+    
+;}
