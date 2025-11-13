@@ -5,8 +5,8 @@ QoS Summary for neuron_intra_Nbits
 ================================================================================
 Metric                          final          
 ================================================================================
-Slack (ps):                     6,670
-  R2R (ps):                     6,670
+Slack (ps):                     6,785
+  R2R (ps):                     6,785
   I2R (ps):                  no_value
   R2O (ps):                  no_value
   I2O (ps):                  no_value
@@ -18,10 +18,10 @@ TNS (ps):                           0
   I2O (ps):                  no_value
   CG  (ps):                  no_value
 Failing Paths:                      0
-Cell Area:                     46,910
-Total Cell Area:               46,910
-Leaf Instances:                63,935
-Total Instances:               63,935
+Cell Area:                    111,773
+Total Cell Area:              111,773
+Leaf Instances:               159,475
+Total Instances:              159,475
 Utilization (%):                 0.00
 Tot. Net Length (um):        no_value
 Avg. Net Length (um):        no_value
@@ -32,17 +32,17 @@ Norm Cong Hotspot Area:
   Max Cong:                  no_value
   Tot Cong:                  no_value
 ================================================================================
-CPU  Runtime (h:m:s):        00:51:59
-Real Runtime (h:m:s):        00:41:50
-CPU  Elapsed (h:m:s):        00:52:03
-Real Elapsed (h:m:s):        00:41:52
-Memory (MB):                  3117.95
+CPU  Runtime (h:m:s):        02:10:48
+Real Runtime (h:m:s):        01:39:43
+CPU  Elapsed (h:m:s):        02:10:55
+Real Elapsed (h:m:s):        01:39:48
+Memory (MB):                  2514.67
 ================================================================================
 ================================================================================
 Flow Settings:
 ================================================================================
-Total Runtime (h:m:s): 00:41:56
-Total Memory (MB):     3117.95
+Total Runtime (h:m:s): 01:39:58
+Total Memory (MB):     2514.67
 Executable Version:    23.12-s086_1
 ================================================================================
 Total Cell Area =  Cell Area + Physical Cell Area

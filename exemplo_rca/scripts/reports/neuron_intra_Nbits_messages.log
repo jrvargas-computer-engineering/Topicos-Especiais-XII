@@ -4,7 +4,7 @@
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 |    Id    |  Sev  |Count|                                                                Message Text                                                                |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|MESG-11   |Warning|    4|Maximum message print count reached.                                                                                                        |
+|MESG-11   |Warning|    5|Maximum message print count reached.                                                                                                        |
 |RPT-16    |Info   |    2|Joules engine is used.                                                                                                                      |
 |RPT_DP-100|Warning|    1|The filename, column and line number information will not be available in the report.                                                       |
 |          |       |     |You must set the 'hdl_track_filename_row_col' attribute to 'true' (before elaborate)                                                        |

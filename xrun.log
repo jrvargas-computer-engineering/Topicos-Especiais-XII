@@ -1,0 +1,19 @@
+xrun(64): 23.09-s013: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s013: Started on Oct 07, 2025 at 12:52:15 -03
+xrun
+	-f neuron_filelist.f
+		rtl/rca_Nbits.v
+		rtl/mult_Nbits.v
+		rtl/AC_Nbits.v
+		rtl/mac_Nbits.v
+		rtl/ReLu_Nbits.v
+		rtl/neuron_Nbits.v
+		tb/tb_neuronNbits.v
+xrun: *E,FILEMIS: Cannot find the provided file rtl/rca_Nbits.v.
+xrun: *E,FILEMIS: Cannot find the provided file rtl/mult_Nbits.v.
+xrun: *E,FILEMIS: Cannot find the provided file rtl/AC_Nbits.v.
+xrun: *E,FILEMIS: Cannot find the provided file rtl/mac_Nbits.v.
+xrun: *E,FILEMIS: Cannot find the provided file rtl/ReLu_Nbits.v.
+xrun: *E,FILEMIS: Cannot find the provided file rtl/neuron_Nbits.v.
+xrun: *E,FILEMIS: Cannot find the provided file tb/tb_neuronNbits.v.
+TOOL:	xrun(64)	23.09-s013: Exiting on Oct 07, 2025 at 12:52:15 -03  (total: 00:00:00)
