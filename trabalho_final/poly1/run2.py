@@ -8,9 +8,9 @@ circuit.set_group("study_no_1")
 circuit.set_synth_tool(None)
 circuit.set_results_filename("output.csv")
 circuit.parameters = {
-    "[[MULTIPLIER_TYPE]]": ["LOBA0s", "LOBA1s", "DRUMs"],
-    "[[MULTIPLIER_K]]": ["4", "8", "16"],
+    "[[MULTIPLIER_TYPE]]": ["DRUMs"],
+    "[[MULTIPLIER_K]]": ["4", "5", "6"],
     "[[ADDER_TYPE]]": ["copyA", "eta1", "loa", "trunc0"],
-    "[[ADDER_K]]": ["4", "8", "16", "32"],
+    "[[ADDER_K]]": ["1", "2", "3", "4"],
 }
 circuit.rtl2py_param_loop(base="rtl_param")
