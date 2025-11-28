@@ -1,0 +1,10 @@
+# Salve como: top.yaml.jinja (na pasta principal)
+# Este arquivo será convertido para YAML pelo Jinja2
+
+# Adiciona o diretório 'inputs' ao caminho de busca
+{{add_to_path(cwd() ~ '/inputs')}}
+
+# Puxa as seções principais de cada arquivo
+architecture: {{include('architecture.yaml', 'architecture')}}
+mapper:       {{include('mapper.yaml', 'mapper')}}
+problem:      {{include('problem.yaml', 'problem')}}

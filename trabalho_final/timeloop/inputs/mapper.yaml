@@ -1,0 +1,8 @@
+# Salve como: inputs/mapper.yaml
+mapper:
+  version: 0.4
+  optimization_metrics: [ edp ] # Otimizar para Produto Energia-Delay
+  algorithm: random_pruned
+  search_size: 1000
+  victory_condition: 100
+  timeout: 500

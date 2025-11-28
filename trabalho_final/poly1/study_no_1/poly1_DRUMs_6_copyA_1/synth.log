@@ -1,0 +1,1894 @@
+MAxPy: SYNTHESIS USING YOSYS
+
+Command line:
+
+yosys synth.ys;
+
+Synth file:
+
+read_verilog /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/*/*.v study_no_1/poly1_DRUMs_6_copyA_1/rtl/poly1.v 
+hierarchy -top poly1
+prep; flatten; synth
+clean -purge
+
+dfflibmap -liberty /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.lib
+abc -liberty /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.lib
+clean -purge
+
+write_verilog -noattr -noexpr  study_no_1/poly1_DRUMs_6_copyA_1/netlist_yosys/poly1.v
+
+
+Log from stdout and stderr:
+
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `synth.ys' --
+
+1. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v' to AST representation.
+Generating RTLIL representation for module `\AND2_X1'.
+Generating RTLIL representation for module `\AND2_X2'.
+Generating RTLIL representation for module `\AND3_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:23: Warning: Identifier `\i_12' is implicitly declared.
+Generating RTLIL representation for module `\AND3_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:33: Warning: Identifier `\i_18' is implicitly declared.
+Generating RTLIL representation for module `\AND4_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:44: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:45: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\AND4_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:56: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:57: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\ANTENNA'.
+Generating RTLIL representation for module `\AOI21_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:73: Warning: Identifier `\i_18' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:73: Warning: Identifier `\i_19' is implicitly declared.
+Generating RTLIL representation for module `\AOI21_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:84: Warning: Identifier `\i_12' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:84: Warning: Identifier `\i_13' is implicitly declared.
+Generating RTLIL representation for module `\AOI22_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:96: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:96: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:96: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\AOI22_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:109: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:109: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:109: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\BUF_X1'.
+Generating RTLIL representation for module `\BUF_X2'.
+Generating RTLIL representation for module `\BUF_X4'.
+Generating RTLIL representation for module `\BUF_X8'.
+Generating RTLIL representation for module `\BUF_X12'.
+Generating RTLIL representation for module `\BUF_X16'.
+Generating RTLIL representation for module `\CLKBUF_X1'.
+Generating RTLIL representation for module `\CLKBUF_X2'.
+Generating RTLIL representation for module `\CLKBUF_X4'.
+Generating RTLIL representation for module `\CLKBUF_X8'.
+Generating RTLIL representation for module `\CLKBUF_X12'.
+Generating RTLIL representation for module `\CLKBUF_X16'.
+Generating RTLIL representation for module `\CLKGATETST_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:238: Warning: Identifier `\QD' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:239: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:240: Warning: Identifier `\QDn' is implicitly declared.
+Generating RTLIL representation for module `\seq_CLKGATETST_X1'.
+Generating RTLIL representation for module `\DFFRNQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:350: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:350: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:351: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_DFFRNQ_X1'.
+Generating RTLIL representation for module `\DFFSNQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:484: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:484: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:485: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_DFFSNQ_X1'.
+Generating RTLIL representation for module `\FA_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:580: Warning: Identifier `\i_12' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:580: Warning: Identifier `\i_15' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:581: Warning: Identifier `\i_13' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:581: Warning: Identifier `\i_14' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:586: Warning: Identifier `\i_20' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:586: Warning: Identifier `\i_21' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:586: Warning: Identifier `\i_27' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:587: Warning: Identifier `\i_22' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:589: Warning: Identifier `\i_23' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:589: Warning: Identifier `\i_24' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:589: Warning: Identifier `\i_25' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:592: Warning: Identifier `\i_26' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:594: Warning: Identifier `\i_28' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:594: Warning: Identifier `\i_29' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:596: Warning: Identifier `\i_30' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:596: Warning: Identifier `\i_31' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:596: Warning: Identifier `\i_32' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:599: Warning: Identifier `\i_33' is implicitly declared.
+Generating RTLIL representation for module `\FILLTIE'.
+Generating RTLIL representation for module `\FILL_X1'.
+Generating RTLIL representation for module `\FILL_X2'.
+Generating RTLIL representation for module `\FILL_X4'.
+Generating RTLIL representation for module `\FILL_X8'.
+Generating RTLIL representation for module `\FILL_X16'.
+Generating RTLIL representation for module `\HA_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:634: Warning: Identifier `\i_42' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:634: Warning: Identifier `\i_43' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:634: Warning: Identifier `\i_44' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:637: Warning: Identifier `\i_45' is implicitly declared.
+Generating RTLIL representation for module `\INV_X1'.
+Generating RTLIL representation for module `\INV_X2'.
+Generating RTLIL representation for module `\INV_X4'.
+Generating RTLIL representation for module `\INV_X8'.
+Generating RTLIL representation for module `\INV_X12'.
+Generating RTLIL representation for module `\INV_X16'.
+Generating RTLIL representation for module `\LHQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:720: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:720: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:721: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_LHQ_X1'.
+Generating RTLIL representation for module `\MUX2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:793: Warning: Identifier `\i_12' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:793: Warning: Identifier `\i_13' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:795: Warning: Identifier `\i_14' is implicitly declared.
+Generating RTLIL representation for module `\NAND2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:805: Warning: Identifier `\i_24' is implicitly declared.
+Generating RTLIL representation for module `\NAND2_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:814: Warning: Identifier `\i_18' is implicitly declared.
+Generating RTLIL representation for module `\NAND3_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:824: Warning: Identifier `\i_6' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:824: Warning: Identifier `\i_7' is implicitly declared.
+Generating RTLIL representation for module `\NAND3_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:835: Warning: Identifier `\i_6' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:835: Warning: Identifier `\i_7' is implicitly declared.
+Generating RTLIL representation for module `\NAND4_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:847: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:847: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:848: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\NAND4_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:860: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:860: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:861: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\NOR2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:871: Warning: Identifier `\i_12' is implicitly declared.
+Generating RTLIL representation for module `\NOR2_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:880: Warning: Identifier `\i_12' is implicitly declared.
+Generating RTLIL representation for module `\NOR3_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:890: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:890: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\NOR3_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:901: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:901: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\NOR4_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:913: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:913: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:914: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\NOR4_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:926: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:926: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:927: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\OAI21_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:938: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:938: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\OAI21_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:949: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:949: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\OAI22_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:961: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:961: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:961: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\OAI22_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:974: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:974: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:974: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\OR2_X1'.
+Generating RTLIL representation for module `\OR2_X2'.
+Generating RTLIL representation for module `\OR3_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1001: Warning: Identifier `\i_0' is implicitly declared.
+Generating RTLIL representation for module `\OR3_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1011: Warning: Identifier `\i_0' is implicitly declared.
+Generating RTLIL representation for module `\OR4_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1022: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1023: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\OR4_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1034: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1035: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\SDFFRNQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1091: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1091: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1094: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1094: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1096: Warning: Identifier `\i_2' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1092: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_SDFFRNQ_X1'.
+Generating RTLIL representation for module `\SDFFSNQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1235: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1235: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1238: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1238: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1240: Warning: Identifier `\i_2' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1236: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_SDFFSNQ_X1'.
+Generating RTLIL representation for module `\TBUF_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1332: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1332: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1342: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1342: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X4'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1352: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1352: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X8'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1362: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1362: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X12'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1372: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1372: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X16'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1382: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1382: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TIEH'.
+Generating RTLIL representation for module `\TIEL'.
+Generating RTLIL representation for module `\XNOR2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1406: Warning: Identifier `\i_19' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1406: Warning: Identifier `\i_20' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1406: Warning: Identifier `\i_21' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1409: Warning: Identifier `\i_22' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1404: Warning: Identifier `\i_18' is implicitly declared.
+Generating RTLIL representation for module `\XOR2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1418: Warning: Identifier `\i_18' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1418: Warning: Identifier `\i_19' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1418: Warning: Identifier `\i_20' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1421: Warning: Identifier `\i_21' is implicitly declared.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/copy.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/copy.v' to AST representation.
+Generating RTLIL representation for module `\copyA'.
+Generating RTLIL representation for module `\copyB'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/eta1.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/eta1.v' to AST representation.
+Generating RTLIL representation for module `\eta1'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/loa.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/loa.v' to AST representation.
+Generating RTLIL representation for module `\loa'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/trunc.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/trunc.v' to AST representation.
+Generating RTLIL representation for module `\trunc0'.
+Generating RTLIL representation for module `\trunc1'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v' to AST representation.
+Generating RTLIL representation for module `\DRUMs'.
+Generating RTLIL representation for module `\DRUMu'.
+Generating RTLIL representation for module `\DRUM_LOD_k'.
+Generating RTLIL representation for module `\DRUM_P_Encoder_k'.
+Generating RTLIL representation for module `\DRUM_Barrel_Shifter_k'.
+Generating RTLIL representation for module `\DRUM_Mux_16_3_k'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/LOBA.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/LOBA.v' to AST representation.
+Generating RTLIL representation for module `\LOBA0s'.
+Generating RTLIL representation for module `\LOBA0u'.
+Generating RTLIL representation for module `\LOBA1s'.
+Generating RTLIL representation for module `\LOBA1u'.
+Generating RTLIL representation for module `\LOBA2s'.
+Generating RTLIL representation for module `\LOBA2u'.
+Generating RTLIL representation for module `\LOBA3s'.
+Generating RTLIL representation for module `\LOBA3u'.
+Generating RTLIL representation for module `\LOBA_SPLIT'.
+Generating RTLIL representation for module `\LOBA_MUX'.
+Generating RTLIL representation for module `\LOBA_LOWER'.
+Generating RTLIL representation for module `\LOBA_LOB'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: study_no_1/poly1_DRUMs_6_copyA_1/rtl/poly1.v
+Parsing Verilog input from `study_no_1/poly1_DRUMs_6_copyA_1/rtl/poly1.v' to AST representation.
+Generating RTLIL representation for module `\poly1'.
+Successfully finished Verilog frontend.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \poly1
+Used module:     \copyA
+Used module:     \DRUMs
+Used module:         \DRUMu
+Used module:             \DRUM_Barrel_Shifter_k
+Used module:             \DRUM_Mux_16_3_k
+Used module:             \DRUM_P_Encoder_k
+Used module:             \DRUM_LOD_k
+Parameter \N = 16
+Parameter \K = 4
+
+9.2. Executing AST frontend in derive mode using pre-parsed AST for module `\DRUMu'.
+Parameter \N = 16
+Parameter \K = 4
+Generating RTLIL representation for module `$paramod$a07b09e41c3d89959fdd140bdec9a7cc3f3fd22e\DRUMu'.
+Parameter \N = 16
+Parameter \K = 6
+
+9.3. Executing AST frontend in derive mode using pre-parsed AST for module `\DRUM_Barrel_Shifter_k'.
+Parameter \N = 16
+Parameter \K = 6
+Generating RTLIL representation for module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k'.
+Parameter \N = 16
+Parameter \K = 6
+
+9.4. Executing AST frontend in derive mode using pre-parsed AST for module `\DRUM_Mux_16_3_k'.
+Parameter \N = 16
+Parameter \K = 6
+Generating RTLIL representation for module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k'.
+Parameter \N = 16
+Parameter \K = 6
+Found cached RTLIL representation for module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k'.
+Parameter \N = 16
+
+9.5. Executing AST frontend in derive mode using pre-parsed AST for module `\DRUM_P_Encoder_k'.
+Parameter \N = 16
+Generating RTLIL representation for module `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000'.
+Parameter \N = 16
+Found cached RTLIL representation for module `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000'.
+Parameter \N = 16
+
+9.6. Executing AST frontend in derive mode using pre-parsed AST for module `\DRUM_LOD_k'.
+Parameter \N = 16
+Generating RTLIL representation for module `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000'.
+Parameter \N = 16
+Found cached RTLIL representation for module `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000'.
+Parameter 1 (\BIT_WIDTH) = 16
+Parameter 2 (\K) = 1
+
+9.7. Executing AST frontend in derive mode using pre-parsed AST for module `\copyA'.
+Parameter 1 (\BIT_WIDTH) = 16
+Parameter 2 (\K) = 1
+Generating RTLIL representation for module `$paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA'.
+Parameter 1 (\N) = 16
+Parameter 2 (\K) = 6
+
+9.8. Executing AST frontend in derive mode using pre-parsed AST for module `\DRUMs'.
+Parameter 1 (\N) = 16
+Parameter 2 (\K) = 6
+Generating RTLIL representation for module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs'.
+
+9.9. Analyzing design hierarchy..
+Top module:  \poly1
+Used module:     $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA
+Used module:     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs
+Used module:         \DRUMu
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k
+Used module:             $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000
+Used module:             $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000
+Parameter \N = 16
+Parameter \K = 6
+
+9.10. Executing AST frontend in derive mode using pre-parsed AST for module `\DRUMu'.
+Parameter \N = 16
+Parameter \K = 6
+Generating RTLIL representation for module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu'.
+
+9.11. Analyzing design hierarchy..
+Top module:  \poly1
+Used module:     $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA
+Used module:     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs
+Used module:         $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu
+Used module:             \DRUM_Barrel_Shifter_k
+Used module:             \DRUM_Mux_16_3_k
+Used module:             \DRUM_P_Encoder_k
+Used module:             \DRUM_LOD_k
+Parameter \N = 16
+Parameter \K = 6
+Found cached RTLIL representation for module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k'.
+Parameter \N = 16
+Parameter \K = 6
+Found cached RTLIL representation for module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k'.
+Parameter \N = 16
+Parameter \K = 6
+Found cached RTLIL representation for module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k'.
+Parameter \N = 16
+Found cached RTLIL representation for module `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000'.
+Parameter \N = 16
+Found cached RTLIL representation for module `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000'.
+Parameter \N = 16
+Found cached RTLIL representation for module `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000'.
+Parameter \N = 16
+Found cached RTLIL representation for module `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000'.
+
+9.12. Analyzing design hierarchy..
+Top module:  \poly1
+Used module:     $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA
+Used module:     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs
+Used module:         $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k
+Used module:             $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000
+Used module:             $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000
+
+9.13. Analyzing design hierarchy..
+Top module:  \poly1
+Used module:     $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA
+Used module:     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs
+Used module:         $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k
+Used module:             $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000
+Used module:             $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000
+Removing unused module `$paramod$a07b09e41c3d89959fdd140bdec9a7cc3f3fd22e\DRUMu'.
+Removing unused module `\LOBA_LOB'.
+Removing unused module `\LOBA_LOWER'.
+Removing unused module `\LOBA_MUX'.
+Removing unused module `\LOBA_SPLIT'.
+Removing unused module `\LOBA3u'.
+Removing unused module `\LOBA3s'.
+Removing unused module `\LOBA2u'.
+Removing unused module `\LOBA2s'.
+Removing unused module `\LOBA1u'.
+Removing unused module `\LOBA1s'.
+Removing unused module `\LOBA0u'.
+Removing unused module `\LOBA0s'.
+Removing unused module `\DRUM_Mux_16_3_k'.
+Removing unused module `\DRUM_Barrel_Shifter_k'.
+Removing unused module `\DRUM_P_Encoder_k'.
+Removing unused module `\DRUM_LOD_k'.
+Removing unused module `\DRUMu'.
+Removing unused module `\DRUMs'.
+Removing unused module `\trunc1'.
+Removing unused module `\trunc0'.
+Removing unused module `\loa'.
+Removing unused module `\eta1'.
+Removing unused module `\copyB'.
+Removing unused module `\copyA'.
+Removing unused module `\XOR2_X1'.
+Removing unused module `\XNOR2_X1'.
+Removing unused module `\TIEL'.
+Removing unused module `\TIEH'.
+Removing unused module `\TBUF_X16'.
+Removing unused module `\TBUF_X12'.
+Removing unused module `\TBUF_X8'.
+Removing unused module `\TBUF_X4'.
+Removing unused module `\TBUF_X2'.
+Removing unused module `\TBUF_X1'.
+Removing unused module `\seq_SDFFSNQ_X1'.
+Removing unused module `\SDFFSNQ_X1'.
+Removing unused module `\seq_SDFFRNQ_X1'.
+Removing unused module `\SDFFRNQ_X1'.
+Removing unused module `\OR4_X2'.
+Removing unused module `\OR4_X1'.
+Removing unused module `\OR3_X2'.
+Removing unused module `\OR3_X1'.
+Removing unused module `\OR2_X2'.
+Removing unused module `\OR2_X1'.
+Removing unused module `\OAI22_X2'.
+Removing unused module `\OAI22_X1'.
+Removing unused module `\OAI21_X2'.
+Removing unused module `\OAI21_X1'.
+Removing unused module `\NOR4_X2'.
+Removing unused module `\NOR4_X1'.
+Removing unused module `\NOR3_X2'.
+Removing unused module `\NOR3_X1'.
+Removing unused module `\NOR2_X2'.
+Removing unused module `\NOR2_X1'.
+Removing unused module `\NAND4_X2'.
+Removing unused module `\NAND4_X1'.
+Removing unused module `\NAND3_X2'.
+Removing unused module `\NAND3_X1'.
+Removing unused module `\NAND2_X2'.
+Removing unused module `\NAND2_X1'.
+Removing unused module `\MUX2_X1'.
+Removing unused module `\seq_LHQ_X1'.
+Removing unused module `\LHQ_X1'.
+Removing unused module `\INV_X16'.
+Removing unused module `\INV_X12'.
+Removing unused module `\INV_X8'.
+Removing unused module `\INV_X4'.
+Removing unused module `\INV_X2'.
+Removing unused module `\INV_X1'.
+Removing unused module `\HA_X1'.
+Removing unused module `\FA_X1'.
+Removing unused module `\seq_DFFSNQ_X1'.
+Removing unused module `\DFFSNQ_X1'.
+Removing unused module `\seq_DFFRNQ_X1'.
+Removing unused module `\DFFRNQ_X1'.
+Removing unused module `\seq_CLKGATETST_X1'.
+Removing unused module `\CLKGATETST_X1'.
+Removing unused module `\CLKBUF_X16'.
+Removing unused module `\CLKBUF_X12'.
+Removing unused module `\CLKBUF_X8'.
+Removing unused module `\CLKBUF_X4'.
+Removing unused module `\CLKBUF_X2'.
+Removing unused module `\CLKBUF_X1'.
+Removing unused module `\BUF_X16'.
+Removing unused module `\BUF_X12'.
+Removing unused module `\BUF_X8'.
+Removing unused module `\BUF_X4'.
+Removing unused module `\BUF_X2'.
+Removing unused module `\BUF_X1'.
+Removing unused module `\AOI22_X2'.
+Removing unused module `\AOI22_X1'.
+Removing unused module `\AOI21_X2'.
+Removing unused module `\AOI21_X1'.
+Removing unused module `\AND4_X2'.
+Removing unused module `\AND4_X1'.
+Removing unused module `\AND3_X2'.
+Removing unused module `\AND3_X1'.
+Removing unused module `\AND2_X2'.
+Removing unused module `\AND2_X1'.
+Removed 100 unused modules.
+Mapping positional arguments of cell poly1.sum1 ($paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA).
+Mapping positional arguments of cell poly1.mult1 ($paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs).
+Warning: Resizing cell port poly1.sum1.B from 8 bits to 16 bits.
+Warning: Resizing cell port poly1.sum1.OUT from 16 bits to 17 bits.
+Warning: Resizing cell port poly1.mult1.a from 8 bits to 16 bits.
+Warning: Resizing cell port poly1.mult1.b from 8 bits to 16 bits.
+Warning: Resizing cell port poly1.mult1.r from 16 bits to 32 bits.
+
+10. Executing PREP pass.
+
+10.1. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1.1. Analyzing design hierarchy..
+Top module:  \poly1
+Used module:     $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA
+Used module:     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs
+Used module:         $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k
+Used module:             $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000
+Used module:             $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000
+
+10.1.2. Analyzing design hierarchy..
+Top module:  \poly1
+Used module:     $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA
+Used module:     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs
+Used module:         $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k
+Used module:             $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k
+Used module:             $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000
+Used module:             $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000
+Removed 0 unused modules.
+
+10.2. Executing PROC pass (convert processes to netlists).
+
+10.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 16 switch rules as full_case in process $proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:128$590 in module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+Marked 10 switch rules as full_case in process $proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:161$579 in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+Removed a total of 0 dead cases.
+
+10.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 37 assignments to connections.
+
+10.2.4. Executing PROC_INIT pass (extract init attributes).
+
+10.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+10.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~26 debug messages>
+
+10.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:107$591'.
+Creating decoders for process `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:128$590'.
+     1/16: $16\out_a[3:0]
+     2/16: $15\out_a[3:0]
+     3/16: $14\out_a[3:0]
+     4/16: $13\out_a[3:0]
+     5/16: $12\out_a[3:0]
+     6/16: $11\out_a[3:0]
+     7/16: $10\out_a[3:0]
+     8/16: $9\out_a[3:0]
+     9/16: $8\out_a[3:0]
+    10/16: $7\out_a[3:0]
+    11/16: $6\out_a[3:0]
+    12/16: $5\out_a[3:0]
+    13/16: $4\out_a[3:0]
+    14/16: $3\out_a[3:0]
+    15/16: $2\out_a[3:0]
+    16/16: $1\out_a[3:0]
+Creating decoders for process `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:161$579'.
+     1/10: $10\out[3:0]
+     2/10: $9\out[3:0]
+     3/10: $8\out[3:0]
+     4/10: $7\out[3:0]
+     5/10: $6\out[3:0]
+     6/10: $5\out[3:0]
+     7/10: $4\out[3:0]
+     8/10: $3\out[3:0]
+     9/10: $2\out[3:0]
+    10/10: $1\out[3:0]
+
+10.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.\out_a' from process `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:107$591'.
+No latch inferred for signal `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.\k' from process `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:107$591'.
+No latch inferred for signal `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.\w' from process `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:107$591'.
+No latch inferred for signal `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.\out_a' from process `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:128$590'.
+No latch inferred for signal `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.\i' from process `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:128$590'.
+No latch inferred for signal `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.\out' from process `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:161$579'.
+No latch inferred for signal `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.\i' from process `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:161$579'.
+
+10.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+10.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+10.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:107$591'.
+Found and cleaned up 16 empty switches in `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:128$590'.
+Removing empty process `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:128$590'.
+Found and cleaned up 10 empty switches in `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:161$579'.
+Removing empty process `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.$proc$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:161$579'.
+Cleaned up 26 empty switches.
+
+10.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.
+Optimizing module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA.
+Optimizing module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.
+Optimizing module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.
+
+10.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.
+Optimizing module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA.
+Optimizing module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.
+Optimizing module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.
+
+10.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs..
+Finding unused cells or wires in module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA..
+Finding unused cells or wires in module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu..
+Removed 1 unused cells and 105 unused wires.
+<suppressed ~28 debug messages>
+
+10.5. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k...
+Checking module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k...
+Checking module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs...
+Checking module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu...
+Checking module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA...
+Checking module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000...
+Checking module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000...
+Checking module poly1...
+Found and reported 0 problems.
+
+10.6. Executing OPT pass (performing simple optimizations).
+
+10.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.
+Optimizing module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA.
+Optimizing module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.
+Optimizing module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+Optimizing module poly1.
+
+10.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `$paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA'.
+Finding identical cells in module `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000'.
+Finding identical cells in module `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000'.
+Finding identical cells in module `\poly1'.
+Removed a total of 2 cells.
+
+10.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$643: { 16'0000000000000000 \a } -> { 17'00000000000000000 \a [14:0] }
+      Replacing known input bits on port A of cell $ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$648: { 16'0000000000000000 \b } -> { 17'00000000000000000 \b [14:0] }
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \poly1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+10.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.
+  Optimizing cells in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+  Optimizing cells in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.
+  Optimizing cells in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.
+  Optimizing cells in module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA.
+  Optimizing cells in module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.
+  Optimizing cells in module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+  Optimizing cells in module \poly1.
+Performed a total of 0 changes.
+
+10.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu'.
+Finding identical cells in module `$paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA'.
+Finding identical cells in module `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000'.
+Finding identical cells in module `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000'.
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+10.6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu..
+Finding unused cells or wires in module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA..
+Finding unused cells or wires in module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module \poly1..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+10.6.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.
+Optimizing module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA.
+Optimizing module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.
+Optimizing module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+Optimizing module poly1.
+
+10.6.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.6.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \poly1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+10.6.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.
+  Optimizing cells in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+  Optimizing cells in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.
+  Optimizing cells in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.
+  Optimizing cells in module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA.
+  Optimizing cells in module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.
+  Optimizing cells in module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+  Optimizing cells in module \poly1.
+Performed a total of 0 changes.
+
+10.6.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu'.
+Finding identical cells in module `$paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA'.
+Finding identical cells in module `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000'.
+Finding identical cells in module `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000'.
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+10.6.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu..
+Finding unused cells or wires in module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA..
+Finding unused cells or wires in module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module \poly1..
+
+10.6.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.
+Optimizing module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA.
+Optimizing module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.
+Optimizing module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+Optimizing module poly1.
+
+10.6.14. Finished OPT passes. (There is nothing left to do.)
+
+10.7. Executing WREDUCE pass (reducing word size of cells).
+Removed top 20 bits (of 32) from port A of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.$shl$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:147$578 ($shl).
+Removed top 1 bits (of 4) from port B of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.$eq$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:164$580 ($eq).
+Removed top 1 bits (of 4) from port B of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.$eq$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:164$581 ($eq).
+Removed top 16 bits (of 32) from port A of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$not$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$640 ($not).
+Removed top 31 bits (of 32) from port B of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$641 ($add).
+Removed top 16 bits (of 32) from mux cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$643 ($mux).
+Removed top 16 bits (of 32) from port A of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$not$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$645 ($not).
+Removed top 31 bits (of 32) from port B of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$646 ($add).
+Removed top 16 bits (of 32) from mux cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$648 ($mux).
+Removed top 31 bits (of 32) from port B of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$651 ($add).
+Removed top 16 bits (of 32) from port Y of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$641 ($add).
+Removed top 16 bits (of 32) from port A of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$641 ($add).
+Removed top 16 bits (of 32) from port Y of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$646 ($add).
+Removed top 16 bits (of 32) from port A of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$646 ($add).
+Removed top 16 bits (of 32) from port Y of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$not$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$640 ($not).
+Removed top 16 bits (of 32) from port Y of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$not$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$645 ($not).
+Removed top 16 bits (of 32) from wire $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$641_Y.
+Removed top 16 bits (of 32) from wire $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.$not$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$640_Y.
+Removed top 29 bits (of 32) from port B of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$gt$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$653 ($gt).
+Removed top 29 bits (of 32) from port B of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$654 ($sub).
+Removed top 27 bits (of 32) from port Y of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$654 ($sub).
+Removed top 28 bits (of 32) from mux cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$655 ($mux).
+Removed top 29 bits (of 32) from port B of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$gt$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$656 ($gt).
+Removed top 29 bits (of 32) from port B of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$657 ($sub).
+Removed top 27 bits (of 32) from port Y of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$657 ($sub).
+Removed top 28 bits (of 32) from mux cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$658 ($mux).
+Removed top 1 bits (of 5) from port Y of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$654 ($sub).
+Removed top 1 bits (of 5) from port Y of cell $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$657 ($sub).
+Removed top 28 bits (of 32) from wire $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$654_Y.
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:109$592 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$594 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$597 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$600 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$603 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$606 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$609 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$612 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$615 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$618 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$621 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$624 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$627 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$630 ($mux).
+Removed top 31 bits (of 32) from mux cell $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$633 ($mux).
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:109$592_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$594_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$597_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$600_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$603_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$606_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$609_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$612_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$615_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$618_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$621_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$624_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$627_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$630_Y.
+Removed top 31 bits (of 32) from wire $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:112$633_Y.
+
+10.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu..
+Finding unused cells or wires in module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA..
+Finding unused cells or wires in module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module \poly1..
+Removed 0 unused cells and 37 unused wires.
+<suppressed ~3 debug messages>
+
+10.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+10.10. Executing OPT pass (performing simple optimizations).
+
+10.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.
+Optimizing module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.
+Optimizing module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA.
+Optimizing module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.
+Optimizing module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+Optimizing module poly1.
+
+10.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs'.
+Finding identical cells in module `$paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu'.
+Finding identical cells in module `$paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA'.
+Finding identical cells in module `$paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000'.
+Finding identical cells in module `$paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000'.
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+10.10.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs..
+Finding unused cells or wires in module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu..
+Finding unused cells or wires in module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA..
+Finding unused cells or wires in module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module \poly1..
+
+10.10.4. Finished fast OPT passes.
+
+10.11. Printing statistics.
+
+=== $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k ===
+
+   Number of wires:                  4
+   Number of wire bits:             81
+   Number of public wires:           4
+   Number of public wire bits:      81
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $shl                            1
+
+=== $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k ===
+
+   Number of wires:                 23
+   Number of wire bits:            102
+   Number of public wires:           4
+   Number of public wire bits:      56
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     $eq                            10
+     $mux                           10
+
+=== $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs ===
+
+   Number of wires:                 13
+   Number of wire bits:            305
+   Number of public wires:           7
+   Number of public wire bits:     129
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 11
+     $add                            3
+     $mux                            3
+     $not                            3
+     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu      1
+     $xor                            1
+
+=== $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu ===
+
+   Number of wires:                 19
+   Number of wire bits:            215
+   Number of public wires:          15
+   Number of public wire bits:     149
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 17
+     $add                            1
+     $gt                             2
+     $mul                            1
+     $mux                            4
+     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k      1
+     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k      2
+     $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000      2
+     $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000      2
+     $sub                            2
+
+=== $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA ===
+
+   Number of wires:                  3
+   Number of wire bits:             49
+   Number of public wires:           3
+   Number of public wire bits:      49
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $add                            1
+
+=== $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000 ===
+
+   Number of wires:                  4
+   Number of wire bits:             80
+   Number of public wires:           4
+   Number of public wire bits:      80
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 30
+     $and                           15
+     $mux                           15
+
+=== $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000 ===
+
+   Number of wires:                 18
+   Number of wire bits:            112
+   Number of public wires:           3
+   Number of public wire bits:      52
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     $mux                           16
+
+=== poly1 ===
+
+   Number of wires:                  7
+   Number of wire bits:             73
+   Number of public wires:           5
+   Number of public wire bits:      56
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs      1
+     $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA      1
+
+=== design hierarchy ===
+
+   poly1                             1
+     $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs      1
+       $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu      1
+         $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k      1
+         $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k      2
+         $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000      2
+         $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000      2
+     $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA      1
+
+   Number of wires:                136
+   Number of wire bits:           1311
+   Number of public wires:          56
+   Number of public wire bits:     840
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                154
+     $add                            5
+     $and                           30
+     $eq                            20
+     $gt                             2
+     $mul                            1
+     $mux                           89
+     $not                            3
+     $shl                            1
+     $sub                            2
+     $xor                            1
+
+10.12. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k...
+Checking module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k...
+Checking module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs...
+Checking module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu...
+Checking module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA...
+Checking module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000...
+Checking module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000...
+Checking module poly1...
+Found and reported 0 problems.
+
+11. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Barrel_Shifter_k.
+Deleting now unused module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUM_Mux_16_3_k.
+Deleting now unused module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMs.
+Deleting now unused module $paramod$5877bb0904bef1bfe55ddc5e09d3387b12830d7a\DRUMu.
+Deleting now unused module $paramod$a35d5664b23a311d9c38bd1c9971c39f0be092c2\copyA.
+Deleting now unused module $paramod\DRUM_LOD_k\N=s32'00000000000000000000000000010000.
+Deleting now unused module $paramod\DRUM_P_Encoder_k\N=s32'00000000000000000000000000010000.
+<suppressed ~10 debug messages>
+
+12. Executing SYNTH pass.
+
+12.1. Executing HIERARCHY pass (managing design hierarchy).
+
+12.1.1. Analyzing design hierarchy..
+Top module:  \poly1
+
+12.1.2. Analyzing design hierarchy..
+Top module:  \poly1
+Removed 0 unused modules.
+
+12.2. Executing PROC pass (convert processes to netlists).
+
+12.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+12.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+12.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+12.2.4. Executing PROC_INIT pass (extract init attributes).
+
+12.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+12.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+12.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+12.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+12.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+12.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+12.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+12.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+12.5. Executing CHECK pass (checking for obvious problems).
+Checking module poly1...
+Found and reported 0 problems.
+
+12.6. Executing OPT pass (performing simple optimizations).
+
+12.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \poly1..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $flatten\mult1.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$643: { 1'0 \a [7] \a [7] \a [7] \a [7] \a [7] \a [7] \a [7] \a } -> { 9'000000000 \a [6:0] }
+      Replacing known input bits on port A of cell $flatten\mult1.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$648: { 1'0 \x [7] \x [7] \x [7] \x [7] \x [7] \x [7] \x [7] \x } -> { 9'000000000 \x [6:0] }
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~39 debug messages>
+
+12.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \poly1.
+Performed a total of 0 changes.
+
+12.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+
+12.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.6.9. Finished OPT passes. (There is nothing left to do.)
+
+12.7. Executing FSM pass (extract and optimize FSM).
+
+12.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+12.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+12.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+12.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+
+12.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+12.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+12.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+12.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+12.8. Executing OPT pass (performing simple optimizations).
+
+12.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \poly1..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~39 debug messages>
+
+12.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \poly1.
+Performed a total of 0 changes.
+
+12.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+
+12.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.8.9. Finished OPT passes. (There is nothing left to do.)
+
+12.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 16) from port Y of cell poly1.$flatten\sum1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/copy.v:13$638 ($add).
+Removed top 16 bits (of 32) from mux cell poly1.$flatten\mult1.$ternary$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$652 ($mux).
+Removed top 16 bits (of 32) from port Y of cell poly1.$flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$651 ($add).
+Removed top 16 bits (of 32) from port A of cell poly1.$flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$651 ($add).
+Removed top 16 bits (of 32) from port Y of cell poly1.$flatten\mult1.$not$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$650 ($not).
+Removed top 16 bits (of 32) from port A of cell poly1.$flatten\mult1.$not$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$650 ($not).
+Removed top 16 bits (of 32) from port Y of cell poly1.$flatten\mult1.\U1.\u7.$shl$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:147$578 ($shl).
+Removed top 16 bits (of 32) from wire poly1.$flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$646_Y.
+Removed top 16 bits (of 32) from wire poly1.$flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$651_Y.
+Removed top 16 bits (of 32) from wire poly1.$flatten\mult1.$auto$wreduce.cc:461:run$746.
+Removed top 16 bits (of 32) from wire poly1.$flatten\mult1.$not$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$645_Y.
+Removed top 16 bits (of 32) from wire poly1.$flatten\mult1.$not$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$650_Y.
+Removed top 28 bits (of 32) from wire poly1.$flatten\mult1.\U1.$auto$wreduce.cc:461:run$747.
+Removed top 28 bits (of 32) from wire poly1.$flatten\mult1.\U1.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$657_Y.
+
+12.10. Executing PEEPOPT pass (run peephole optimizers).
+
+12.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+12.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module poly1:
+  creating $macc model for $flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$641 ($add).
+  creating $macc model for $flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$646 ($add).
+  creating $macc model for $flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$651 ($add).
+  creating $macc model for $flatten\mult1.\U1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:93$664 ($add).
+  creating $macc model for $flatten\mult1.\U1.$mul$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:92$663 ($mul).
+  creating $macc model for $flatten\mult1.\U1.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$654 ($sub).
+  creating $macc model for $flatten\mult1.\U1.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$657 ($sub).
+  creating $macc model for $flatten\sum1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/copy.v:13$638 ($add).
+  creating $alu model for $macc $flatten\sum1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/copy.v:13$638.
+  creating $alu model for $macc $flatten\mult1.\U1.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$657.
+  creating $alu model for $macc $flatten\mult1.\U1.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$654.
+  creating $alu model for $macc $flatten\mult1.\U1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:93$664.
+  creating $alu model for $macc $flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$651.
+  creating $alu model for $macc $flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$646.
+  creating $alu model for $macc $flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$641.
+  creating $macc cell for $flatten\mult1.\U1.$mul$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:92$663: $auto$alumacc.cc:365:replace_macc$770
+  creating $alu model for $flatten\mult1.\U1.$gt$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$653 ($gt): new $alu
+  creating $alu model for $flatten\mult1.\U1.$gt$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$656 ($gt): new $alu
+  creating $alu cell for $flatten\mult1.\U1.$gt$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$656: $auto$alumacc.cc:485:replace_alu$773
+  creating $alu cell for $flatten\mult1.\U1.$gt$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$653: $auto$alumacc.cc:485:replace_alu$778
+  creating $alu cell for $flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:49$641: $auto$alumacc.cc:485:replace_alu$783
+  creating $alu cell for $flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:50$646: $auto$alumacc.cc:485:replace_alu$786
+  creating $alu cell for $flatten\mult1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:52$651: $auto$alumacc.cc:485:replace_alu$789
+  creating $alu cell for $flatten\mult1.\U1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:93$664: $auto$alumacc.cc:485:replace_alu$792
+  creating $alu cell for $flatten\mult1.\U1.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:88$654: $auto$alumacc.cc:485:replace_alu$795
+  creating $alu cell for $flatten\mult1.\U1.$sub$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v:89$657: $auto$alumacc.cc:485:replace_alu$798
+  creating $alu cell for $flatten\sum1.$add$/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/copy.v:13$638: $auto$alumacc.cc:485:replace_alu$801
+  created 9 $alu and 1 $macc cells.
+
+12.13. Executing SHARE pass (SAT-based resource sharing).
+
+12.14. Executing OPT pass (performing simple optimizations).
+
+12.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+<suppressed ~4 debug messages>
+
+12.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \poly1..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~39 debug messages>
+
+12.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \poly1.
+Performed a total of 0 changes.
+
+12.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+Removed 2 unused cells and 4 unused wires.
+<suppressed ~3 debug messages>
+
+12.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+12.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \poly1..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~39 debug messages>
+
+12.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \poly1.
+Performed a total of 0 changes.
+
+12.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+
+12.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.14.16. Finished OPT passes. (There is nothing left to do.)
+
+12.15. Executing MEMORY pass.
+
+12.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+12.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+12.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+12.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+12.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+12.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+
+12.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+12.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+12.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+
+12.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+12.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+
+12.17. Executing OPT pass (performing simple optimizations).
+
+12.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+<suppressed ~29 debug messages>
+
+12.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+Removed 2 unused cells and 4 unused wires.
+<suppressed ~3 debug messages>
+
+12.17.5. Finished fast OPT passes.
+
+12.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+12.19. Executing OPT pass (performing simple optimizations).
+
+12.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \poly1..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~37 debug messages>
+
+12.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \poly1.
+    Consolidated identical input bits for $mux cell $flatten\mult1.\U1.\u3.$procmux$713:
+      Old ports: A=4'0000, B=4'1111, Y=$flatten\mult1.\U1.\u3.$1\out_a[3:0]
+      New ports: A=1'0, B=1'1, Y=$flatten\mult1.\U1.\u3.$1\out_a[3:0] [0]
+      New connections: $flatten\mult1.\U1.\u3.$1\out_a[3:0] [3:1] = { $flatten\mult1.\U1.\u3.$1\out_a[3:0] [0] $flatten\mult1.\U1.\u3.$1\out_a[3:0] [0] $flatten\mult1.\U1.\u3.$1\out_a[3:0] [0] }
+    Consolidated identical input bits for $mux cell $flatten\mult1.\U1.\u4.$procmux$713:
+      Old ports: A=4'0000, B=4'1111, Y=$flatten\mult1.\U1.\u4.$1\out_a[3:0]
+      New ports: A=1'0, B=1'1, Y=$flatten\mult1.\U1.\u4.$1\out_a[3:0] [0]
+      New connections: $flatten\mult1.\U1.\u4.$1\out_a[3:0] [3:1] = { $flatten\mult1.\U1.\u4.$1\out_a[3:0] [0] $flatten\mult1.\U1.\u4.$1\out_a[3:0] [0] $flatten\mult1.\U1.\u4.$1\out_a[3:0] [0] }
+  Optimizing cells in module \poly1.
+    Consolidated identical input bits for $mux cell $flatten\mult1.\U1.\u3.$procmux$710:
+      Old ports: A=$flatten\mult1.\U1.\u3.$1\out_a[3:0], B=4'1110, Y=$flatten\mult1.\U1.\u3.$2\out_a[3:0]
+      New ports: A={ $flatten\mult1.\U1.\u3.$1\out_a[3:0] [0] $flatten\mult1.\U1.\u3.$1\out_a[3:0] [0] }, B=2'10, Y=$flatten\mult1.\U1.\u3.$2\out_a[3:0] [1:0]
+      New connections: $flatten\mult1.\U1.\u3.$2\out_a[3:0] [3:2] = { $flatten\mult1.\U1.\u3.$2\out_a[3:0] [1] $flatten\mult1.\U1.\u3.$2\out_a[3:0] [1] }
+    Consolidated identical input bits for $mux cell $flatten\mult1.\U1.\u4.$procmux$710:
+      Old ports: A=$flatten\mult1.\U1.\u4.$1\out_a[3:0], B=4'1110, Y=$flatten\mult1.\U1.\u4.$2\out_a[3:0]
+      New ports: A={ $flatten\mult1.\U1.\u4.$1\out_a[3:0] [0] $flatten\mult1.\U1.\u4.$1\out_a[3:0] [0] }, B=2'10, Y=$flatten\mult1.\U1.\u4.$2\out_a[3:0] [1:0]
+      New connections: $flatten\mult1.\U1.\u4.$2\out_a[3:0] [3:2] = { $flatten\mult1.\U1.\u4.$2\out_a[3:0] [1] $flatten\mult1.\U1.\u4.$2\out_a[3:0] [1] }
+  Optimizing cells in module \poly1.
+    Consolidated identical input bits for $mux cell $flatten\mult1.\U1.\u3.$procmux$707:
+      Old ports: A=$flatten\mult1.\U1.\u3.$2\out_a[3:0], B=4'1101, Y=$flatten\mult1.\U1.\u3.$3\out_a[3:0]
+      New ports: A={ $flatten\mult1.\U1.\u3.$2\out_a[3:0] [1] $flatten\mult1.\U1.\u3.$2\out_a[3:0] [1:0] }, B=3'101, Y=$flatten\mult1.\U1.\u3.$3\out_a[3:0] [2:0]
+      New connections: $flatten\mult1.\U1.\u3.$3\out_a[3:0] [3] = $flatten\mult1.\U1.\u3.$3\out_a[3:0] [2]
+    Consolidated identical input bits for $mux cell $flatten\mult1.\U1.\u4.$procmux$707:
+      Old ports: A=$flatten\mult1.\U1.\u4.$2\out_a[3:0], B=4'1101, Y=$flatten\mult1.\U1.\u4.$3\out_a[3:0]
+      New ports: A={ $flatten\mult1.\U1.\u4.$2\out_a[3:0] [1] $flatten\mult1.\U1.\u4.$2\out_a[3:0] [1:0] }, B=3'101, Y=$flatten\mult1.\U1.\u4.$3\out_a[3:0] [2:0]
+      New connections: $flatten\mult1.\U1.\u4.$3\out_a[3:0] [3] = $flatten\mult1.\U1.\u4.$3\out_a[3:0] [2]
+  Optimizing cells in module \poly1.
+    Consolidated identical input bits for $mux cell $flatten\mult1.\U1.\u3.$procmux$704:
+      Old ports: A=$flatten\mult1.\U1.\u3.$3\out_a[3:0], B=4'1100, Y=$flatten\mult1.\U1.\u3.$4\out_a[3:0]
+      New ports: A=$flatten\mult1.\U1.\u3.$3\out_a[3:0] [2:0], B=3'100, Y=$flatten\mult1.\U1.\u3.$4\out_a[3:0] [2:0]
+      New connections: $flatten\mult1.\U1.\u3.$4\out_a[3:0] [3] = $flatten\mult1.\U1.\u3.$4\out_a[3:0] [2]
+    Consolidated identical input bits for $mux cell $flatten\mult1.\U1.\u4.$procmux$704:
+      Old ports: A=$flatten\mult1.\U1.\u4.$3\out_a[3:0], B=4'1100, Y=$flatten\mult1.\U1.\u4.$4\out_a[3:0]
+      New ports: A=$flatten\mult1.\U1.\u4.$3\out_a[3:0] [2:0], B=3'100, Y=$flatten\mult1.\U1.\u4.$4\out_a[3:0] [2:0]
+      New connections: $flatten\mult1.\U1.\u4.$4\out_a[3:0] [3] = $flatten\mult1.\U1.\u4.$4\out_a[3:0] [2]
+  Optimizing cells in module \poly1.
+Performed a total of 8 changes.
+
+12.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.19.6. Executing OPT_SHARE pass.
+
+12.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+
+12.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+<suppressed ~2 debug messages>
+
+12.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+12.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \poly1..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~37 debug messages>
+
+12.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \poly1.
+Performed a total of 0 changes.
+
+12.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.19.14. Executing OPT_SHARE pass.
+
+12.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+12.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.19.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+12.19.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \poly1..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~37 debug messages>
+
+12.19.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \poly1.
+Performed a total of 0 changes.
+
+12.19.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+Removed a total of 0 cells.
+
+12.19.22. Executing OPT_SHARE pass.
+
+12.19.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.19.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+
+12.19.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+
+12.19.26. Finished OPT passes. (There is nothing left to do.)
+
+12.20. Executing TECHMAP pass (map to technology primitives).
+
+12.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+12.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper maccmap for cells of type $macc.
+  add \mult1.U1.mm * \mult1.U1.nn (6x6 bits, unsigned)
+Using template $paramod$79fc7abbb3333dbd5736999d565fd903198fb1eb\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$f956edc9fe4df758d9fdb10bfc518a364c99e75e\_90_alu for cells of type $alu.
+Using template $paramod$67e8f4b8dba01cd3d8fc718acd02276257d102de\_90_alu for cells of type $alu.
+Using template $paramod$2af30114e9bd4ccb04dad757b3f0a8f6bf0615b0\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$b85fbb3374a1d9ba7ee4f4d6323c30f939df3ada\_90_alu for cells of type $alu.
+Using template $paramod$constmap:72985665f506a290db277500afe3b03c20d1d602$paramod$4d07202299dae961c0f8dfa7f00863927af2eff9\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001100 for cells of type $fa.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000010000 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001111 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using template $paramod$ee3d784672cdb1cb32d9a801a3af776716f16b74\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001100 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~1702 debug messages>
+
+12.21. Executing OPT pass (performing simple optimizations).
+
+12.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+<suppressed ~814 debug messages>
+
+12.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+<suppressed ~342 debug messages>
+Removed a total of 114 cells.
+
+12.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+Removed 65 unused cells and 598 unused wires.
+<suppressed ~66 debug messages>
+
+12.21.5. Finished fast OPT passes.
+
+12.22. Executing ABC pass (technology mapping using ABC).
+
+12.22.1. Extracting gate netlist of module `\poly1' to `<abc-temp-dir>/input.blif'..
+Extracted 872 gates and 897 wires to a netlist network with 23 inputs and 16 outputs.
+
+12.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+12.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       21
+ABC RESULTS:              NAND cells:       16
+ABC RESULTS:             ORNOT cells:       37
+ABC RESULTS:               NOT cells:       41
+ABC RESULTS:               MUX cells:      148
+ABC RESULTS:                OR cells:      164
+ABC RESULTS:               NOR cells:       80
+ABC RESULTS:            ANDNOT cells:      192
+ABC RESULTS:               XOR cells:      100
+ABC RESULTS:              XNOR cells:       30
+ABC RESULTS:        internal signals:      858
+ABC RESULTS:           input signals:       23
+ABC RESULTS:          output signals:       16
+Removing temp directory.
+
+12.23. Executing OPT pass (performing simple optimizations).
+
+12.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module poly1.
+<suppressed ~23 debug messages>
+
+12.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\poly1'.
+<suppressed ~102 debug messages>
+Removed a total of 34 cells.
+
+12.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \poly1..
+Removed 1 unused cells and 307 unused wires.
+<suppressed ~21 debug messages>
+
+12.23.5. Finished fast OPT passes.
+
+12.24. Executing HIERARCHY pass (managing design hierarchy).
+
+12.24.1. Analyzing design hierarchy..
+Top module:  \poly1
+
+12.24.2. Analyzing design hierarchy..
+Top module:  \poly1
+Removed 0 unused modules.
+
+12.25. Printing statistics.
+
+=== poly1 ===
+
+   Number of wires:                815
+   Number of wire bits:           1523
+   Number of public wires:          37
+   Number of public wire bits:     745
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                794
+     $_ANDNOT_                     178
+     $_AND_                         21
+     $_MUX_                        148
+     $_NAND_                        16
+     $_NOR_                         80
+     $_NOT_                         40
+     $_ORNOT_                       37
+     $_OR_                         144
+     $_XNOR_                        30
+     $_XOR_                        100
+
+12.26. Executing CHECK pass (checking for obvious problems).
+Checking module poly1...
+Found and reported 0 problems.
+Removed 0 unused cells and 33 unused wires.
+
+13. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+  cell DFFRNQ_X1 (noninv, pins=4, area=1.28) is a direct match for cell type $_DFF_PN0_.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+  cell DFFSNQ_X1 (noninv, pins=4, area=1.28) is a direct match for cell type $_DFF_PN1_.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    unmapped dff cell: $_DFF_P_
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \DFFRNQ_X1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RN( R));
+    \DFFSNQ_X1 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SN( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+13.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\poly1':
+
+14. Executing ABC pass (technology mapping using ABC).
+
+14.1. Extracting gate netlist of module `\poly1' to `<abc-temp-dir>/input.blif'..
+Extracted 794 gates and 817 wires to a netlist network with 23 inputs and 16 outputs.
+
+14.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.01 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRNQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFSNQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLTIE" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X16" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LHQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRNQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFSNQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X12".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped cell "TIEH" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "TIEL" due to dont_use attribute.
+ABC: Library "NanGate_15nm_OCL" from "/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.lib" has 55 cells (12 skipped: 5 seq; 6 tri-state; 1 no func; 9 dont_use).  Time =     0.02 sec
+ABC: Memory =    3.72 MB. Time =     0.02 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+14.1.2. Re-integrating ABC results.
+ABC RESULTS:           AND4_X1 cells:        1
+ABC RESULTS:          NAND4_X1 cells:        9
+ABC RESULTS:           NOR4_X1 cells:        7
+ABC RESULTS:          AOI22_X1 cells:       14
+ABC RESULTS:           NOR3_X1 cells:       27
+ABC RESULTS:            OR3_X1 cells:        5
+ABC RESULTS:           AND3_X1 cells:        4
+ABC RESULTS:          OAI22_X1 cells:       18
+ABC RESULTS:            OR4_X1 cells:        3
+ABC RESULTS:          NAND3_X1 cells:       23
+ABC RESULTS:            INV_X1 cells:       17
+ABC RESULTS:            OR2_X1 cells:       14
+ABC RESULTS:           AND2_X1 cells:       18
+ABC RESULTS:          XNOR2_X1 cells:       50
+ABC RESULTS:           XOR2_X1 cells:       29
+ABC RESULTS:           MUX2_X1 cells:       10
+ABC RESULTS:          OAI21_X1 cells:       51
+ABC RESULTS:          NAND2_X1 cells:       52
+ABC RESULTS:          AOI21_X1 cells:       57
+ABC RESULTS:           NOR2_X1 cells:       74
+ABC RESULTS:        internal signals:      778
+ABC RESULTS:           input signals:       23
+ABC RESULTS:          output signals:       16
+Removing temp directory.
+Removed 0 unused cells and 817 unused wires.
+
+15. Executing Verilog backend.
+Dumping module `\poly1'.
+
+Warnings: 43 unique messages, 149 total
+End of script. Logfile hash: 988be59d77, CPU: user 0.67s system 0.01s, MEM: 24.94 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 30% 2x abc (0 sec), 16% 36x opt_expr (0 sec), ...
+Synth command exit code: 0

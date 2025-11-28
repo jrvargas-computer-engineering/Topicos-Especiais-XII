@@ -1,0 +1,12 @@
+MAxPy: VERILATOR LOG
+
+Command line:
+
+verilator -Wall -Wno-UNUSED -cc -top poly1 -Mdir study_no_1/poly1_DRUMs_4_copyA_3/source/ /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/tcl/Verilator/verilator_config.vlt study_no_1/poly1_DRUMs_4_copyA_3/rtl/poly1.v /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/*.v /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/*.v -Istudy_no_1/poly1_DRUMs_4_copyA_3/rtl -I/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/ -I/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/ --prefix poly1_DRUMs_4_copyA_3 --mod-prefix sub
+
+Log from stdout and stderr:
+
+
+
+11-26-2025 01:49:07
+

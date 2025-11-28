@@ -1,0 +1,51 @@
+MAxPy: VERILATOR/PYBIND WRAPPER
+
+instance name: poly1
+net: {'name': 'a', 'bit_mask': 0, 'short_name': 'a', 'parent': []}
+net: {'name': 'a', 'bit_mask': 1, 'short_name': 'a', 'parent': []}
+net: {'name': 'a', 'bit_mask': 2, 'short_name': 'a', 'parent': []}
+net: {'name': 'a', 'bit_mask': 3, 'short_name': 'a', 'parent': []}
+net: {'name': 'a', 'bit_mask': 4, 'short_name': 'a', 'parent': []}
+net: {'name': 'a', 'bit_mask': 5, 'short_name': 'a', 'parent': []}
+net: {'name': 'a', 'bit_mask': 6, 'short_name': 'a', 'parent': []}
+net: {'name': 'a', 'bit_mask': 7, 'short_name': 'a', 'parent': []}
+net: {'name': 'b', 'bit_mask': 0, 'short_name': 'b', 'parent': []}
+net: {'name': 'b', 'bit_mask': 1, 'short_name': 'b', 'parent': []}
+net: {'name': 'b', 'bit_mask': 2, 'short_name': 'b', 'parent': []}
+net: {'name': 'b', 'bit_mask': 3, 'short_name': 'b', 'parent': []}
+net: {'name': 'b', 'bit_mask': 4, 'short_name': 'b', 'parent': []}
+net: {'name': 'b', 'bit_mask': 5, 'short_name': 'b', 'parent': []}
+net: {'name': 'b', 'bit_mask': 6, 'short_name': 'b', 'parent': []}
+net: {'name': 'b', 'bit_mask': 7, 'short_name': 'b', 'parent': []}
+net: {'name': 'x', 'bit_mask': 0, 'short_name': 'x', 'parent': []}
+net: {'name': 'x', 'bit_mask': 1, 'short_name': 'x', 'parent': []}
+net: {'name': 'x', 'bit_mask': 2, 'short_name': 'x', 'parent': []}
+net: {'name': 'x', 'bit_mask': 3, 'short_name': 'x', 'parent': []}
+net: {'name': 'x', 'bit_mask': 4, 'short_name': 'x', 'parent': []}
+net: {'name': 'x', 'bit_mask': 5, 'short_name': 'x', 'parent': []}
+net: {'name': 'x', 'bit_mask': 6, 'short_name': 'x', 'parent': []}
+net: {'name': 'x', 'bit_mask': 7, 'short_name': 'x', 'parent': []}
+net: {'name': 'y', 'bit_mask': 0, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 1, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 2, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 3, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 4, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 5, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 6, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 7, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 8, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 9, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 10, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 11, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 12, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 13, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 14, 'short_name': 'y', 'parent': []}
+net: {'name': 'y', 'bit_mask': 15, 'short_name': 'y', 'parent': []}
+method: eval
+method: eval_step
+method: eval_end_step
+method: final
+
+
+11-26-2025 23:28:52
+
