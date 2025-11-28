@@ -1,0 +1,12 @@
+# ninja log v5
+2	1756	1764205434481871718	CMakeFiles/poly1.dir/source/sub___024root__DepSet_h5ffa2650__0.cpp.o	40737676b4efc9b3
+5	1786	1764205434521871664	CMakeFiles/poly1.dir/source/sub___024root__Slow.cpp.o	45280fce0f95a761
+3	1871	1764205434605871549	CMakeFiles/poly1.dir/source/sub___024root__DepSet_h5ffa2650__0__Slow.cpp.o	420da8b5f8910c50
+4	1905	1764205434641871500	CMakeFiles/poly1.dir/source/sub___024root__DepSet_h727558ff__0__Slow.cpp.o	631d2b5a39a8df4
+2	1931	1764205434665871468	CMakeFiles/poly1.dir/source/poly1_LOBA0s_4_eta1_4__Syms.cpp.o	fa72a7eb3e78df98
+2	1995	1764205434733871375	CMakeFiles/poly1.dir/source/poly1_LOBA0s_4_eta1_4.cpp.o	c9c917c3fb639554
+3	2140	1764205434877871179	CMakeFiles/poly1.dir/source/sub___024root__DepSet_h727558ff__0.cpp.o	6946e864ff647b7f
+1	3184	1764205435917869722	CMakeFiles/poly1.dir/home/juliana/verilator/include/verilated.cpp.o	171bf4d8441a95b6
+1	4435	1764205437165868062	CMakeFiles/poly1.dir/source/maxpy_poly1.cpp.o	255c0dc8d6d654fc
+6	4938	1764205437669867373	CMakeFiles/poly1.dir/source/verilator_pybind_wrapper.cpp.o	a18bc773f77d4b03
+4938	8283	1764205441021862518	poly1.cpython-312-x86_64-linux-gnu.so	e4039205578adc50
