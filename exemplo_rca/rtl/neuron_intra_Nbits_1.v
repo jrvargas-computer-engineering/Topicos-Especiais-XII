@@ -2,8 +2,8 @@
 
 module neuron_intra_Nbits #(
     parameter N = 8,
-    parameter N_INPUTS = 4,
-    parameter LOG_N_INPUTS = 2 // log2(N_INPUTS)
+    parameter N_INPUTS = 2,
+    parameter LOG_N_INPUTS = 1 // log2(N_INPUTS)
 ) (
     input  wire                         clk,
     input  wire                         rst,

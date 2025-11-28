@@ -2,5 +2,5 @@
 // File created by:  xrun
 // Do not modify this file
 //
--f
-neuron_filelist.f
+rtl/neuron_intra_Nbits_1.v
+tb/tb_neuron_intra_1.v
