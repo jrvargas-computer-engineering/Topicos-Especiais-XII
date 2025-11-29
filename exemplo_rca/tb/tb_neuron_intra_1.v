@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 
-module tb_neuron_intra;
+module tb_neuron_intra_1;
 
   parameter N      = 8;  // bitwidth
-  parameter N_INPUTS  = 2;  // number of (W,X) 
+  parameter N_INPUTS  = 128;  // number of (W,X) 
 
   // Entradas
   reg clk;
-  reg rst;
+  reg rst;  
   reg en;
   reg signed [N*N_INPUTS-1:0] W;  // packed vector: N_INPUTS of N bits
   reg signed [N*N_INPUTS-1:0] X;
@@ -16,7 +16,7 @@ module tb_neuron_intra;
   wire signed [N-1:0] Out;
 
   // Instância do DUT
-  neuron_intra_Nbits #(
+  neuron_intra_Nbits_1 #(
       .N(N),
       .N_INPUTS(N_INPUTS)   // <-- adapt your DUT to also accept N_INPUTS as parameter
   ) uut (
@@ -64,7 +64,8 @@ module tb_neuron_intra;
     X    = 0;
 
     // Libera reset
-    #10 rst = 0;`timescale 1ns / 1ps`timescale 1ns / 1ps
+    #10 
+    rst = 0;
 
 
     en   = 1;
