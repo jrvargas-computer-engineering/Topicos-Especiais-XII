@@ -1,0 +1,11 @@
+GlobalBuffer [ Weights:162 (162) Inputs:128 (128) Outputs:35 (35) ] 
+-------------------------------------------------------------------
+| for K in [0:64)
+|   for M in [0:35)
+
+inter_PE_Array_spatial [ ] 
+Input_Port [ Inputs:2 (2) ] 
+inter_MACC_spatial [ ] 
+----------------------
+|     for K in [0:2) (Spatial-X)
+|       << Compute >>

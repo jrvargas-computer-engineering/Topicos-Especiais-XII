@@ -1,4 +1,3 @@
-# Salve como: inputs/problem.yaml
 problem:
   version: 0.4
   shape:
@@ -19,6 +18,6 @@ problem:
       - [ [N], [M] ] 
       read_write: True
   instance:
-    K: 100  # Dimensão de entrada
+    K: 128  # Dimensão de entrada
     M: 35   # Dimensão de saída
     N: 1    # Tamanho do Batch

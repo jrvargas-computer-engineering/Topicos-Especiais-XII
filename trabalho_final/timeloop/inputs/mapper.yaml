@@ -6,3 +6,4 @@ mapper:
   search_size: 1000
   victory_condition: 100
   timeout: 500
+  diagnostics: true

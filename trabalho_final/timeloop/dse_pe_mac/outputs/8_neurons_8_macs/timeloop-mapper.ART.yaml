@@ -1,0 +1,13 @@
+ART:
+    version: '0.4'
+    tables:
+      - name: accelerator_top_level.GlobalBuffer[1..1]
+        area: 7617920.0
+      - name: accelerator_top_level.inter_PE_Array_spatial[1..1]
+        area: 1.0
+      - name: accelerator_top_level.Input_Port[1..8]
+        area: 5.98
+      - name: accelerator_top_level.inter_MACC_spatial[1..8]
+        area: 1.0
+      - name: accelerator_top_level.MACC[1..64]
+        area: 466.375

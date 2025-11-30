@@ -1,0 +1,178 @@
+2025-11-29 23:08:25 INFO            _                _                      
+2025-11-29 23:08:25 INFO           / \   ___ ___ ___| | ___ _ __ __ _ _   _ 
+2025-11-29 23:08:25 INFO          / _ \ / __/ __/ _ \ |/ _ \ '__/ _` | | | |
+2025-11-29 23:08:25 INFO         / ___ \ (_| (_|  __/ |  __/ | | (_| | |_| |
+2025-11-29 23:08:25 INFO        /_/   \_\___\___\___|_|\___|_|  \__, |\__, |
+2025-11-29 23:08:25 INFO                                        |___/ |___/ 
+2025-11-29 23:08:25 INFO        generating outputs according to the following specified output flags... 
+2025-11-29 23:08:25 INFO         Please use the -f flag to update the preference (default to all output files)
+2025-11-29 23:08:25 INFO        {'ERT': 1, 'ERT_summary': 1, 'ART': 1, 'ART_summary': 1, 'energy_estimation': 1, 'flattened_arch': 1}
+2025-11-29 23:08:25 INFO        Located config file at /home/juliana/.config/accelergy/accelergy_config.yaml.
+2025-11-29 23:08:25 INFO        config file located:
+2025-11-29 23:08:25 INFO        /home/juliana/.config/accelergy/accelergy_config.yaml
+2025-11-29 23:08:25 INFO        Parsing file /home/juliana/Topicos-Especiais-XII/trabalho_final/timeloop/dse_pe_mac_width/outputs/1_neurons_2_macs_4_width/parsed-processed-input.yaml for architecture info
+2025-11-29 23:08:25 INFO        Parsing file /home/juliana/Topicos-Especiais-XII/trabalho_final/timeloop/dse_pe_mac_width/outputs/1_neurons_2_macs_4_width/parsed-processed-input.yaml for compound_components info
+2025-11-29 23:08:25 WARNING     No compound component classes specified, architecture can only contain primitive components
+2025-11-29 23:08:25 INFO        Adding required action "read" to class SRAM
+2025-11-29 23:08:25 INFO        Adding required action "write" to class SRAM
+2025-11-29 23:08:25 INFO        Adding required action "leak" to class SRAM
+2025-11-29 23:08:25 INFO        Adding required action "update" to class SRAM
+2025-11-29 23:08:25 INFO        Adding required action "read" to class regfile
+2025-11-29 23:08:25 INFO        Adding required action "write" to class regfile
+2025-11-29 23:08:25 INFO        Adding required action "leak" to class regfile
+2025-11-29 23:08:25 INFO        Adding required action "update" to class regfile
+2025-11-29 23:08:25 INFO        Adding required action "compute" to class intmac
+2025-11-29 23:08:25 INFO        Estimator plug-in identified by: /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-adc-plug-in/adc.estimator.yaml
+2025-11-29 23:08:25 INFO        Estimator plug-in identified by: /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-table-based-plug-ins/table.estimator.yaml
+2025-11-29 23:08:25 INFO        Estimator plug-in identified by: /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-library-plugin/library.estimator.yaml
+2025-11-29 23:08:25 INFO        Estimator plug-in identified by: /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/dummy_tables/dummy.estimator.yaml
+2025-11-29 23:08:25 INFO        Estimator plug-in identified by: /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-neurosim-plugin/neurosim.estimator.yaml
+2025-11-29 23:08:25 INFO        Estimator plug-in identified by: /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-aladdin-plug-in/aladdin.estimator.yaml
+2025-11-29 23:08:25 INFO        Estimator plug-in identified by: /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti.estimator.yaml
+2025-11-29 23:08:25 INFO        Loading Python plug-in: /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_wrapper.py. Errors below are likely due to plug-in, not Accelergy.
+2025-11-29 23:08:25 INFO        Getting all estimators in module <module 'python_plug_in0' from '/home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_wrapper.py'>
+2025-11-29 23:08:25 INFO        Added estimator CactiCache that estimates cache with actions idle, read, read_access, update, update_access, write, write_access, leak
+2025-11-29 23:08:25 INFO        Added estimator CactiDRAM that estimates ['DRAM', 'dram'] with actions idle, read, update, write, leak
+2025-11-29 23:08:25 INFO        Added estimator CactiSRAM that estimates ['SRAM', 'sram'] with actions idle, read, update, write, leak
+2025-11-29 23:08:25 INFO        Done loading Python plug-ins.
+2025-11-29 23:08:25 INFO        Found estimator plug-in: ADC Plug-In (<ADCEstimator.ADCEstimator object at 0x7941999f4f20>)
+2025-11-29 23:08:25 INFO        Found estimator plug-in: DEPRECATED table-based-plug-ins. Use the Library plug-in instead. (<SetsOfTables.SetsOfTables object at 0x7941999f5250>)
+2025-11-29 23:08:25 INFO        Found estimator plug-in: Library (<LibraryEstimator.LibraryEstimator object at 0x79419980e780>)
+2025-11-29 23:08:25 INFO        Found estimator plug-in: dummy (<DummyTable.DummyTable object at 0x7941999f6f90>)
+2025-11-29 23:08:25 INFO        Found estimator plug-in: Neurosim Plug-In (<NeuroWrapper.NeuroWrapper object at 0x7941999a7bc0>)
+2025-11-29 23:08:25 INFO        Found estimator plug-in: Aladdin_table (<AladdinTable.AladdinTable object at 0x79419a294a70>)
+2025-11-29 23:08:25 INFO        Found estimator plug-in: CactiCache (<accelergy.plug_in_interface.estimator_wrapper.EstimatorWrapper object at 0x7941999f5af0>)
+2025-11-29 23:08:25 INFO        Found estimator plug-in: CactiDRAM (<accelergy.plug_in_interface.estimator_wrapper.EstimatorWrapper object at 0x7941999c2450>)
+2025-11-29 23:08:25 INFO        Found estimator plug-in: CactiSRAM (<accelergy.plug_in_interface.estimator_wrapper.EstimatorWrapper object at 0x7941999f5760>)
+2025-11-29 23:08:25 INFO        
+2025-11-29 23:08:25 INFO        ENERGY ESTIMATION for SRAM(depth=16384, width=16, datawidth=4, instances=1, meshX=1, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).read(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-11-29 23:08:26 INFO        CactiSRAM estimated 1.0807307499999998e-11 with accuracy 80%. Messages:
+2025-11-29 23:08:26 INFO        | Unused arguments (datawidth, instances, meshX, has_power_gating, cluster_size, reduction_supported, multiple_buffering, min_utilization, allow_overbooking, meshY, global_cycle_seconds, version, action_latency_cycles, cycle_seconds, n_instances) provided for ['SRAM', 'sram'].__init__. Arguments used: (depth, width, n_banks, technology)
+2025-11-29 23:08:26 INFO        | Unused arguments (global_cycle_seconds, action_latency_cycles) provided for ['SRAM', 'sram'].read. Arguments used: ()
+2025-11-29 23:08:26 INFO        | Interpolating technology between 32 and 45.
+2025-11-29 23:08:26 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.032 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:26 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp6v5pagbw
+2025-11-29 23:08:26 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpv8ukp0__
+2025-11-29 23:08:26 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:26 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp6v5pagbw >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpv8ukp0__ 2>&1
+2025-11-29 23:08:26 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.045 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:26 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpdjft7bs7
+2025-11-29 23:08:26 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpd6rwpzcg
+2025-11-29 23:08:26 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:26 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpdjft7bs7 >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpd6rwpzcg 2>&1
+2025-11-29 23:08:26 INFO        | Cache bandwidth: 4.0 bytes/cycle
+2025-11-29 23:08:26 INFO        | Cache bandwidth: 21690164344.706764 bits/second
+2025-11-29 23:08:26 INFO        
+2025-11-29 23:08:26 INFO        ENERGY ESTIMATION for SRAM(depth=16384, width=16, datawidth=4, instances=1, meshX=1, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).write(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-11-29 23:08:27 INFO        CactiSRAM estimated 6.7637175e-12 with accuracy 80%. Messages:
+2025-11-29 23:08:27 INFO        | Unused arguments (datawidth, instances, meshX, has_power_gating, cluster_size, reduction_supported, multiple_buffering, min_utilization, allow_overbooking, meshY, global_cycle_seconds, version, action_latency_cycles, cycle_seconds, n_instances) provided for ['SRAM', 'sram'].__init__. Arguments used: (depth, width, n_banks, technology)
+2025-11-29 23:08:27 INFO        | Unused arguments (global_cycle_seconds, action_latency_cycles) provided for ['SRAM', 'sram'].write. Arguments used: ()
+2025-11-29 23:08:27 INFO        | Interpolating technology between 32 and 45.
+2025-11-29 23:08:27 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.032 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:27 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpoxboqli7
+2025-11-29 23:08:27 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp__efwb9c
+2025-11-29 23:08:27 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:27 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpoxboqli7 >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp__efwb9c 2>&1
+2025-11-29 23:08:27 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.045 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:27 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp11d32dy9
+2025-11-29 23:08:27 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp08k491w0
+2025-11-29 23:08:27 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:27 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp11d32dy9 >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp08k491w0 2>&1
+2025-11-29 23:08:27 INFO        | Cache bandwidth: 4.0 bytes/cycle
+2025-11-29 23:08:27 INFO        | Cache bandwidth: 21690164344.706764 bits/second
+2025-11-29 23:08:27 INFO        
+2025-11-29 23:08:27 INFO        ENERGY ESTIMATION for SRAM(depth=16384, width=16, datawidth=4, instances=1, meshX=1, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).leak(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-11-29 23:08:28 INFO        CactiSRAM estimated 1.0801636923076924e-15 with accuracy 80%. Messages:
+2025-11-29 23:08:28 INFO        | Unused arguments (datawidth, instances, meshX, has_power_gating, cluster_size, reduction_supported, multiple_buffering, min_utilization, allow_overbooking, meshY, global_cycle_seconds, version, action_latency_cycles, cycle_seconds, n_instances) provided for ['SRAM', 'sram'].__init__. Arguments used: (depth, width, n_banks, technology)
+2025-11-29 23:08:28 INFO        | Unused arguments (action_latency_cycles) provided for ['SRAM', 'sram'].leak. Arguments used: (global_cycle_seconds)
+2025-11-29 23:08:28 INFO        | Interpolating technology between 32 and 45.
+2025-11-29 23:08:28 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.032 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:28 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpysdef6on
+2025-11-29 23:08:28 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpnirgeq3a
+2025-11-29 23:08:28 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:28 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpysdef6on >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpnirgeq3a 2>&1
+2025-11-29 23:08:28 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.045 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:28 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpg0a981kp
+2025-11-29 23:08:28 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmparjqvkg9
+2025-11-29 23:08:28 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:28 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpg0a981kp >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmparjqvkg9 2>&1
+2025-11-29 23:08:28 INFO        | Cache bandwidth: 4.0 bytes/cycle
+2025-11-29 23:08:28 INFO        | Cache bandwidth: 21690164344.706764 bits/second
+2025-11-29 23:08:28 INFO        | Global cycle time 1e-09 is less than the cache's random cycle time 1.475323076923077e-09
+2025-11-29 23:08:28 INFO        | Multiplying by n_instances 1
+2025-11-29 23:08:28 INFO        
+2025-11-29 23:08:28 INFO        ENERGY ESTIMATION for SRAM(depth=16384, width=16, datawidth=4, instances=1, meshX=1, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).update(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-11-29 23:08:29 INFO        CactiSRAM estimated 6.7637175e-12 with accuracy 80%. Messages:
+2025-11-29 23:08:29 INFO        | Unused arguments (datawidth, instances, meshX, has_power_gating, cluster_size, reduction_supported, multiple_buffering, min_utilization, allow_overbooking, meshY, global_cycle_seconds, version, action_latency_cycles, cycle_seconds, n_instances) provided for ['SRAM', 'sram'].__init__. Arguments used: (depth, width, n_banks, technology)
+2025-11-29 23:08:29 INFO        | Unused arguments (global_cycle_seconds, action_latency_cycles) provided for ['SRAM', 'sram'].update. Arguments used: ()
+2025-11-29 23:08:29 INFO        | Interpolating technology between 32 and 45.
+2025-11-29 23:08:29 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.032 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:29 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpivgqct3h
+2025-11-29 23:08:29 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpviwuffq5
+2025-11-29 23:08:29 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:29 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpivgqct3h >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpviwuffq5 2>&1
+2025-11-29 23:08:29 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.045 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:29 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpdprlkd3t
+2025-11-29 23:08:29 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpdptfugjx
+2025-11-29 23:08:29 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:29 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpdprlkd3t >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpdptfugjx 2>&1
+2025-11-29 23:08:29 INFO        | Cache bandwidth: 4.0 bytes/cycle
+2025-11-29 23:08:29 INFO        | Cache bandwidth: 21690164344.706764 bits/second
+2025-11-29 23:08:29 INFO        
+2025-11-29 23:08:29 INFO        ENERGY ESTIMATION for regfile(depth=1, width=8, datawidth=4, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, spatial={'meshX': 32}, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).read(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-11-29 23:08:29 INFO        Aladdin_table estimated 0.009p with accuracy 70%. 
+2025-11-29 23:08:29 INFO        
+2025-11-29 23:08:29 INFO        ENERGY ESTIMATION for regfile(depth=1, width=8, datawidth=4, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, spatial={'meshX': 32}, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).write(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-11-29 23:08:29 INFO        Aladdin_table estimated 0.009p with accuracy 70%. 
+2025-11-29 23:08:29 INFO        
+2025-11-29 23:08:29 INFO        ENERGY ESTIMATION for regfile(depth=1, width=8, datawidth=4, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, spatial={'meshX': 32}, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).leak(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-11-29 23:08:29 INFO        Aladdin_table estimated 7e-05p with accuracy 70%. Messages:
+2025-11-29 23:08:29 INFO        | Multiplying by n_instances 1
+2025-11-29 23:08:29 INFO        
+2025-11-29 23:08:29 INFO        ENERGY ESTIMATION for regfile(depth=1, width=8, datawidth=4, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, spatial={'meshX': 32}, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).update(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-11-29 23:08:29 INFO        Aladdin_table estimated 0.009p with accuracy 70%. 
+2025-11-29 23:08:29 INFO        
+2025-11-29 23:08:29 INFO        ENERGY ESTIMATION for intmac(width=4, datawidth=4, has_power_gating=False, meshX=2, meshY=1, technology=40nm, global_cycle_seconds=1e-09, spatial={'meshX': 32}, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1).compute(global_cycle_seconds=1e-09, action_latency_cycles=1)
+2025-11-29 23:08:29 INFO        Aladdin_table estimated 0.224375p with accuracy 70%. 
+2025-11-29 23:08:29 WARNING     No action counts are specified as yaml input
+2025-11-29 23:08:29 INFO        
+2025-11-29 23:08:29 INFO        AREA ESTIMATION for SRAM(depth=16384, width=16, datawidth=4, instances=1, meshX=1, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshY=1, technology=40nm, global_cycle_seconds=1e-09, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1)
+2025-11-29 23:08:30 INFO        CactiSRAM estimated 8.602265384615383e-08 with accuracy 80%. Messages:
+2025-11-29 23:08:30 INFO        | Unused arguments (datawidth, instances, meshX, has_power_gating, cluster_size, reduction_supported, multiple_buffering, min_utilization, allow_overbooking, meshY, global_cycle_seconds, version, action_latency_cycles, cycle_seconds, n_instances) provided for ['SRAM', 'sram'].__init__. Arguments used: (depth, width, n_banks, technology)
+2025-11-29 23:08:30 INFO        | Interpolating technology between 32 and 45.
+2025-11-29 23:08:30 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.032 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:30 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpd_9bj6y5
+2025-11-29 23:08:30 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpae2j_zjh
+2025-11-29 23:08:30 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:30 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpd_9bj6y5 >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpae2j_zjh 2>&1
+2025-11-29 23:08:30 INFO        | Calling CACTI with cache_size=65536 n_rw_ports=1 block_size=4 tech_node_um=0.045 n_banks=2 tag_size=0 associativity=1
+2025-11-29 23:08:30 INFO        | Calling CACTI with input path /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp5g57hygq
+2025-11-29 23:08:30 INFO        | CACTI output will be written to /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpgnpya3ns
+2025-11-29 23:08:30 INFO        | CACTI executable not found at /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti/cacti
+2025-11-29 23:08:30 INFO        | Calling: cd /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in ; ./cacti -infile /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmp5g57hygq >> /home/juliana/venv_pytorch/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti_inputs_outputs/tmpgnpya3ns 2>&1
+2025-11-29 23:08:30 INFO        | Cache bandwidth: 4.0 bytes/cycle
+2025-11-29 23:08:30 INFO        | Cache bandwidth: 21690164344.706764 bits/second
+2025-11-29 23:08:30 INFO        | Multiplying by n_instances 1
+2025-11-29 23:08:30 INFO        
+2025-11-29 23:08:30 INFO        AREA ESTIMATION for regfile(depth=1, width=8, datawidth=4, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, technology=40nm, global_cycle_seconds=1e-09, spatial={'meshX': 32}, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1)
+2025-11-29 23:08:30 INFO        Aladdin_table estimated 5.98u^2 with accuracy 70%. Messages:
+2025-11-29 23:08:30 INFO        | Multiplying by n_instances 1
+2025-11-29 23:08:30 INFO        
+2025-11-29 23:08:30 INFO        AREA ESTIMATION for dummy_storage(width=1, depth=1, datawidth=1, technology=-1, has_power_gating=False, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1, global_cycle_seconds=1e-09, spatial={'meshX': 32}, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1)
+2025-11-29 23:08:30 INFO        dummy estimated 1u^2 with accuracy 100%. Messages:
+2025-11-29 23:08:30 INFO        | Multiplying by n_instances 1
+2025-11-29 23:08:30 INFO        
+2025-11-29 23:08:30 INFO        AREA ESTIMATION for intmac(width=4, datawidth=4, has_power_gating=False, meshX=2, meshY=1, technology=40nm, global_cycle_seconds=1e-09, spatial={'meshX': 32}, version=0.4, action_latency_cycles=1, cycle_seconds=1e-09, n_instances=1)
+2025-11-29 23:08:30 INFO        Aladdin_table estimated 133.96875u^2 with accuracy 70%. Messages:
+2025-11-29 23:08:30 INFO        | Multiplying by n_instances 1
+2025-11-29 23:08:30 INFO        flattened architecture is saved to:
+2025-11-29 23:08:30 INFO        ./timeloop-mapper.flattened_architecture.yaml
+2025-11-29 23:08:30 INFO        energy reference table is saved to:
+2025-11-29 23:08:30 INFO        ./timeloop-mapper.ERT.yaml
+2025-11-29 23:08:30 INFO        energy reference table summary is saved to:
+2025-11-29 23:08:30 INFO        ./timeloop-mapper.ERT_summary.yaml
+2025-11-29 23:08:30 WARNING     no runtime energy estimations are generated... not generating energy_estimation.yaml
+2025-11-29 23:08:30 INFO        area reference table is saved to:
+2025-11-29 23:08:30 INFO        ./timeloop-mapper.ART.yaml
+2025-11-29 23:08:30 INFO        area reference table summary is saved to:
+2025-11-29 23:08:30 INFO        ./timeloop-mapper.ART_summary.yaml

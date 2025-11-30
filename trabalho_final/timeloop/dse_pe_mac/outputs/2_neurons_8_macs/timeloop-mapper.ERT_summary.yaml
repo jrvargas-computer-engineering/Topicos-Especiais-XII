@@ -1,0 +1,36 @@
+ERT_summary:
+    version: '0.4'
+    table_summary:
+      - name: accelerator_top_level.GlobalBuffer[1..1]
+        actions:
+          - name: write
+            energy: 130.818
+          - name: read
+            energy: 137.164
+          - name: leak
+            energy: 0.0158234
+          - name: update
+            energy: 130.818
+        primitive_estimation(s):
+          - name: accelerator_top_level.GlobalBuffer[1..1]
+            estimator: CactiSRAM
+      - name: accelerator_top_level.Input_Port[1..2]
+        actions:
+          - name: write
+            energy: 0.009
+          - name: read
+            energy: 0.009
+          - name: leak
+            energy: 7e-05
+          - name: update
+            energy: 0.009
+        primitive_estimation(s):
+          - name: accelerator_top_level.Input_Port[1..2]
+            estimator: Aladdin_table
+      - name: accelerator_top_level.MACC[1..16]
+        actions:
+          - name: compute
+            energy: 0.845
+        primitive_estimation(s):
+          - name: accelerator_top_level.MACC[1..16]
+            estimator: Aladdin_table

@@ -1,0 +1,53 @@
+mapping:
+  - target: inter_MACC_spatial
+    type: datatype
+    keep:
+      []
+    bypass:
+      - Weights
+      - Inputs
+      - Outputs
+  - target: Input_Port
+    type: datatype
+    keep:
+      - Outputs
+    bypass:
+      - Weights
+      - Inputs
+  - target: inter_PE_Array_spatial
+    type: datatype
+    keep:
+      []
+    bypass:
+      - Weights
+      - Inputs
+      - Outputs
+  - target: GlobalBuffer
+    type: datatype
+    keep:
+      - Weights
+      - Inputs
+      - Outputs
+    bypass:
+      []
+  - target: inter_MACC_spatial
+    type: spatial
+    factors: K1 M7 N1
+    permutation: MKN
+    split: 1
+  - target: inter_MACC_spatial
+    type: temporal
+    factors: K1 M1 N1
+    permutation: KMN
+  - target: Input_Port
+    type: temporal
+    factors: K1 M1 N1
+    permutation: KMN
+  - target: inter_PE_Array_spatial
+    type: temporal
+    factors: K1 M1 N1
+    permutation: KMN
+  - target: GlobalBuffer
+    type: temporal
+    factors: K128 M5 N1
+    permutation: KMN
