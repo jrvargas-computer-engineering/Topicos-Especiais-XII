@@ -1,0 +1,111 @@
+MAxPy: VERILATOR/PYBIND WRAPPER
+
+instance name: neuron_wrapper
+net: {'name': 'clk', 'bit_mask': 64, 'short_name': 'clk', 'parent': []}
+net: {'name': 'rst', 'bit_mask': 64, 'short_name': 'rst', 'parent': []}
+net: {'name': 'en', 'bit_mask': 64, 'short_name': 'en', 'parent': []}
+net: {'name': 'load_en', 'bit_mask': 64, 'short_name': 'load_en', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 0, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 1, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 2, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 3, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 4, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 5, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 6, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 7, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 8, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 9, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 10, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 11, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 12, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 13, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 14, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 15, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 16, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 17, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 18, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 19, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 20, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 21, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 22, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 23, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 24, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 25, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 26, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 27, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 28, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 29, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 30, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'w_in', 'bit_mask': 31, 'short_name': 'w_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 0, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 1, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 2, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 3, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 4, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 5, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 6, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 7, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 8, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 9, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 10, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 11, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 12, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 13, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 14, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 15, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 16, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 17, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 18, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 19, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 20, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 21, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 22, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 23, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 24, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 25, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 26, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 27, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 28, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 29, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 30, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'x_in', 'bit_mask': 31, 'short_name': 'x_in', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 0, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 1, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 2, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 3, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 4, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 5, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 6, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 7, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 8, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 9, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 10, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 11, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 12, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 13, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 14, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 15, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 16, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 17, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 18, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 19, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 20, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 21, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 22, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 23, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 24, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 25, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 26, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 27, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 28, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 29, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 30, 'short_name': 'out_safe', 'parent': []}
+net: {'name': 'out_safe', 'bit_mask': 31, 'short_name': 'out_safe', 'parent': []}
+method: eval
+method: eval_step
+method: eval_end_step
+method: final
+
+
+12-02-2025 21:53:35
+

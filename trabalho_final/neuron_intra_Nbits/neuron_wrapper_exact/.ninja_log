@@ -1,0 +1,12 @@
+# ninja log v5
+5	1441	1764723218331218753	CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0__Slow.cpp.o	72ba907d5f8d0b2b
+3	1552	1764723218439645900	CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h64d47701__0.cpp.o	33e177e4b0f852f
+6	1560	1764723218458340236	CMakeFiles/neuron_wrapper.dir/source/sub___024root__Slow.cpp.o	96261053d525a38
+3	1581	1764723218477034571	CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact.cpp.o	a16bdc4ca0e18218
+4	1625	1764723218521900977	CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h64d47701__0__Slow.cpp.o	769c7b8bc8a9703
+3	1736	1764723218634066991	CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact__Syms.cpp.o	38a8d416b7f27adc
+4	1783	1764723218678933396	CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0.cpp.o	ecb1851e1b38d85
+2	3040	1764723219937797296	CMakeFiles/neuron_wrapper.dir/home/juliana/verilator/include/verilated.cpp.o	4e1f9e77e98f22ad
+2	4431	1764723221312732228	CMakeFiles/neuron_wrapper.dir/source/maxpy_neuron_wrapper.cpp.o	177e2284c91631f0
+6	5480	1764723222372618787	CMakeFiles/neuron_wrapper.dir/source/verilator_pybind_wrapper.cpp.o	2ebb7215df87982a
+5480	11999	1764723228890286276	neuron_wrapper.cpython-312-x86_64-linux-gnu.so	7246fcf1d9df36ce

@@ -1,0 +1,12 @@
+# ninja log v5
+4	1827	1764707707321281383	CMakeFiles/neuron_intra_Nbits.dir/source/sub___024root__DepSet_h727558ff__0__Slow.cpp.o	2ab436adba6f1c12
+3	1857	1764707707360288393	CMakeFiles/neuron_intra_Nbits.dir/source/sub___024root__DepSet_h5d43a460__0.cpp.o	6635573a39e3aea
+4	1862	1764707707340784888	CMakeFiles/neuron_intra_Nbits.dir/source/sub___024root__DepSet_h727558ff__0.cpp.o	f0cfc972f441a29e
+2	1976	1764707707473408723	CMakeFiles/neuron_intra_Nbits.dir/source/neuron_intra_Nbits_exact__Syms.cpp.o	4fe2c5fa319541eb
+7	1977	1764707707469508022	CMakeFiles/neuron_intra_Nbits.dir/source/sub___024root__Slow.cpp.o	f4da66f425302890
+3	2043	1764707707543621341	CMakeFiles/neuron_intra_Nbits.dir/source/sub___024root__DepSet_h5d43a460__0__Slow.cpp.o	de9ed26794c259ff
+2	2153	1764707707656741670	CMakeFiles/neuron_intra_Nbits.dir/source/neuron_intra_Nbits_exact.cpp.o	e56ba06d0c6bced
+1	4392	1764707709891508808	CMakeFiles/neuron_intra_Nbits.dir/home/juliana/verilator/include/verilated.cpp.o	7957a15267f90626
+1	6138	1764707711638745781	CMakeFiles/neuron_intra_Nbits.dir/source/maxpy_neuron_intra_Nbits.cpp.o	489bb06ce6180f48
+12	6735	1764707712231558325	CMakeFiles/neuron_intra_Nbits.dir/source/verilator_pybind_wrapper.cpp.o	46527f8341f290d0
+6735	12165	1764707717669215718	neuron_intra_Nbits.cpython-312-x86_64-linux-gnu.so	dcd459e9f163fba8

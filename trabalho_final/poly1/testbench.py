@@ -5,7 +5,6 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import accuracy_score
 
 def testbench_run(ckt=None, results_filename=None):
-    print(dir(ckt))
     lin = ckt.top()
     rst = results.ResultsTable(results_filename, ["mape", "mae", "accuracy"])
     print(f">>> testbench init - circuit: {lin.name()}, area: {lin.area}, parameters: {lin.parameters}")
