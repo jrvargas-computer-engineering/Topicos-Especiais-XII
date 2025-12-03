@@ -30,10 +30,10 @@ architecture:
                 global_cycle_seconds: 1e-9
                 power_gated_at: null
             required_actions:
-              - read
               - write
-              - leak
+              - read
               - update
+              - leak
             enabled: true
           - name: inter_PE_Array_spatial[1..1]
             class: dummy_storage
@@ -78,10 +78,10 @@ architecture:
                 spatial:
                     meshX: 32
             required_actions:
-              - read
               - write
-              - leak
+              - read
               - update
+              - leak
             enabled: true
           - name: inter_MACC_spatial[1..8]
             class: dummy_storage

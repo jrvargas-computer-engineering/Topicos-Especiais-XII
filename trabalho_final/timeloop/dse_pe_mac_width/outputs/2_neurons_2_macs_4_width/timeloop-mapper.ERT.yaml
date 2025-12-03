@@ -3,12 +3,17 @@ ERT:
     tables:
       - name: accelerator_top_level.GlobalBuffer[1..1]
         actions:
+          - name: write
+            arguments:
+                global_cycle_seconds: 1e-09
+                action_latency_cycles: 1
+            energy: 10.4057
           - name: read
             arguments:
                 global_cycle_seconds: 1e-09
                 action_latency_cycles: 1
             energy: 16.6266
-          - name: write
+          - name: update
             arguments:
                 global_cycle_seconds: 1e-09
                 action_latency_cycles: 1
@@ -18,19 +23,19 @@ ERT:
                 global_cycle_seconds: 1e-09
                 action_latency_cycles: 1
             energy: 0.00216033
-          - name: update
+      - name: accelerator_top_level.Input_Port[1..2]
+        actions:
+          - name: write
             arguments:
                 global_cycle_seconds: 1e-09
                 action_latency_cycles: 1
-            energy: 10.4057
-      - name: accelerator_top_level.Input_Port[1..2]
-        actions:
+            energy: 0.009
           - name: read
             arguments:
                 global_cycle_seconds: 1e-09
                 action_latency_cycles: 1
             energy: 0.009
-          - name: write
+          - name: update
             arguments:
                 global_cycle_seconds: 1e-09
                 action_latency_cycles: 1
@@ -40,11 +45,6 @@ ERT:
                 global_cycle_seconds: 1e-09
                 action_latency_cycles: 1
             energy: 7e-05
-          - name: update
-            arguments:
-                global_cycle_seconds: 1e-09
-                action_latency_cycles: 1
-            energy: 0.009
       - name: accelerator_top_level.MACC[1..4]
         actions:
           - name: compute
