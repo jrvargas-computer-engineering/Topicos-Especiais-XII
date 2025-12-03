@@ -1,0 +1,12 @@
+MAxPy: VERILATOR LOG
+
+Command line:
+
+verilator -Wall -Wno-UNUSED -cc -top neuron_wrapper_2neurons -Mdir neuron_wrapper_test/neuron_wrapper_2neurons_LOBA1s_8/source/ /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/tcl/Verilator/verilator_config.vlt neuron_wrapper_test/neuron_wrapper_2neurons_LOBA1s_8/rtl/neuron_wrapper_2neurons.v /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/*.v /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/*.v -Ineuron_wrapper_test/neuron_wrapper_2neurons_LOBA1s_8/rtl -I/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/ -I/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/ --prefix neuron_wrapper_2neurons_LOBA1s_8 --mod-prefix sub
+
+Log from stdout and stderr:
+
+
+
+12-03-2025 02:37:13
+

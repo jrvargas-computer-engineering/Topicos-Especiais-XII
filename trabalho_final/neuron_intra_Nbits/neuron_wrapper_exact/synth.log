@@ -1366,7 +1366,7 @@ Removed 0 unused cells and 1321 unused wires.
 Dumping module `\neuron_wrapper'.
 
 Warnings: 38 unique messages, 144 total
-End of script. Logfile hash: 60d66266b9, CPU: user 0.54s system 0.03s, MEM: 19.38 MB peak
+End of script. Logfile hash: 60d66266b9, CPU: user 0.55s system 0.06s, MEM: 19.38 MB peak
 Yosys 0.33 (git sha1 2584903a060)
-Time spent: 45% 2x abc (0 sec), 11% 24x opt_expr (0 sec), ...
+Time spent: 44% 2x abc (0 sec), 10% 24x opt_expr (0 sec), ...
 Synth command exit code: 0

@@ -1,0 +1,16 @@
+Pesos 2 bits, Entrada 2 bits -> 16.35%**
+Pesos 2 bits, Entrada 4 bits -> 7.01%
+Pesos 2 bits, Entrada 8 bits -> 7.15%
+Pesos 2 bits, Entrada 16 bits -> 7.13%
+Pesos 4 bits, Entrada 2 bits -> 84.14%
+Pesos 4 bits, Entrada 4 bits -> 84.24%**
+Pesos 4 bits, Entrada 8 bits -> 85.25%
+Pesos 4 bits, Entrada 16 bits -> 85.30%
+Pesos 8 bits, Entrada 2 bits -> 85.49%
+Pesos 8 bits, Entrada 4 bits -> 87.90%
+Pesos 8 bits, Entrada 8 bits -> 88.86%**
+Pesos 8 bits, Entrada 16 bits -> 88.83%
+Pesos 16 bits, Entrada 2 bits -> 85.46%
+Pesos 16 bits, Entrada 4 bits -> 87.93%
+Pesos 16 bits, Entrada 8 bits -> 89.03%
+Pesos 16 bits, Entrada 16 bits -> 88.99%**
