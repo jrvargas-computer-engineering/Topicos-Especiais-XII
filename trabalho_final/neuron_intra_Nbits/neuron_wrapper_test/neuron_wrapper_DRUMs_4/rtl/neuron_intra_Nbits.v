@@ -1,61 +1,3 @@
-module neuron_wrapper #(
-    parameter N = 8,             // Bits por peso (ex: 4)
-    parameter N_INPUTS = 8,      // Quantidade de entradas
-    parameter LOG_N_INPUTS = 3
-) (
-    input  wire        clk,
-    input  wire        rst,
-    input  wire        en,         // Enable do neurônio (cálculo)
-    
-    // --- Interface Simplificada (Shift) ---
-    input  wire        load_en,    // 1 = Empurra valores para dentro
-    input  wire signed [31:0] w_in, // Entrada de um peso (32 bits safe)
-    input  wire signed [31:0] x_in, // Entrada de um dado (32 bits safe)
-
-    // --- Saída Segura ---
-    output wire signed [31:0] out_safe
-);
-
-    // Registradores gigantes para armazenar tudo
-    reg signed [N*N_INPUTS-1:0] W_reg;
-    reg signed [N*N_INPUTS-1:0] X_reg;
-
-    // Lógica de Shift Register
-    // A cada clock com 'load_en', o dado novo entra no LSB e empurra o resto para a esquerda.
-    always @(posedge clk) begin
-        if (rst) begin
-            W_reg <= 0;
-            X_reg <= 0;
-        end
-        else if (load_en) begin
-            // Concatena: {Resto Antigo, Novo Valor Truncado}
-            // O valor mais antigo vai sendo empurrado para os bits mais altos (MSB)
-            W_reg <= {W_reg[N*(N_INPUTS-1)-1:0], w_in[N-1:0]};
-            X_reg <= {X_reg[N*(N_INPUTS-1)-1:0], x_in[N-1:0]};
-        end
-    end
-
-    // Instância do Neurônio Original
-    wire signed [N-1:0] neuron_out;
-
-    neuron_intra_Nbits #(
-        .N(N),
-        .N_INPUTS(N_INPUTS),
-        .LOG_N_INPUTS(LOG_N_INPUTS)
-    ) u_neuron (
-        .clk(clk),
-        .rst(rst),
-        .en(en),
-        .W(W_reg),   // Liga o registrador cheio no neurônio
-        .X_N(X_reg),
-        .Out(neuron_out)
-    );
-
-    // Saída com extensão de sinal para 32 bits (para o Python ler correto)
-    assign out_safe = {{ (32-N){neuron_out[N-1]} }, neuron_out};
-endmodule
-
-
 module neuron_intra_Nbits #(
     parameter N = 8,
     parameter N_INPUTS = 8,
@@ -83,7 +25,7 @@ module neuron_intra_Nbits #(
       assign Xi = X_N[i*N+:N];
 
         //mudanca maxpy
-        [[MULTIPLIER_TYPE]] #(2*N, [[MULTIPLIER_K]]) mult_i (
+        DRUMs #(2*N, 4) mult_i (
         Wi,
         Xi,
         prod[i*2*N+:2*N]
@@ -91,7 +33,7 @@ module neuron_intra_Nbits #(
         //assign prod[i*2*N+:2*N] = Wi * Xi;
 
       // substuir aqui 
-    [[MULTIPLIER_TYPE]] #(16, [[MULTIPLIER_K]]) mult1 (a, x, p);
+    DRUMs #(16, 4) mult1 (a, x, p);
     end
   endgenerate
 

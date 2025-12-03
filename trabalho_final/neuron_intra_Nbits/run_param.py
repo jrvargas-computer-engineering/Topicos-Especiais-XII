@@ -4,7 +4,7 @@ from testbench import testbench_run
 circuit = maxpy.AxCircuit(top_name="neuron_wrapper")
 circuit.set_testbench_script(testbench_run)
 
-circuit.set_group("neuron_drums_4")
+circuit.set_group("neuron_wrapper_test")
 circuit.set_synth_tool(None)
 circuit.set_results_filename("output.csv")
 circuit.parameters = {

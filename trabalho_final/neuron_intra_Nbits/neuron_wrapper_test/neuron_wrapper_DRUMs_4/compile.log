@@ -2,11 +2,11 @@ MAxPy: PYBIND COMPILATION LOG
 
 Command line:
 
-cmake -G Ninja -B neuron_wrapper_exact/ -S neuron_wrapper_exact/
+cmake -G Ninja -B neuron_wrapper_test/neuron_wrapper_DRUMs_4/ -S neuron_wrapper_test/neuron_wrapper_DRUMs_4/
 
 Command line:
 
-ninja -C neuron_wrapper_exact/
+ninja -C neuron_wrapper_test/neuron_wrapper_DRUMs_4/
 
 Log from stdout and stderr:
 
@@ -35,11 +35,15 @@ Call Stack (most recent call first):
   CMakeLists.txt:3 (find_package)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
+-- Found PythonInterp: /home/juliana/venv_pytorch/bin/python (found suitable version "3.12.3", minimum required is "3.8") 
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.12.so
+-- Performing Test HAS_FLTO_AUTO
+-- Performing Test HAS_FLTO_AUTO - Success
 -- Found pybind11: /home/juliana/venv_pytorch/include (found version "3.0.1")
--- Configuring done (1.0s)
+-- Configuring done (1.5s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact
+-- Build files have been written to: /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_4
 
 
-12-02-2025 22:36:48
+12-02-2025 22:45:03
 

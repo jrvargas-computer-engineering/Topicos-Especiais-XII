@@ -5,7 +5,7 @@ module tb_neuron_wrapper;
     // -------------------------------
     // Parâmetros (ajuste se quiser)
     // -------------------------------
-    localparam N          = 8;
+    localparam N          = 4;
     localparam N_INPUTS   = 8;
     localparam LOG_N_IN   = 3;
 

@@ -34,7 +34,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/
+cmake_ninja_workdir = /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/
 # =============================================================================
 # Object build statements for MODULE_LIBRARY target neuron_wrapper
 
@@ -54,7 +54,7 @@ build CMakeFiles/neuron_wrapper.dir/home/juliana/verilator/include/verilated.cpp
   TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
   TARGET_PDB = neuron_wrapper.pdb
 
-build CMakeFiles/neuron_wrapper.dir/source/maxpy_neuron_wrapper.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/source/maxpy_neuron_wrapper.cpp || cmake_object_order_depends_target_neuron_wrapper
+build CMakeFiles/neuron_wrapper.dir/source/maxpy_neuron_wrapper.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/source/maxpy_neuron_wrapper.cpp || cmake_object_order_depends_target_neuron_wrapper
   DEFINES = -Dneuron_wrapper_EXPORTS
   DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/maxpy_neuron_wrapper.cpp.o.d
   FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
@@ -64,9 +64,9 @@ build CMakeFiles/neuron_wrapper.dir/source/maxpy_neuron_wrapper.cpp.o: CXX_COMPI
   TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
   TARGET_PDB = neuron_wrapper.pdb
 
-build CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/source/neuron_wrapper_exact.cpp || cmake_object_order_depends_target_neuron_wrapper
+build CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_DRUMs_8.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/source/neuron_wrapper_DRUMs_8.cpp || cmake_object_order_depends_target_neuron_wrapper
   DEFINES = -Dneuron_wrapper_EXPORTS
-  DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact.cpp.o.d
+  DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_DRUMs_8.cpp.o.d
   FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
   INCLUDES = -I/home/juliana/verilator/include -I/home/juliana/verilator/include/vltstd -isystem /home/juliana/venv_pytorch/include -isystem /usr/include/python3.12
   OBJECT_DIR = CMakeFiles/neuron_wrapper.dir
@@ -74,9 +74,9 @@ build CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact.cpp.o: CXX_COMPI
   TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
   TARGET_PDB = neuron_wrapper.pdb
 
-build CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact__Syms.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/source/neuron_wrapper_exact__Syms.cpp || cmake_object_order_depends_target_neuron_wrapper
+build CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_DRUMs_8__Syms.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/source/neuron_wrapper_DRUMs_8__Syms.cpp || cmake_object_order_depends_target_neuron_wrapper
   DEFINES = -Dneuron_wrapper_EXPORTS
-  DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact__Syms.cpp.o.d
+  DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_DRUMs_8__Syms.cpp.o.d
   FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
   INCLUDES = -I/home/juliana/verilator/include -I/home/juliana/verilator/include/vltstd -isystem /home/juliana/venv_pytorch/include -isystem /usr/include/python3.12
   OBJECT_DIR = CMakeFiles/neuron_wrapper.dir
@@ -84,27 +84,7 @@ build CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact__Syms.cpp.o: CXX
   TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
   TARGET_PDB = neuron_wrapper.pdb
 
-build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h64d47701__0.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/source/sub___024root__DepSet_h64d47701__0.cpp || cmake_object_order_depends_target_neuron_wrapper
-  DEFINES = -Dneuron_wrapper_EXPORTS
-  DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h64d47701__0.cpp.o.d
-  FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
-  INCLUDES = -I/home/juliana/verilator/include -I/home/juliana/verilator/include/vltstd -isystem /home/juliana/venv_pytorch/include -isystem /usr/include/python3.12
-  OBJECT_DIR = CMakeFiles/neuron_wrapper.dir
-  OBJECT_FILE_DIR = CMakeFiles/neuron_wrapper.dir/source
-  TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
-  TARGET_PDB = neuron_wrapper.pdb
-
-build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h64d47701__0__Slow.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/source/sub___024root__DepSet_h64d47701__0__Slow.cpp || cmake_object_order_depends_target_neuron_wrapper
-  DEFINES = -Dneuron_wrapper_EXPORTS
-  DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h64d47701__0__Slow.cpp.o.d
-  FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
-  INCLUDES = -I/home/juliana/verilator/include -I/home/juliana/verilator/include/vltstd -isystem /home/juliana/venv_pytorch/include -isystem /usr/include/python3.12
-  OBJECT_DIR = CMakeFiles/neuron_wrapper.dir
-  OBJECT_FILE_DIR = CMakeFiles/neuron_wrapper.dir/source
-  TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
-  TARGET_PDB = neuron_wrapper.pdb
-
-build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/source/sub___024root__DepSet_h727558ff__0.cpp || cmake_object_order_depends_target_neuron_wrapper
+build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/source/sub___024root__DepSet_h727558ff__0.cpp || cmake_object_order_depends_target_neuron_wrapper
   DEFINES = -Dneuron_wrapper_EXPORTS
   DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0.cpp.o.d
   FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
@@ -114,7 +94,7 @@ build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0.cp
   TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
   TARGET_PDB = neuron_wrapper.pdb
 
-build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0__Slow.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/source/sub___024root__DepSet_h727558ff__0__Slow.cpp || cmake_object_order_depends_target_neuron_wrapper
+build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0__Slow.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/source/sub___024root__DepSet_h727558ff__0__Slow.cpp || cmake_object_order_depends_target_neuron_wrapper
   DEFINES = -Dneuron_wrapper_EXPORTS
   DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0__Slow.cpp.o.d
   FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
@@ -124,7 +104,27 @@ build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0__S
   TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
   TARGET_PDB = neuron_wrapper.pdb
 
-build CMakeFiles/neuron_wrapper.dir/source/sub___024root__Slow.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/source/sub___024root__Slow.cpp || cmake_object_order_depends_target_neuron_wrapper
+build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_hf30594af__0.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/source/sub___024root__DepSet_hf30594af__0.cpp || cmake_object_order_depends_target_neuron_wrapper
+  DEFINES = -Dneuron_wrapper_EXPORTS
+  DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_hf30594af__0.cpp.o.d
+  FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
+  INCLUDES = -I/home/juliana/verilator/include -I/home/juliana/verilator/include/vltstd -isystem /home/juliana/venv_pytorch/include -isystem /usr/include/python3.12
+  OBJECT_DIR = CMakeFiles/neuron_wrapper.dir
+  OBJECT_FILE_DIR = CMakeFiles/neuron_wrapper.dir/source
+  TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
+  TARGET_PDB = neuron_wrapper.pdb
+
+build CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_hf30594af__0__Slow.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/source/sub___024root__DepSet_hf30594af__0__Slow.cpp || cmake_object_order_depends_target_neuron_wrapper
+  DEFINES = -Dneuron_wrapper_EXPORTS
+  DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_hf30594af__0__Slow.cpp.o.d
+  FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
+  INCLUDES = -I/home/juliana/verilator/include -I/home/juliana/verilator/include/vltstd -isystem /home/juliana/venv_pytorch/include -isystem /usr/include/python3.12
+  OBJECT_DIR = CMakeFiles/neuron_wrapper.dir
+  OBJECT_FILE_DIR = CMakeFiles/neuron_wrapper.dir/source
+  TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
+  TARGET_PDB = neuron_wrapper.pdb
+
+build CMakeFiles/neuron_wrapper.dir/source/sub___024root__Slow.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/source/sub___024root__Slow.cpp || cmake_object_order_depends_target_neuron_wrapper
   DEFINES = -Dneuron_wrapper_EXPORTS
   DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/sub___024root__Slow.cpp.o.d
   FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
@@ -134,7 +134,7 @@ build CMakeFiles/neuron_wrapper.dir/source/sub___024root__Slow.cpp.o: CXX_COMPIL
   TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
   TARGET_PDB = neuron_wrapper.pdb
 
-build CMakeFiles/neuron_wrapper.dir/source/verilator_pybind_wrapper.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/source/verilator_pybind_wrapper.cpp || cmake_object_order_depends_target_neuron_wrapper
+build CMakeFiles/neuron_wrapper.dir/source/verilator_pybind_wrapper.cpp.o: CXX_COMPILER__neuron_wrapper_unscanned_ /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/source/verilator_pybind_wrapper.cpp || cmake_object_order_depends_target_neuron_wrapper
   DEFINES = -Dneuron_wrapper_EXPORTS
   DEP_FILE = CMakeFiles/neuron_wrapper.dir/source/verilator_pybind_wrapper.cpp.o.d
   FLAGS = -fPIC -fvisibility=hidden -flto=auto -fno-fat-lto-objects
@@ -152,10 +152,10 @@ build CMakeFiles/neuron_wrapper.dir/source/verilator_pybind_wrapper.cpp.o: CXX_C
 #############################################
 # Link the shared module neuron_wrapper.cpython-312-x86_64-linux-gnu.so
 
-build neuron_wrapper.cpython-312-x86_64-linux-gnu.so: CXX_MODULE_LIBRARY_LINKER__neuron_wrapper_ CMakeFiles/neuron_wrapper.dir/home/juliana/verilator/include/verilated.cpp.o CMakeFiles/neuron_wrapper.dir/source/maxpy_neuron_wrapper.cpp.o CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact.cpp.o CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_exact__Syms.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h64d47701__0.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h64d47701__0__Slow.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0__Slow.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__Slow.cpp.o CMakeFiles/neuron_wrapper.dir/source/verilator_pybind_wrapper.cpp.o
+build neuron_wrapper.cpython-312-x86_64-linux-gnu.so: CXX_MODULE_LIBRARY_LINKER__neuron_wrapper_ CMakeFiles/neuron_wrapper.dir/home/juliana/verilator/include/verilated.cpp.o CMakeFiles/neuron_wrapper.dir/source/maxpy_neuron_wrapper.cpp.o CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_DRUMs_8.cpp.o CMakeFiles/neuron_wrapper.dir/source/neuron_wrapper_DRUMs_8__Syms.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_h727558ff__0__Slow.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_hf30594af__0.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__DepSet_hf30594af__0__Slow.cpp.o CMakeFiles/neuron_wrapper.dir/source/sub___024root__Slow.cpp.o CMakeFiles/neuron_wrapper.dir/source/verilator_pybind_wrapper.cpp.o
   LINK_FLAGS = -flto=auto
   OBJECT_DIR = CMakeFiles/neuron_wrapper.dir
-  POST_BUILD = cd /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact && /usr/bin/strip /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact/neuron_wrapper.cpython-312-x86_64-linux-gnu.so
+  POST_BUILD = cd /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8 && /usr/bin/strip /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8/neuron_wrapper.cpython-312-x86_64-linux-gnu.so
   PRE_LINK = :
   TARGET_COMPILE_PDB = CMakeFiles/neuron_wrapper.dir/
   TARGET_FILE = neuron_wrapper.cpython-312-x86_64-linux-gnu.so
@@ -166,7 +166,7 @@ build neuron_wrapper.cpython-312-x86_64-linux-gnu.so: CXX_MODULE_LIBRARY_LINKER_
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8 && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -177,7 +177,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact && /usr/bin/cmake --regenerate-during-build -S/home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact -B/home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact
+  COMMAND = cd /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8 && /usr/bin/cmake --regenerate-during-build -S/home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8 -B/home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -195,7 +195,7 @@ build neuron_wrapper: phony neuron_wrapper.cpython-312-x86_64-linux-gnu.so
 # =============================================================================
 
 #############################################
-# Folder: /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_exact
+# Folder: /home/juliana/Topicos-Especiais-XII/trabalho_final/neuron_intra_Nbits/neuron_wrapper_test/neuron_wrapper_DRUMs_8
 
 build all: phony neuron_wrapper.cpython-312-x86_64-linux-gnu.so
 

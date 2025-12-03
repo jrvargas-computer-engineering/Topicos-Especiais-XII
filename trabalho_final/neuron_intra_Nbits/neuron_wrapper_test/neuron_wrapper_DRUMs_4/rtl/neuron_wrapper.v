@@ -1,5 +1,5 @@
 module neuron_wrapper #(
-    parameter N = 8,             // Bits por peso (ex: 4)
+    parameter N = 4,             // Bits por peso (ex: 4)
     parameter N_INPUTS = 8,      // Quantidade de entradas
     parameter LOG_N_INPUTS = 3
 ) (
@@ -83,7 +83,7 @@ module neuron_intra_Nbits #(
       assign Xi = X_N[i*N+:N];
 
         //mudanca maxpy
-        [[MULTIPLIER_TYPE]] #(2*N, [[MULTIPLIER_K]]) mult_i (
+        DRUMs #(2*N, 4) mult_i (
         Wi,
         Xi,
         prod[i*2*N+:2*N]
@@ -91,7 +91,7 @@ module neuron_intra_Nbits #(
         //assign prod[i*2*N+:2*N] = Wi * Xi;
 
       // substuir aqui 
-    [[MULTIPLIER_TYPE]] #(16, [[MULTIPLIER_K]]) mult1 (a, x, p);
+    DRUMs #(16, 4) mult1 (a, x, p);
     end
   endgenerate
 
