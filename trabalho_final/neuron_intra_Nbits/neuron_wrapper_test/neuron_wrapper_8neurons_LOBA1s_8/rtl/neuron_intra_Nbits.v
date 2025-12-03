@@ -25,7 +25,7 @@ module neuron_intra_Nbits #(
       assign Xi = X_N[i*N+:N];
 
         //mudanca maxpy
-        [[MULTIPLIER_TYPE]] #(2*N, [[MULTIPLIER_K]]) mult_i (
+        LOBA1s #(2*N, 8) mult_i (
         Wi,
         Xi,
         prod[i*2*N+:2*N]
@@ -33,7 +33,7 @@ module neuron_intra_Nbits #(
         //assign prod[i*2*N+:2*N] = Wi * Xi;
 
       // substuir aqui 
-    [[MULTIPLIER_TYPE]] #(16, [[MULTIPLIER_K]]) mult1 (a, x, p);
+    LOBA1s #(16, 8) mult1 (a, x, p);
     end
   endgenerate
 
