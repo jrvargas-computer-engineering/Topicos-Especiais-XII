@@ -15,7 +15,7 @@ os.makedirs(version, exist_ok=True)
 # =========================
 PE_LIST = [1,2,4,8,16]    #numero de neuronios
 MAC_LIST = [2,4,8]   #numero de MACs 
-WIDTH_LIST = [4,6,16]
+WIDTH_LIST = [4,8,16]
 
 # =========================
 # pasta de outputs
