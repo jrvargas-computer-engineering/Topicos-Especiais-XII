@@ -1,37 +1,38 @@
-Acur�cia geral: 98.77%
+Acurácia total: 84.11%
 
-Classe 0: 85.44%
-Classe 1: 88.83%
-Classe 2: 93.20%
-Classe 3: 92.23%
-Classe 4: 94.17%
-Classe 5: 96.60%
-Classe 6: 84.47%
-Classe 7: 86.89%
-Classe 8: 73.30%
-Classe 9: 87.38%
-Classe 10: 87.13%
-Classe 11: 73.30%
-Classe 12: 94.61%
-Classe 13: 96.04%
-Classe 14: 95.05%
-Classe 15: 94.61%
-Classe 16: 94.12%
-Classe 17: 96.08%
-Classe 18: 60.89%
-Classe 19: 97.57%
-Classe 20: 97.52%
-Classe 21: 94.55%
-Classe 22: 96.08%
-Classe 23: 89.71%
-Classe 24: 87.13%
-Classe 25: 64.36%
-Classe 26: 92.16%
-Classe 27: 88.24%
-Classe 28: 89.71%
-Classe 29: 89.60%
-Classe 30: 79.13%
-Classe 31: 95.54%
-Classe 32: 88.12%
-Classe 33: 77.23%
-Classe 34: 98.77%
+Acurácia por classe:
+  Classe 0: 79.61%
+  Classe 1: 66.50%
+  Classe 2: 90.29%
+  Classe 3: 83.50%
+  Classe 4: 94.17%
+  Classe 5: 95.63%
+  Classe 6: 75.24%
+  Classe 7: 77.67%
+  Classe 8: 50.00%
+  Classe 9: 87.38%
+  Classe 10: 78.22%
+  Classe 11: 62.14%
+  Classe 12: 97.55%
+  Classe 13: 93.07%
+  Classe 14: 92.08%
+  Classe 15: 94.12%
+  Classe 16: 97.55%
+  Classe 17: 95.10%
+  Classe 18: 37.13%
+  Classe 19: 98.54%
+  Classe 20: 90.59%
+  Classe 21: 93.56%
+  Classe 22: 83.33%
+  Classe 23: 84.80%
+  Classe 24: 93.07%
+  Classe 25: 57.92%
+  Classe 26: 86.76%
+  Classe 27: 95.10%
+  Classe 28: 100.00%
+  Classe 29: 92.08%
+  Classe 30: 83.98%
+  Classe 31: 85.64%
+  Classe 32: 75.74%
+  Classe 33: 84.65%
+  Classe 34: 93.21%

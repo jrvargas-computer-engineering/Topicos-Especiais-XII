@@ -12,18 +12,16 @@ arquivos = [
     "accuracy/accuracy_quant8.txt",
 ]
 
-# Legendas desejadas (na mesma ordem dos arquivos)
 legendas = [
     "Original",
     "Normalização 0.0 até 1.0",
     "Normalização -1.0 até 1.0",
     "Quantização 2 bits",
-    "Quantização 4 bits",   
+    "Quantização 4 bits",
     "Quantização 8 bits",
 ]
 
 def ler_acuracias_por_classe(caminho):
-    """Extrai acurácias das classes de um arquivo no formato informado."""
     acuracias = []
     padrao = r"Classe (\d+): ([0-9\.]+)%"
 
@@ -36,14 +34,26 @@ def ler_acuracias_por_classe(caminho):
 
 # Calcular médias
 medias = []
-
 for arq in arquivos:
     acur = ler_acuracias_por_classe(arq)
     medias.append(np.mean(acur))
 
 # Plot do gráfico de barras
-plt.figure(figsize=(8, 5))
-plt.bar(legendas, medias)
+plt.figure(figsize=(10, 6))
+bars = plt.bar(legendas, medias)
+
+# Adicionar valores acima de cada barra
+for bar in bars:
+    altura = bar.get_height()
+    plt.text(
+        bar.get_x() + bar.get_width() / 2,
+        altura,
+        f"{altura:.2f}%",       # Formato do texto
+        ha='center',
+        va='bottom',
+        fontsize=9
+    )
+
 plt.title("Acurácia Média x Técnica de Pré-processamento")
 plt.ylabel("Acurácia Média (%)")
 plt.xlabel("Técnica de Pré-processamento")

@@ -1,0 +1,385 @@
+Resultados
+
+entrada 2 bits x pesos 2 bits -> 21.83%**
+entrada 4 bits x pesos 2 bits -> 13,28%
+entrada 8 bits x pesos 2 bits -> 13,37%
+
+entrada 2 bits x pesos 4 bits -> 80,89%
+entrada 4 bits x pesos 4 bits -> 77.89%**
+entrada 8 bits x pesos 4 bits -> 79,06%
+
+entrada 2 bits x pesos 8 bits -> 82,48%
+entrada 4 bits x pesos 8 bits -> 83,44%
+entrada 8 bits x pesos 8 bits -> 84.11%**
+
+
+entrada 8 bits x pesos 8 bits
+
+Acurácia total: 84.11%
+
+Acurácia por classe:
+  Classe 0: 79.61%
+  Classe 1: 66.50%
+  Classe 2: 90.29%
+  Classe 3: 83.50%
+  Classe 4: 94.17%
+  Classe 5: 95.63%
+  Classe 6: 75.24%
+  Classe 7: 77.67%
+  Classe 8: 50.00%
+  Classe 9: 87.38%
+  Classe 10: 78.22%
+  Classe 11: 62.14%
+  Classe 12: 97.55%
+  Classe 13: 93.07%
+  Classe 14: 92.08%
+  Classe 15: 94.12%
+  Classe 16: 97.55%
+  Classe 17: 95.10%
+  Classe 18: 37.13%
+  Classe 19: 98.54%
+  Classe 20: 90.59%
+  Classe 21: 93.56%
+  Classe 22: 83.33%
+  Classe 23: 84.80%
+  Classe 24: 93.07%
+  Classe 25: 57.92%
+  Classe 26: 86.76%
+  Classe 27: 95.10%
+  Classe 28: 100.00%
+  Classe 29: 92.08%
+  Classe 30: 83.98%
+  Classe 31: 85.64%
+  Classe 32: 75.74%
+  Classe 33: 84.65%
+  Classe 34: 93.21%
+
+
+entrada 4 bits x pesos 4 bits
+
+Acurácia total: 77.89%
+
+Acurácia por classe:
+  Classe 0: 27.18%
+  Classe 1: 62.62%
+  Classe 2: 89.32%
+  Classe 3: 82.52%
+  Classe 4: 91.26%
+  Classe 5: 95.63%
+  Classe 6: 40.78%
+  Classe 7: 73.79%
+  Classe 8: 45.63%
+  Classe 9: 73.79%
+  Classe 10: 59.41%
+  Classe 11: 31.07%
+  Classe 12: 96.57%
+  Classe 13: 89.11%
+  Classe 14: 73.27%
+  Classe 15: 94.12%
+  Classe 16: 97.06%
+  Classe 17: 83.33%
+  Classe 18: 35.15%
+  Classe 19: 99.03%
+  Classe 20: 84.65%
+  Classe 21: 91.58%
+  Classe 22: 83.82%
+  Classe 23: 81.86%
+  Classe 24: 86.63%
+  Classe 25: 72.77%
+  Classe 26: 88.24%
+  Classe 27: 97.55%
+  Classe 28: 99.02%
+  Classe 29: 97.03%
+  Classe 30: 90.29%
+  Classe 31: 78.71%
+  Classe 32: 62.87%
+  Classe 33: 77.72%
+  Classe 34: 97.53%
+
+
+  entrada 2 bits x pesos 4 bits
+
+  Acurácia total: 21.83%
+
+Acurácia por classe:
+  Classe 0: 0.00%
+  Classe 1: 0.00%
+  Classe 2: 89.32%
+  Classe 3: 82.04%
+  Classe 4: 0.00%
+  Classe 5: 86.41%
+  Classe 6: 17.96%
+  Classe 7: 0.00%
+  Classe 8: 12.62%
+  Classe 9: 51.94%
+  Classe 10: 0.00%
+  Classe 11: 1.94%
+  Classe 12: 97.06%
+  Classe 13: 66.34%
+  Classe 14: 72.77%
+  Classe 15: 0.00%
+  Classe 16: 44.12%
+  Classe 17: 0.00%
+  Classe 18: 0.00%
+  Classe 19: 0.00%
+  Classe 20: 0.00%
+  Classe 21: 0.00%
+  Classe 22: 0.00%
+  Classe 23: 0.00%
+  Classe 24: 1.98%
+  Classe 25: 77.23%
+  Classe 26: 0.00%
+  Classe 27: 56.86%
+  Classe 28: 0.00%
+  Classe 29: 0.00%
+  Classe 30: 0.00%
+  Classe 31: 0.00%
+  Classe 32: 0.00%
+  Classe 33: 0.00%
+  Classe 34: 0.00%
+
+
+  entrada 4 x peso 2
+
+  Acurácia total: 13.28%
+
+Acurácia por classe:
+  Classe 0: 0.00%
+  Classe 1: 0.00%
+  Classe 2: 83.01%
+  Classe 3: 85.92%
+  Classe 4: 0.00%
+  Classe 5: 9.71%
+  Classe 6: 0.00%
+  Classe 7: 0.00%
+  Classe 8: 0.00%
+  Classe 9: 4.85%
+  Classe 10: 0.00%
+  Classe 11: 0.00%
+  Classe 12: 100.00%
+  Classe 13: 29.70%
+  Classe 14: 46.53%
+  Classe 15: 0.00%
+  Classe 16: 0.00%
+  Classe 17: 0.00%
+  Classe 18: 0.00%
+  Classe 19: 0.00%
+  Classe 20: 0.00%
+  Classe 21: 0.00%
+  Classe 22: 0.00%
+  Classe 23: 0.00%
+  Classe 24: 0.00%
+  Classe 25: 80.20%
+  Classe 26: 0.00%
+  Classe 27: 22.06%
+  Classe 28: 0.00%
+  Classe 29: 0.00%
+  Classe 30: 0.00%
+  Classe 31: 0.00%
+  Classe 32: 0.00%
+  Classe 33: 0.00%
+  Classe 34: 0.00%
+
+  entrada 8 x peso 2
+
+  Acurácia total: 13.37%
+
+Acurácia por classe:
+  Classe 0: 0.00%
+  Classe 1: 0.00%
+  Classe 2: 82.04%
+  Classe 3: 89.81%
+  Classe 4: 0.00%
+  Classe 5: 4.85%
+  Classe 6: 0.00%
+  Classe 7: 0.00%
+  Classe 8: 0.00%
+  Classe 9: 4.37%
+  Classe 10: 0.00%
+  Classe 11: 0.00%
+  Classe 12: 100.00%
+  Classe 13: 27.72%
+  Classe 14: 48.51%
+  Classe 15: 0.00%
+  Classe 16: 0.00%
+  Classe 17: 0.00%
+  Classe 18: 0.00%
+  Classe 19: 0.00%
+  Classe 20: 0.00%
+  Classe 21: 0.00%
+  Classe 22: 0.00%
+  Classe 23: 0.00%
+  Classe 24: 0.00%
+  Classe 25: 85.15%
+  Classe 26: 0.00%
+  Classe 27: 22.55%
+  Classe 28: 0.00%
+  Classe 29: 0.00%
+  Classe 30: 0.00%
+  Classe 31: 0.00%
+  Classe 32: 0.00%
+  Classe 33: 0.00%
+  Classe 34: 0.00%
+
+
+  entrada 2 x peso 4
+
+  Acurácia total: 80.89%
+
+Acurácia por classe:
+  Classe 0: 52.91%
+  Classe 1: 88.35%
+  Classe 2: 86.89%
+  Classe 3: 81.55%
+  Classe 4: 81.55%
+  Classe 5: 90.78%
+  Classe 6: 75.73%
+  Classe 7: 66.02%
+  Classe 8: 64.56%
+  Classe 9: 81.07%
+  Classe 10: 78.71%
+  Classe 11: 51.94%
+  Classe 12: 95.10%
+  Classe 13: 88.12%
+  Classe 14: 84.65%
+  Classe 15: 89.22%
+  Classe 16: 94.61%
+  Classe 17: 75.98%
+  Classe 18: 33.66%
+  Classe 19: 96.12%
+  Classe 20: 81.68%
+  Classe 21: 88.61%
+  Classe 22: 84.80%
+  Classe 23: 86.76%
+  Classe 24: 86.14%
+  Classe 25: 61.39%
+  Classe 26: 88.24%
+  Classe 27: 95.10%
+  Classe 28: 89.71%
+  Classe 29: 84.16%
+  Classe 30: 86.89%
+  Classe 31: 81.19%
+  Classe 32: 88.12%
+  Classe 33: 75.25%
+  Classe 34: 99.38%
+
+  entrada 8 x peso 4
+
+  Acurácia total: 79.06%
+
+Acurácia por classe:
+  Classe 0: 25.73%
+  Classe 1: 61.17%
+  Classe 2: 88.83%
+  Classe 3: 83.50%
+  Classe 4: 93.20%
+  Classe 5: 94.66%
+  Classe 6: 45.15%
+  Classe 7: 75.24%
+  Classe 8: 46.12%
+  Classe 9: 77.18%
+  Classe 10: 61.39%
+  Classe 11: 34.95%
+  Classe 12: 97.06%
+  Classe 13: 91.09%
+  Classe 14: 77.23%
+  Classe 15: 95.10%
+  Classe 16: 97.55%
+  Classe 17: 83.33%
+  Classe 18: 37.13%
+  Classe 19: 98.54%
+  Classe 20: 85.64%
+  Classe 21: 92.57%
+  Classe 22: 84.31%
+  Classe 23: 81.86%
+  Classe 24: 87.13%
+  Classe 25: 74.26%
+  Classe 26: 88.24%
+  Classe 27: 97.06%
+  Classe 28: 99.02%
+  Classe 29: 97.03%
+  Classe 30: 89.32%
+  Classe 31: 83.17%
+  Classe 32: 68.32%
+  Classe 33: 81.19%
+  Classe 34: 98.77%
+
+  entrada 2 x peso 8
+
+  Acurácia total: 82.48%
+
+Acurácia por classe:
+  Classe 0: 68.93%
+  Classe 1: 88.83%
+  Classe 2: 88.35%
+  Classe 3: 81.55%
+  Classe 4: 81.55%
+  Classe 5: 91.26%
+  Classe 6: 80.10%
+  Classe 7: 69.42%
+  Classe 8: 65.05%
+  Classe 9: 85.44%
+  Classe 10: 81.68%
+  Classe 11: 64.56%
+  Classe 12: 95.10%
+  Classe 13: 85.64%
+  Classe 14: 90.10%
+  Classe 15: 88.73%
+  Classe 16: 91.67%
+  Classe 17: 84.80%
+  Classe 18: 24.75%
+  Classe 19: 96.60%
+  Classe 20: 83.66%
+  Classe 21: 91.09%
+  Classe 22: 85.29%
+  Classe 23: 88.24%
+  Classe 24: 90.59%
+  Classe 25: 56.93%
+  Classe 26: 86.76%
+  Classe 27: 92.65%
+  Classe 28: 91.67%
+  Classe 29: 81.68%
+  Classe 30: 84.47%
+  Classe 31: 84.65%
+  Classe 32: 91.09%
+  Classe 33: 79.70%
+  Classe 34: 96.91%
+
+  entrada 4 x peso 8
+
+  Acurácia por classe:
+  Classe 0: 78.64%
+  Classe 1: 68.45%
+  Classe 2: 90.78%
+  Classe 3: 80.58%
+  Classe 4: 92.72%
+  Classe 5: 95.63%
+  Classe 6: 71.36%
+  Classe 7: 75.73%
+  Classe 8: 49.03%
+  Classe 9: 86.89%
+  Classe 10: 77.72%
+  Classe 11: 61.65%
+  Classe 12: 97.06%
+  Classe 13: 90.59%
+  Classe 14: 89.11%
+  Classe 15: 93.63%
+  Classe 16: 98.04%
+  Classe 17: 95.10%
+  Classe 18: 38.61%
+  Classe 19: 98.54%
+  Classe 20: 88.61%
+  Classe 21: 94.06%
+  Classe 22: 81.86%
+  Classe 23: 83.33%
+  Classe 24: 94.06%
+  Classe 25: 59.90%
+  Classe 26: 85.78%
+  Classe 27: 96.08%
+  Classe 28: 99.51%
+  Classe 29: 91.09%
+  Classe 30: 82.04%
+  Classe 31: 86.63%
+  Classe 32: 71.78%
+  Classe 33: 83.66%
+  Classe 34: 94.44%
