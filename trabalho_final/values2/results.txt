@@ -1,16 +1,16 @@
 Resultados
 
-entrada 2 bits x pesos 2 bits -> 21.83%**
+entrada 2 bits x pesos 2 bits -> 21.83%
 entrada 4 bits x pesos 2 bits -> 13,28%
 entrada 8 bits x pesos 2 bits -> 13,37%
 
 entrada 2 bits x pesos 4 bits -> 80,89%
-entrada 4 bits x pesos 4 bits -> 77.89%**
+entrada 4 bits x pesos 4 bits -> 77.89%
 entrada 8 bits x pesos 4 bits -> 79,06%
 
 entrada 2 bits x pesos 8 bits -> 82,48%
 entrada 4 bits x pesos 8 bits -> 83,44%
-entrada 8 bits x pesos 8 bits -> 84.11%**
+entrada 8 bits x pesos 8 bits -> 84.11%
 
 
 entrada 8 bits x pesos 8 bits

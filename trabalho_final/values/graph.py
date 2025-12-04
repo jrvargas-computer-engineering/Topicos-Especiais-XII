@@ -1,41 +1,47 @@
 import re
 import matplotlib.pyplot as plt
 
-# Arquivos e legendas desejadas
+# Liste aqui os 4 arquivos que você quer ler:
 arquivos = [
     "accuracy/original.txt",
-    "accuracy/accuracy_norm_01.txt",
-    "accuracy/accuracy_norm_m11.txt",
+    "accuracy/accuracy_quant2.txt",
+    "accuracy/accuracy_quant4.txt",
+    "accuracy/accuracy_quant8.txt"
 ]
 
-# Legendas desejadas (na mesma ordem dos arquivos)
-legendas = [
+# Nome de cada curva no gráfico
+labels = [
     "Original",
-    "Normalização 0.0 até 1.0",
-    "Normalização -1.0 até 1.0",
+    "2 bits",
+    "4 bits",
+    "8 bits"
 ]
 
-def ler_acuracias_por_classe(caminho):
+def ler_acuracias(path):
+    """
+    Lê um arquivo no formato dado e retorna uma lista com as acurácias de cada classe.
+    """
     acuracias = []
-    padrao = r"Classe (\d+): ([0-9\.]+)%"
-
-    with open(caminho, "r", encoding="utf-8", errors="ignore") as f:
-        conteudo = f.read()
-        for classe, valor in re.findall(padrao, conteudo):
-            acuracias.append(float(valor))
-
+    with open(path, "r") as f:
+        for linha in f:
+            m = re.search(r"Classe\s+(\d+):\s+([0-9.]+)%", linha)
+            if m:
+                acuracias.append(float(m.group(2)))
     return acuracias
 
-plt.figure(figsize=(12, 6))
+# Ler todos
+todas_acuracias = [ler_acuracias(arq) for arq in arquivos]
 
-for caminho, legenda in zip(arquivos, legendas):
-    acuracias = ler_acuracias_por_classe(caminho)
-    plt.plot(range(len(acuracias)), acuracias, marker='o', label=legenda)
+# Plotar
+plt.figure(figsize=(12,5))
 
-plt.title("Acurácia x Classe")
+for acc, label in zip(todas_acuracias, labels):
+    plt.plot(range(len(acc)), acc, marker="o", label=label)
+
 plt.xlabel("Classe")
 plt.ylabel("Acurácia (%)")
-plt.grid(True, linestyle="--", alpha=0.4)
+plt.title("Acurácia por classe para cada configuração")
 plt.legend()
+plt.grid(True)
 plt.tight_layout()
 plt.show()
