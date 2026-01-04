@@ -1,211 +1,199 @@
+# Testbench completo para MAXPy com leitura de pesos e inputs reais
+# Gerado automaticamente conforme especificação da Juliana
+
 import random
 from MAxPy import results
-from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_absolute_percentage_error, mean_absolute_error, accuracy_score
 
-# Ajuste para seu hardware
+# ----------------------
+# PARÂMETROS
+# ----------------------
 N_BITS = 8
-N_INPUTS = 4
+VALUES_PER_MAC = 4          # Cada MAC consome 4 valores
+INPUT_SIZE = 128            # Cada linha tem 128 valores
+CYCLES = INPUT_SIZE // 4    # 32 ciclos
+NEURONS_TOTAL = 35
+NEURONS_PER_BLOCK = 8       # Hardware processa 8 neurônios por vez
 
-def clock_tick(lin, label=""):
+# ----------------------
+# LEITURA DOS ARQUIVOS
+# ----------------------
+def load_weights(filename):
+    weights = []
+    with open(filename) as f:
+        for line in f:
+            vals = line.strip().split()
+            weights.append([int(v) for v in vals])  # Agora decimal
+    return weights
+
+def load_inputs(filename, max_lines=None):
+    inputs = []
+    with open(filename) as f:
+        for i, line in enumerate(f):
+            if max_lines and i >= max_lines:
+                break
+            vals = line.strip().split()
+            inputs.append([int(v) for v in vals])   # Agora decimal
+    return inputs
+
+# ----------------------
+# CLOCK
+# ----------------------
+def clock_tick(lin):
     lin.set_clk(0); lin.eval()
     lin.set_clk(1); lin.eval()
 
-def testbench_run(ckt=None, results_filename=None):
+# ----------------------
+# TESTBENCH PRINCIPAL
+# ----------------------
+def testbench_run(ckt=None, results_filename=None, weights_file="values2/pesos/int8.txt", inputs_file="values2/input/entrada_int8.txt", num_input_lines=10):
+
+    # Carregar arquivos reais
+    weights_table = load_weights(weights_file)   # 35 x 128
+    inputs_table = load_inputs(inputs_file, num_input_lines)
 
     lin = ckt.top()
-    print(f">>> ATUALIZADO Testbench Shift-Register Init: {lin.name()}")
+    print(f">>> Testbench MAXPy com arquivos reais: {lin.name()}")
 
-    rstfile = results.ResultsTable(results_filename, ["mae_0", "mae_1", "mae_2", "mae_3", "mae_4", "mae_5", "mae_6", "mae_7"])
-    y_true_0 = []
-    y_pred_0 = []
-    y_true_1 = []
-    y_pred_1 = []
-    y_true_2 = []
-    y_pred_2 = []
-    y_true_3 = []
-    y_pred_3 = []
-    y_true_4 = []
-    y_pred_4 = []
-    y_true_5 = []
-    y_pred_5 = []
-    y_true_6 = []
-    y_pred_6 = []
-    y_true_7 = []
-    y_pred_7 = []
+    # colunas das métricas
+    mae_cols = [f"mae_{i}" for i in range(NEURONS_PER_BLOCK)]
+    mape_cols = [f"mape_{i}" for i in range(NEURONS_PER_BLOCK)]
+    acc_cols = [f"accuracy_{i}" for i in range(NEURONS_PER_BLOCK)]
+    col_names = mae_cols + mape_cols + acc_cols
 
-    # -----------------------
+    rstfile = results.ResultsTable(results_filename, col_names)
+
+    # Armazenadores das métricas
+    y_true = [[] for _ in range(NEURONS_PER_BLOCK)]
+    y_pred = [[] for _ in range(NEURONS_PER_BLOCK)]
+
+    # ----------------------
     # RESET
-    # -----------------------
+    # ----------------------
     lin.set_rst(1)
     lin.set_en(0)
     lin.set_load_en(0)
-    clock_tick(lin, "reset")
+    clock_tick(lin)
     lin.set_rst(0)
 
-    # Valores permitidos
-    val_min = -(1 << (N_BITS-1))
-    val_max = (1 << (N_BITS-1)) - 1
+    # ----------------------
+    # PROCESSA BLOCOS DE 8 NEURÔNIOS
+    # ----------------------
+    num_blocks = (NEURONS_TOTAL + NEURONS_PER_BLOCK - 1) // NEURONS_PER_BLOCK
 
-    #val_min = -10
-    #val_max = 10
-    for k in range(20):  
-        print("\n==============================")
-        print(f"=== ITERAÇÃO {k} ===")
-        print("==============================")
+    for block in range(num_blocks):
+        block_start = block * NEURONS_PER_BLOCK
+        block_end = min(block_start + NEURONS_PER_BLOCK, NEURONS_TOTAL)
+        block_size = block_end - block_start
 
-        # ============================
-        # 1. Gera vetores aleatórios para cada neurônio
-        # ============================
-        #trocar aqui por import para valores de verdade
-        W_vec_0 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        X_vec_0 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        W_vec_1 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        X_vec_1 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        W_vec_2 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        X_vec_2 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        W_vec_3 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        X_vec_3 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        W_vec_4 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        X_vec_4 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        W_vec_5 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        X_vec_5 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        W_vec_6 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        X_vec_6 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        W_vec_7 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]
-        X_vec_7 = [random.randint(val_min, val_max) for _ in range(N_INPUTS)]  
-        print(f"Neurônio 0 - W = {W_vec_0}, X = {X_vec_0}\n")
-        print(f"Neurônio 1 - W = {W_vec_1}, X = {X_vec_1}\n")
-        print(f"Neurônio 2 - W = {W_vec_2}, X = {X_vec_2}\n")
-        print(f"Neurônio 3 - W = {W_vec_3}, X = {X_vec_3}\n")
-        print(f"Neurônio 4 - W = {W_vec_4}, X = {X_vec_4}\n")
-        print(f"Neurônio 5 - W = {W_vec_5}, X = {X_vec_5}\n")
-        print(f"Neurônio 6 - W = {W_vec_6}, X = {X_vec_6}\n")
-        print(f"Neurônio 7 - W = {W_vec_7}, X = {X_vec_7}\n")
+        # print(f"\n============== BLOCO {block} ({block_size} neurônios) ==============")
 
-        # ============================
-        # 2. CARGA DO SHIFT REGISTER
-        # ============================
-        lin.set_load_en(1)
-        for idx in range(N_INPUTS):
-            lin.set_w_in_0(W_vec_0[N_INPUTS-1-idx])
-            lin.set_x_in_0(X_vec_0[N_INPUTS-1-idx])
+        # Extrai os pesos para este bloco
+        block_weights = weights_table[block_start:block_end]
 
-            lin.set_w_in_1(W_vec_1[N_INPUTS-1-idx])
-            lin.set_x_in_1(X_vec_1[N_INPUTS-1-idx])
+        # ----------------------
+        # PARA CADA LINHA DE ENTRADA DO ARQUIVO
+        # ----------------------
+        for line_idx, input_line in enumerate(inputs_table):
+            # print(f"\n---- Input line {line_idx} ----")
 
-            lin.set_w_in_2(W_vec_2[N_INPUTS-1-idx])
-            lin.set_x_in_2(X_vec_2[N_INPUTS-1-idx])
+            # ----------------------
+            # CARREGAMENTO DOS 128 VALORES (4 por ciclo)
+            # ----------------------
+            lin.set_load_en(1)
 
-            lin.set_w_in_3(W_vec_3[N_INPUTS-1-idx])
-            lin.set_x_in_3(X_vec_3[N_INPUTS-1-idx])
+            for j in range(CYCLES):
+                # índice inicial e final no vetor de entrada
+                x_slice = input_line[j*4:(j+1)*4]
+                x0, x1, x2, x3 = x_slice
 
-            lin.set_w_in_4(W_vec_4[N_INPUTS-1-idx])
-            lin.set_x_in_4(X_vec_4[N_INPUTS-1-idx])
+                for n in range(block_size):
+                    # pesos reais daquele neurônio
+                    w_slice = block_weights[n][j*4:(j+1)*4]
+                    w0, w1, w2, w3 = w_slice
 
-            lin.set_w_in_5(W_vec_5[N_INPUTS-1-idx])
-            lin.set_x_in_5(X_vec_5[N_INPUTS-1-idx])
+                    # A entrada do MAXPy é invertida como no testbench original
+                    getattr(lin, f"set_w_in_{n}")(w3)
+                    getattr(lin, f"set_x_in_{n}")(x3)
+                clock_tick(lin)
 
-            lin.set_w_in_6(W_vec_6[N_INPUTS-1-idx])
-            lin.set_x_in_6(X_vec_6[N_INPUTS-1-idx])
+                for n in range(block_size):
+                    w0, w1, w2, w3 = block_weights[n][j*4:(j+1)*4]
+                    getattr(lin, f"set_w_in_{n}")(w2)
+                    getattr(lin, f"set_x_in_{n}")(x2)
+                clock_tick(lin)
 
-            lin.set_w_in_7(W_vec_7[N_INPUTS-1-idx])
-            lin.set_x_in_7(X_vec_7[N_INPUTS-1-idx])
-    
-            clock_tick(lin, f"shift {idx}")
-        lin.set_load_en(0)
+                for n in range(block_size):
+                    w0, w1, w2, w3 = block_weights[n][j*4:(j+1)*4]
+                    getattr(lin, f"set_w_in_{n}")(w1)
+                    getattr(lin, f"set_x_in_{n}")(x1)
+                clock_tick(lin)
 
-        # ============================
-        # 3. COMPUTAÇÃO
-        # ============================
-        lin.set_en(1)
-        clock_tick(lin, "mul")
-        clock_tick(lin, "acc")
-        clock_tick(lin, "out_reg")
+                for n in range(block_size):
+                    w0, w1, w2, w3 = block_weights[n][j*4:(j+1)*4]
+                    getattr(lin, f"set_w_in_{n}")(w0)
+                    getattr(lin, f"set_x_in_{n}")(x0)
+                clock_tick(lin)
 
-        # ============================
-        # 4. LEITURA
-        # ============================
-        out_hw_0 = lin.get_out_safe_0()
-        out_hw_1 = lin.get_out_safe_1()
-        out_hw_2 = lin.get_out_safe_2()
-        out_hw_3 = lin.get_out_safe_3()
-        out_hw_4 = lin.get_out_safe_4()
-        out_hw_5 = lin.get_out_safe_5()
-        out_hw_6 = lin.get_out_safe_6()
-        out_hw_7 = lin.get_out_safe_7()
+            lin.set_load_en(0)
 
-        # Referência em Python
-        acc_0 = sum([w * x for w, x in zip(W_vec_0, X_vec_0)])
-        acc_1 = sum([w * x for w, x in zip(W_vec_1, X_vec_1)])
-        acc_2 = sum([w * x for w, x in zip(W_vec_2, X_vec_2)])
-        acc_3 = sum([w * x for w, x in zip(W_vec_3, X_vec_3)])
-        acc_4 = sum([w * x for w, x in zip(W_vec_4, X_vec_4)])
-        acc_5 = sum([w * x for w, x in zip(W_vec_5, X_vec_5)])
-        acc_6 = sum([w * x for w, x in zip(W_vec_6, X_vec_6)])
-        acc_7 = sum([w * x for w, x in zip(W_vec_7, X_vec_7)])
+            # ----------------------
+            # COMPUTAÇÃO
+            # ----------------------
+            lin.set_en(1)
+            clock_tick(lin)
+            clock_tick(lin)
+            clock_tick(lin)
 
-        limit_pos = (1 << (N_BITS-1)) - 1
-        limit_neg = -(1 << (N_BITS-1))
+            # ----------------------
+            # LEITURA DAS SAÍDAS
+            # ----------------------
+            limit_pos = (1 << (N_BITS-1)) - 1
+            limit_neg = -(1 << (N_BITS-1))
 
-        ref_0 = max(min(acc_0, limit_pos), limit_neg)
-        ref_1 = max(min(acc_1, limit_pos), limit_neg)
-        ref_2 = max(min(acc_2, limit_pos), limit_neg)
-        ref_3 = max(min(acc_3, limit_pos), limit_neg)
-        ref_4 = max(min(acc_4, limit_pos), limit_neg)
-        ref_5 = max(min(acc_5, limit_pos), limit_neg)
-        ref_6 = max(min(acc_6, limit_pos), limit_neg)
-        ref_7 = max(min(acc_7, limit_pos), limit_neg)
+            for n in range(block_size):
+                out_hw = getattr(lin, f"get_out_safe_{n}")()
+                ref = sum([w * x for w, x in zip(block_weights[n], input_line)])
 
-        print(f"Neuron 0: Soma Python = {acc_0}, Saturado = {ref_0}, HW = {out_hw_0}")
-        print(f"Neuron 1: Soma Python = {acc_1}, Saturado = {ref_1}, HW = {out_hw_1}")
-        print(f"Neuron 2: Soma Python = {acc_2}, Saturado = {ref_2}, HW = {out_hw_2}")
-        print(f"Neuron 3: Soma Python = {acc_3}, Saturado = {ref_3}, HW = {out_hw_3}")
-        print(f"Neuron 4: Soma Python = {acc_4}, Saturado = {ref_4}, HW = {out_hw_4}")
-        print(f"Neuron 5: Soma Python = {acc_5}, Saturado = {ref_5}, HW = {out_hw_5}")
-        print(f"Neuron 6: Soma Python = {acc_6}, Saturado = {ref_6}, HW = {out_hw_6}")
-        print(f"Neuron 7: Soma Python = {acc_7}, Saturado = {ref_7}, HW = {out_hw_7}")
-  
-        y_true_0.append(ref_0)
-        y_true_1.append(ref_1)
-        y_true_2.append(ref_2)
-        y_true_3.append(ref_3)
-        y_true_4.append(ref_4)
-        y_true_5.append(ref_5)
-        y_true_6.append(ref_6)
-        y_true_7.append(ref_7)
-        
-        y_pred_0.append(out_hw_0)
-        y_pred_1.append(out_hw_1)
-        y_pred_2.append(out_hw_2)
-        y_pred_3.append(out_hw_3)
-        y_pred_4.append(out_hw_4)
-        y_pred_5.append(out_hw_5)
-        y_pred_6.append(out_hw_6)
-        y_pred_7.append(out_hw_7)
+                # saturação
+                ref = max(min(ref, limit_pos), limit_neg)
 
-    # ============================
-    # 5. MÉTRICA FINAL
-    # ============================
-    mae_0 = mean_absolute_error(y_true_0, y_pred_0)
-    mae_1 = mean_absolute_error(y_true_1, y_pred_1)
-    mae_2 = mean_absolute_error(y_true_2, y_pred_2)
-    mae_3 = mean_absolute_error(y_true_3, y_pred_3)
-    mae_4 = mean_absolute_error(y_true_4, y_pred_4)
-    mae_5 = mean_absolute_error(y_true_5, y_pred_5)
-    mae_6 = mean_absolute_error(y_true_6, y_pred_6)
-    mae_7 = mean_absolute_error(y_true_7, y_pred_7)
-    rstfile.add(lin, {"mae_0": mae_0, "mae_1": mae_1, "mae_2": mae_2, "mae_3": mae_3, "mae_4": mae_4, "mae_5": mae_6, "mae_6": mae_7, "mae_7": mae_7})
+                y_true[n].append(ref)
+                y_pred[n].append(out_hw)
 
-    print("\n==============================")
-    print(f"MAE Neuron 0 = {mae_0:.4f}")
-    print(f"MAE Neuron 1 = {mae_1:.4f}")
-    print(f"MAE Neuron 2 = {mae_2:.4f}")
-    print(f"MAE Neuron 3 = {mae_3:.4f}")
-    print(f"MAE Neuron 4 = {mae_4:.4f}")
-    print(f"MAE Neuron 5 = {mae_5:.4f}")
-    print(f"MAE Neuron 6 = {mae_6:.4f}")
-    print(f"MAE Neuron 7 = {mae_7:.4f}")
-    print("==============================\n")
+                # print(f"Neuron {block_start+n}: REF={ref}  HW={out_hw}")
 
-    # Retorna True se ambos neurônios estiverem dentro do limite
-    return (mae_0 < 0.5 and mae_1 < 0.5 and mae_2 < 0.5 and mae_3 < 0.5 and mae_4 < 0.5 and mae_5 < 0.5 and mae_6 < 0.5 and mae_7 < 0.5), lin.node_info
+    # ----------------------
+    # MÉTRICAS DO BLOCO DE 8
+    # ----------------------
+    results_save = {}
+
+    print("\n=========== MÉTRICAS FINAIS ===========")
+    for n in range(NEURONS_PER_BLOCK):
+        if len(y_true[n]) == 0:
+            results_save[f"mae_{n}"] = -1
+            results_save[f"mape_{n}"] = -1
+            results_save[f"accuracy_{n}"] = -1
+            continue
+
+        mae = mean_absolute_error(y_true[n], y_pred[n])
+        results_save[f"mae_{n}"] = mae
+        print(f"Neuron {n} MAE = {mae:.4f}")
+
+        try:
+            mape = mean_absolute_percentage_error(y_true[n], y_pred[n])
+        except:
+            mape = -1.0
+        results_save[f"mape_{n}"] = mape
+        print(f"Neuron {n} MAPE = {mape:.4f}")
+
+        acc = accuracy_score(y_true[n], y_pred[n])
+        results_save[f"accuracy_{n}"] = acc
+        print(f"Neuron {n} ACC = {acc:.4f}")
+
+    rstfile.add(lin, results_save)
+    return True, lin.node_info
+
+if __name__ == "__main__":
+    mod = importlib.import_module(name="neuron_wrapper_8neurons_exact.neuron_wrapper_8neurons")
+    testbench_run(ckt=mod, results_filename="testbench_dev.csv")

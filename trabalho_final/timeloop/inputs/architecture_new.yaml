@@ -5,7 +5,7 @@ architecture:
     name: accelerator
     attributes:
       technology: "40nm" #150
-      global_cycle_seconds: 1e-9 #frequencia mto alta #frequencia do neurointra ? #alvos de vazão #com neuro intra? 
+      global_cycle_seconds: 1e-9
 
   - !Component
     name: GlobalBuffer

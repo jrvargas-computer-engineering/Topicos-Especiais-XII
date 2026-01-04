@@ -1,6 +1,6 @@
 // =======================================
 // Wrapper para instanciar 2 neuronios
-// compatível com MAxPy
+// compatível com MAxPye
 // =======================================
 module neuron_wrapper_8neurons #(
     parameter N = 8,
@@ -330,8 +330,17 @@ module neuron_intra_Nbits #(
   localparam signed [N-1:0] MAX_VAL = {1'b0, {(N-1){1'b1}}}; // maior valor positivo representável em N bits
   localparam signed [N-1:0] MIN_VAL = {1'b1, {(N-1){1'b0}}}; // menor valor negativo
     
+  //wire signed [2*N-1:0] MAX_EXT = {{(N){MAX_VAL[N-1]}}, MAX_VAL};
+  //wire signed [2*N-1:0] MIN_EXT = {{(N){MIN_VAL[N-1]}}, MIN_VAL};
+
+  //wire signed [2*N-1:0] MAX_EXT = {{N{1'b0}}, MAX_VAL};
+  //wire signed [2*N-1:0] MIN_EXT = {{N{1'b1}}, MIN_VAL};
+
   assign act_out = (acc > MAX_VAL) ? MAX_VAL :
                    (acc < MIN_VAL) ? MIN_VAL :
                     acc;
+  //assign act_out = (acc > MAX_EXT) ? MAX_VAL :
+  //                 (acc < MAX_EXT) ? MIN_VAL :
+  //                 acc[N-1:0];
 endmodule
 

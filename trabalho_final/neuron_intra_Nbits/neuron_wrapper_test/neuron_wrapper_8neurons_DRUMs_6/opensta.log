@@ -1,0 +1,32 @@
+MAxPy: OpenSTA LOG
+
+Command line:
+
+sta cmd_file.sta
+
+OpenSTA file:
+
+read_liberty /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.lib
+read_verilog neuron_wrapper_test/neuron_wrapper_8neurons_DRUMs_6/netlist_yosys/neuron_wrapper_8neurons.v
+link_design neuron_wrapper_8neurons
+report_power -digits 5 >power.rpt
+report_checks -unconstrained -path_delay max -format summary -digits 5 >timing.rpt
+exit
+
+
+Log from stdout and stderr:
+
+OpenSTA 2.7.0 581364982d Copyright (c) 2025, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Power report:
+
+['Group                   Internal   Switching     Leakage       Total\n', '                           Power       Power       Power       Power (Watts)\n', '--------------------------------------------------------------------\n', 'Sequential           2.02849e-01 8.52242e-02 2.62414e-05 2.88099e-01  16.4%\n', 'Combinational        7.05085e-01 7.59780e-01 1.81953e-04 1.46505e+00  83.6%\n', 'Clock                0.00000e+00 0.00000e+00 0.00000e+00 0.00000e+00   0.0%\n', 'Macro                0.00000e+00 0.00000e+00 0.00000e+00 0.00000e+00   0.0%\n', 'Pad                  0.00000e+00 0.00000e+00 0.00000e+00 0.00000e+00   0.0%\n', '--------------------------------------------------------------------\n', 'Total                9.07936e-01 8.45004e-01 2.08192e-04 1.75315e+00 100.0%\n', '                           51.8%       48.2%        0.0%\n']
+
+Timing report:
+
+['Startpoint                           Endpoint                                  Slack\n', '-----------------------------------------------------------------------------------\n', 'load_en (input)                      _31779_/D (DFFRNQ_X1)                 374.81732\n', '\n']
+

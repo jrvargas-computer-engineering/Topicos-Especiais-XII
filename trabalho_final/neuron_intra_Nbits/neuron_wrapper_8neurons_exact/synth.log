@@ -1,0 +1,1780 @@
+MAxPy: SYNTHESIS USING YOSYS
+
+Command line:
+
+yosys synth.ys;
+
+Synth file:
+
+read_verilog /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/*/*.v rtl/neuron_wrapper_8neurons.v 
+hierarchy -top neuron_wrapper_8neurons
+prep; flatten; synth
+clean -purge
+
+dfflibmap -liberty /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.lib
+abc -liberty /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.lib
+clean -purge
+
+write_verilog -noattr -noexpr  neuron_wrapper_8neurons_exact/netlist_yosys/neuron_wrapper_8neurons.v
+
+
+Log from stdout and stderr:
+
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `synth.ys' --
+
+1. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v' to AST representation.
+Generating RTLIL representation for module `\AND2_X1'.
+Generating RTLIL representation for module `\AND2_X2'.
+Generating RTLIL representation for module `\AND3_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:23: Warning: Identifier `\i_12' is implicitly declared.
+Generating RTLIL representation for module `\AND3_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:33: Warning: Identifier `\i_18' is implicitly declared.
+Generating RTLIL representation for module `\AND4_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:44: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:45: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\AND4_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:56: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:57: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\ANTENNA'.
+Generating RTLIL representation for module `\AOI21_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:73: Warning: Identifier `\i_18' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:73: Warning: Identifier `\i_19' is implicitly declared.
+Generating RTLIL representation for module `\AOI21_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:84: Warning: Identifier `\i_12' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:84: Warning: Identifier `\i_13' is implicitly declared.
+Generating RTLIL representation for module `\AOI22_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:96: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:96: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:96: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\AOI22_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:109: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:109: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:109: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\BUF_X1'.
+Generating RTLIL representation for module `\BUF_X2'.
+Generating RTLIL representation for module `\BUF_X4'.
+Generating RTLIL representation for module `\BUF_X8'.
+Generating RTLIL representation for module `\BUF_X12'.
+Generating RTLIL representation for module `\BUF_X16'.
+Generating RTLIL representation for module `\CLKBUF_X1'.
+Generating RTLIL representation for module `\CLKBUF_X2'.
+Generating RTLIL representation for module `\CLKBUF_X4'.
+Generating RTLIL representation for module `\CLKBUF_X8'.
+Generating RTLIL representation for module `\CLKBUF_X12'.
+Generating RTLIL representation for module `\CLKBUF_X16'.
+Generating RTLIL representation for module `\CLKGATETST_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:238: Warning: Identifier `\QD' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:239: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:240: Warning: Identifier `\QDn' is implicitly declared.
+Generating RTLIL representation for module `\seq_CLKGATETST_X1'.
+Generating RTLIL representation for module `\DFFRNQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:350: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:350: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:351: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_DFFRNQ_X1'.
+Generating RTLIL representation for module `\DFFSNQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:484: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:484: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:485: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_DFFSNQ_X1'.
+Generating RTLIL representation for module `\FA_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:580: Warning: Identifier `\i_12' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:580: Warning: Identifier `\i_15' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:581: Warning: Identifier `\i_13' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:581: Warning: Identifier `\i_14' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:586: Warning: Identifier `\i_20' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:586: Warning: Identifier `\i_21' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:586: Warning: Identifier `\i_27' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:587: Warning: Identifier `\i_22' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:589: Warning: Identifier `\i_23' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:589: Warning: Identifier `\i_24' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:589: Warning: Identifier `\i_25' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:592: Warning: Identifier `\i_26' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:594: Warning: Identifier `\i_28' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:594: Warning: Identifier `\i_29' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:596: Warning: Identifier `\i_30' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:596: Warning: Identifier `\i_31' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:596: Warning: Identifier `\i_32' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:599: Warning: Identifier `\i_33' is implicitly declared.
+Generating RTLIL representation for module `\FILLTIE'.
+Generating RTLIL representation for module `\FILL_X1'.
+Generating RTLIL representation for module `\FILL_X2'.
+Generating RTLIL representation for module `\FILL_X4'.
+Generating RTLIL representation for module `\FILL_X8'.
+Generating RTLIL representation for module `\FILL_X16'.
+Generating RTLIL representation for module `\HA_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:634: Warning: Identifier `\i_42' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:634: Warning: Identifier `\i_43' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:634: Warning: Identifier `\i_44' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:637: Warning: Identifier `\i_45' is implicitly declared.
+Generating RTLIL representation for module `\INV_X1'.
+Generating RTLIL representation for module `\INV_X2'.
+Generating RTLIL representation for module `\INV_X4'.
+Generating RTLIL representation for module `\INV_X8'.
+Generating RTLIL representation for module `\INV_X12'.
+Generating RTLIL representation for module `\INV_X16'.
+Generating RTLIL representation for module `\LHQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:720: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:720: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:721: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_LHQ_X1'.
+Generating RTLIL representation for module `\MUX2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:793: Warning: Identifier `\i_12' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:793: Warning: Identifier `\i_13' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:795: Warning: Identifier `\i_14' is implicitly declared.
+Generating RTLIL representation for module `\NAND2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:805: Warning: Identifier `\i_24' is implicitly declared.
+Generating RTLIL representation for module `\NAND2_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:814: Warning: Identifier `\i_18' is implicitly declared.
+Generating RTLIL representation for module `\NAND3_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:824: Warning: Identifier `\i_6' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:824: Warning: Identifier `\i_7' is implicitly declared.
+Generating RTLIL representation for module `\NAND3_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:835: Warning: Identifier `\i_6' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:835: Warning: Identifier `\i_7' is implicitly declared.
+Generating RTLIL representation for module `\NAND4_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:847: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:847: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:848: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\NAND4_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:860: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:860: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:861: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\NOR2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:871: Warning: Identifier `\i_12' is implicitly declared.
+Generating RTLIL representation for module `\NOR2_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:880: Warning: Identifier `\i_12' is implicitly declared.
+Generating RTLIL representation for module `\NOR3_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:890: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:890: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\NOR3_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:901: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:901: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\NOR4_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:913: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:913: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:914: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\NOR4_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:926: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:926: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:927: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\OAI21_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:938: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:938: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\OAI21_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:949: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:949: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\OAI22_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:961: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:961: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:961: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\OAI22_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:974: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:974: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:974: Warning: Identifier `\i_2' is implicitly declared.
+Generating RTLIL representation for module `\OR2_X1'.
+Generating RTLIL representation for module `\OR2_X2'.
+Generating RTLIL representation for module `\OR3_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1001: Warning: Identifier `\i_0' is implicitly declared.
+Generating RTLIL representation for module `\OR3_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1011: Warning: Identifier `\i_0' is implicitly declared.
+Generating RTLIL representation for module `\OR4_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1022: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1023: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\OR4_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1034: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1035: Warning: Identifier `\i_1' is implicitly declared.
+Generating RTLIL representation for module `\SDFFRNQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1091: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1091: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1094: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1094: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1096: Warning: Identifier `\i_2' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1092: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_SDFFRNQ_X1'.
+Generating RTLIL representation for module `\SDFFSNQ_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1235: Warning: Identifier `\IQ' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1235: Warning: Identifier `\nextstate' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1238: Warning: Identifier `\i_0' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1238: Warning: Identifier `\i_1' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1240: Warning: Identifier `\i_2' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1236: Warning: Identifier `\IQN' is implicitly declared.
+Generating RTLIL representation for module `\seq_SDFFSNQ_X1'.
+Generating RTLIL representation for module `\TBUF_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1332: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1332: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X2'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1342: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1342: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X4'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1352: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1352: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X8'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1362: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1362: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X12'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1372: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1372: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TBUF_X16'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1382: Warning: Identifier `\Z_enable' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1382: Warning: Identifier `\Z_in' is implicitly declared.
+Generating RTLIL representation for module `\TIEH'.
+Generating RTLIL representation for module `\TIEL'.
+Generating RTLIL representation for module `\XNOR2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1406: Warning: Identifier `\i_19' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1406: Warning: Identifier `\i_20' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1406: Warning: Identifier `\i_21' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1409: Warning: Identifier `\i_22' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1404: Warning: Identifier `\i_18' is implicitly declared.
+Generating RTLIL representation for module `\XOR2_X1'.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1418: Warning: Identifier `\i_18' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1418: Warning: Identifier `\i_19' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1418: Warning: Identifier `\i_20' is implicitly declared.
+/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.v:1421: Warning: Identifier `\i_21' is implicitly declared.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/copy.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/copy.v' to AST representation.
+Generating RTLIL representation for module `\copyA'.
+Generating RTLIL representation for module `\copyB'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/eta1.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/eta1.v' to AST representation.
+Generating RTLIL representation for module `\eta1'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/loa.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/loa.v' to AST representation.
+Generating RTLIL representation for module `\loa'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/trunc.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/adders/trunc.v' to AST representation.
+Generating RTLIL representation for module `\trunc0'.
+Generating RTLIL representation for module `\trunc1'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/DRUM.v' to AST representation.
+Generating RTLIL representation for module `\DRUMs'.
+Generating RTLIL representation for module `\DRUMu'.
+Generating RTLIL representation for module `\DRUM_LOD_k'.
+Generating RTLIL representation for module `\DRUM_P_Encoder_k'.
+Generating RTLIL representation for module `\DRUM_Barrel_Shifter_k'.
+Generating RTLIL representation for module `\DRUM_Mux_16_3_k'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/LOBA.v
+Parsing Verilog input from `/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/vlib/AxArith/multipliers/LOBA.v' to AST representation.
+Generating RTLIL representation for module `\LOBA0s'.
+Generating RTLIL representation for module `\LOBA0u'.
+Generating RTLIL representation for module `\LOBA1s'.
+Generating RTLIL representation for module `\LOBA1u'.
+Generating RTLIL representation for module `\LOBA2s'.
+Generating RTLIL representation for module `\LOBA2u'.
+Generating RTLIL representation for module `\LOBA3s'.
+Generating RTLIL representation for module `\LOBA3u'.
+Generating RTLIL representation for module `\LOBA_SPLIT'.
+Generating RTLIL representation for module `\LOBA_MUX'.
+Generating RTLIL representation for module `\LOBA_LOWER'.
+Generating RTLIL representation for module `\LOBA_LOB'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: rtl/neuron_wrapper_8neurons.v
+Parsing Verilog input from `rtl/neuron_wrapper_8neurons.v' to AST representation.
+Generating RTLIL representation for module `\neuron_wrapper_8neurons'.
+rtl/neuron_wrapper_8neurons.v:200: Warning: Identifier `\w_in_8' is implicitly declared.
+rtl/neuron_wrapper_8neurons.v:201: Warning: Identifier `\x_in_8' is implicitly declared.
+rtl/neuron_wrapper_8neurons.v:202: Warning: Identifier `\out_safe_8' is implicitly declared.
+Generating RTLIL representation for module `\neuron_wrapper'.
+Generating RTLIL representation for module `\neuron_intra_Nbits'.
+Successfully finished Verilog frontend.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+Used module:     \neuron_wrapper
+Used module:         \neuron_intra_Nbits
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+
+9.2. Executing AST frontend in derive mode using pre-parsed AST for module `\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Generating RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Found cached RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Found cached RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Found cached RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Found cached RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Found cached RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Found cached RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Found cached RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Found cached RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+
+9.3. Executing AST frontend in derive mode using pre-parsed AST for module `\neuron_intra_Nbits'.
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Generating RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits'.
+
+9.4. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+Used module:     $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper
+Used module:         \neuron_intra_Nbits
+Parameter \N = 8
+Parameter \N_INPUTS = 4
+Parameter \LOG_N_INPUTS = 2
+Found cached RTLIL representation for module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits'.
+
+9.5. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+Used module:     $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper
+Used module:         $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits
+
+9.6. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+Used module:     $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper
+Used module:         $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits
+Removing unused module `\neuron_intra_Nbits'.
+Removing unused module `\neuron_wrapper'.
+Removing unused module `\LOBA_LOB'.
+Removing unused module `\LOBA_LOWER'.
+Removing unused module `\LOBA_MUX'.
+Removing unused module `\LOBA_SPLIT'.
+Removing unused module `\LOBA3u'.
+Removing unused module `\LOBA3s'.
+Removing unused module `\LOBA2u'.
+Removing unused module `\LOBA2s'.
+Removing unused module `\LOBA1u'.
+Removing unused module `\LOBA1s'.
+Removing unused module `\LOBA0u'.
+Removing unused module `\LOBA0s'.
+Removing unused module `\DRUM_Mux_16_3_k'.
+Removing unused module `\DRUM_Barrel_Shifter_k'.
+Removing unused module `\DRUM_P_Encoder_k'.
+Removing unused module `\DRUM_LOD_k'.
+Removing unused module `\DRUMu'.
+Removing unused module `\DRUMs'.
+Removing unused module `\trunc1'.
+Removing unused module `\trunc0'.
+Removing unused module `\loa'.
+Removing unused module `\eta1'.
+Removing unused module `\copyB'.
+Removing unused module `\copyA'.
+Removing unused module `\XOR2_X1'.
+Removing unused module `\XNOR2_X1'.
+Removing unused module `\TIEL'.
+Removing unused module `\TIEH'.
+Removing unused module `\TBUF_X16'.
+Removing unused module `\TBUF_X12'.
+Removing unused module `\TBUF_X8'.
+Removing unused module `\TBUF_X4'.
+Removing unused module `\TBUF_X2'.
+Removing unused module `\TBUF_X1'.
+Removing unused module `\seq_SDFFSNQ_X1'.
+Removing unused module `\SDFFSNQ_X1'.
+Removing unused module `\seq_SDFFRNQ_X1'.
+Removing unused module `\SDFFRNQ_X1'.
+Removing unused module `\OR4_X2'.
+Removing unused module `\OR4_X1'.
+Removing unused module `\OR3_X2'.
+Removing unused module `\OR3_X1'.
+Removing unused module `\OR2_X2'.
+Removing unused module `\OR2_X1'.
+Removing unused module `\OAI22_X2'.
+Removing unused module `\OAI22_X1'.
+Removing unused module `\OAI21_X2'.
+Removing unused module `\OAI21_X1'.
+Removing unused module `\NOR4_X2'.
+Removing unused module `\NOR4_X1'.
+Removing unused module `\NOR3_X2'.
+Removing unused module `\NOR3_X1'.
+Removing unused module `\NOR2_X2'.
+Removing unused module `\NOR2_X1'.
+Removing unused module `\NAND4_X2'.
+Removing unused module `\NAND4_X1'.
+Removing unused module `\NAND3_X2'.
+Removing unused module `\NAND3_X1'.
+Removing unused module `\NAND2_X2'.
+Removing unused module `\NAND2_X1'.
+Removing unused module `\MUX2_X1'.
+Removing unused module `\seq_LHQ_X1'.
+Removing unused module `\LHQ_X1'.
+Removing unused module `\INV_X16'.
+Removing unused module `\INV_X12'.
+Removing unused module `\INV_X8'.
+Removing unused module `\INV_X4'.
+Removing unused module `\INV_X2'.
+Removing unused module `\INV_X1'.
+Removing unused module `\HA_X1'.
+Removing unused module `\FA_X1'.
+Removing unused module `\seq_DFFSNQ_X1'.
+Removing unused module `\DFFSNQ_X1'.
+Removing unused module `\seq_DFFRNQ_X1'.
+Removing unused module `\DFFRNQ_X1'.
+Removing unused module `\seq_CLKGATETST_X1'.
+Removing unused module `\CLKGATETST_X1'.
+Removing unused module `\CLKBUF_X16'.
+Removing unused module `\CLKBUF_X12'.
+Removing unused module `\CLKBUF_X8'.
+Removing unused module `\CLKBUF_X4'.
+Removing unused module `\CLKBUF_X2'.
+Removing unused module `\CLKBUF_X1'.
+Removing unused module `\BUF_X16'.
+Removing unused module `\BUF_X12'.
+Removing unused module `\BUF_X8'.
+Removing unused module `\BUF_X4'.
+Removing unused module `\BUF_X2'.
+Removing unused module `\BUF_X1'.
+Removing unused module `\AOI22_X2'.
+Removing unused module `\AOI22_X1'.
+Removing unused module `\AOI21_X2'.
+Removing unused module `\AOI21_X1'.
+Removing unused module `\AND4_X2'.
+Removing unused module `\AND4_X1'.
+Removing unused module `\AND3_X2'.
+Removing unused module `\AND3_X1'.
+Removing unused module `\AND2_X2'.
+Removing unused module `\AND2_X1'.
+Removed 101 unused modules.
+Warning: Resizing cell port neuron_wrapper_8neurons.neuron8.out_safe from 1 bits to 32 bits.
+Warning: Resizing cell port neuron_wrapper_8neurons.neuron8.x_in from 1 bits to 32 bits.
+Warning: Resizing cell port neuron_wrapper_8neurons.neuron8.w_in from 1 bits to 32 bits.
+
+10. Executing PREP pass.
+
+10.1. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1.1. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+Used module:     $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper
+Used module:         $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits
+
+10.1.2. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+Used module:     $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper
+Used module:         $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits
+Removed 0 unused modules.
+
+10.2. Executing PROC pass (convert processes to netlists).
+
+10.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl/neuron_wrapper_8neurons.v:316$582 in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.
+Marked 1 switch rules as full_case in process $proc$rtl/neuron_wrapper_8neurons.v:227$581 in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.
+Removed a total of 0 dead cases.
+
+10.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+10.2.4. Executing PROC_INIT pass (extract init attributes).
+
+10.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.$proc$rtl/neuron_wrapper_8neurons.v:316$582'.
+
+10.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+10.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.$proc$rtl/neuron_wrapper_8neurons.v:316$582'.
+     1/2: $0\acc[15:0]
+     2/2: $0\Out[7:0]
+Creating decoders for process `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.$proc$rtl/neuron_wrapper_8neurons.v:227$581'.
+     1/2: $0\X_reg[31:0]
+     2/2: $0\W_reg[31:0]
+
+10.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+10.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.\Out' using process `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.$proc$rtl/neuron_wrapper_8neurons.v:316$582'.
+  created $adff cell `$procdff$611' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.\acc' using process `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.$proc$rtl/neuron_wrapper_8neurons.v:316$582'.
+  created $adff cell `$procdff$612' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.\W_reg' using process `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.$proc$rtl/neuron_wrapper_8neurons.v:227$581'.
+  created $dff cell `$procdff$613' with positive edge clock.
+Creating register for signal `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.\X_reg' using process `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.$proc$rtl/neuron_wrapper_8neurons.v:227$581'.
+  created $dff cell `$procdff$614' with positive edge clock.
+
+10.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+10.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.$proc$rtl/neuron_wrapper_8neurons.v:316$582'.
+Removing empty process `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.$proc$rtl/neuron_wrapper_8neurons.v:316$582'.
+Found and cleaned up 2 empty switches in `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.$proc$rtl/neuron_wrapper_8neurons.v:227$581'.
+Removing empty process `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.$proc$rtl/neuron_wrapper_8neurons.v:227$581'.
+Cleaned up 3 empty switches.
+
+10.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.
+<suppressed ~2 debug messages>
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.
+Optimizing module neuron_wrapper_8neurons.
+
+10.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.
+Optimizing module neuron_wrapper_8neurons.
+
+10.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits..
+Finding unused cells or wires in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper..
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+Removed 1 unused cells and 23 unused wires.
+<suppressed ~7 debug messages>
+
+10.5. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits...
+Checking module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper...
+Checking module neuron_wrapper_8neurons...
+Found and reported 0 problems.
+
+10.6. Executing OPT pass (performing simple optimizations).
+
+10.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.
+Optimizing module neuron_wrapper_8neurons.
+
+10.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits'.
+Finding identical cells in module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+10.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \neuron_wrapper_8neurons..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+10.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.
+  Optimizing cells in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.
+  Optimizing cells in module \neuron_wrapper_8neurons.
+Performed a total of 0 changes.
+
+10.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits'.
+Finding identical cells in module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+10.6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits..
+Finding unused cells or wires in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper..
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+10.6.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.
+Optimizing module neuron_wrapper_8neurons.
+
+10.6.8. Finished OPT passes. (There is nothing left to do.)
+
+10.7. Executing WREDUCE pass (reducing word size of cells).
+Removed top 8 bits (of 16) from mux cell $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.$ternary$rtl/neuron_wrapper_8neurons.v:335$588 ($mux).
+Removed top 8 bits (of 16) from mux cell $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.$ternary$rtl/neuron_wrapper_8neurons.v:336$586 ($mux).
+Removed top 8 bits (of 16) from wire $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.$ternary$rtl/neuron_wrapper_8neurons.v:336$586_Y.
+
+10.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits..
+Finding unused cells or wires in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper..
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+10.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+10.10. Executing OPT pass (performing simple optimizations).
+
+10.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.
+Optimizing module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.
+Optimizing module neuron_wrapper_8neurons.
+
+10.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits'.
+Finding identical cells in module `$paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper'.
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+10.10.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits..
+Finding unused cells or wires in module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper..
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+10.10.4. Finished fast OPT passes.
+
+10.11. Printing statistics.
+
+=== $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits ===
+
+   Number of wires:                 25
+   Number of wire bits:            333
+   Number of public wires:          20
+   Number of public wire bits:     291
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 15
+     $add                            3
+     $adff                           2
+     $gt                             1
+     $lt                             1
+     $mul                            4
+     $mux                            4
+
+=== $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper ===
+
+   Number of wires:                 14
+   Number of wire bits:            300
+   Number of public wires:          10
+   Number of public wire bits:     172
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $dff                            2
+     $mux                            4
+     $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits      1
+
+=== neuron_wrapper_8neurons ===
+
+   Number of wires:                 28
+   Number of wire bits:            772
+   Number of public wires:          28
+   Number of public wire bits:     772
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper      8
+
+=== design hierarchy ===
+
+   neuron_wrapper_8neurons           1
+     $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper      8
+       $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits      1
+
+   Number of wires:                340
+   Number of wire bits:           5836
+   Number of public wires:         268
+   Number of public wire bits:    4476
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                168
+     $add                           24
+     $adff                          16
+     $dff                           16
+     $gt                             8
+     $lt                             8
+     $mul                           32
+     $mux                           64
+
+10.12. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits...
+Checking module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper...
+Checking module neuron_wrapper_8neurons...
+Found and reported 0 problems.
+
+11. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_intra_Nbits.
+Deleting now unused module $paramod$a0585601ca9330a617ca887ceb407af60a9dce25\neuron_wrapper.
+<suppressed ~9 debug messages>
+
+12. Executing SYNTH pass.
+
+12.1. Executing HIERARCHY pass (managing design hierarchy).
+
+12.1.1. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+
+12.1.2. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+Removed 0 unused modules.
+
+12.2. Executing PROC pass (convert processes to netlists).
+
+12.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+12.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+12.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+12.2.4. Executing PROC_INIT pass (extract init attributes).
+
+12.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+12.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+12.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+12.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+12.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+12.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+12.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+12.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+12.5. Executing CHECK pass (checking for obvious problems).
+Checking module neuron_wrapper_8neurons...
+Found and reported 0 problems.
+
+12.6. Executing OPT pass (performing simple optimizations).
+
+12.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \neuron_wrapper_8neurons..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+12.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \neuron_wrapper_8neurons.
+Performed a total of 0 changes.
+
+12.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+12.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.6.9. Finished OPT passes. (There is nothing left to do.)
+
+12.7. Executing FSM pass (extract and optimize FSM).
+
+12.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+12.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+12.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+12.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+12.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+12.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+12.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+12.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+12.8. Executing OPT pass (performing simple optimizations).
+
+12.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \neuron_wrapper_8neurons..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+12.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \neuron_wrapper_8neurons.
+Performed a total of 0 changes.
+
+12.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\neuron7.\u_neuron.$procdff$612 ($adff) from module neuron_wrapper_8neurons (D = \neuron7.u_neuron.ADDER_TREE[1].sum_stage, Q = \neuron7.u_neuron.acc).
+Adding EN signal on $flatten\neuron7.\u_neuron.$procdff$611 ($adff) from module neuron_wrapper_8neurons (D = \neuron7.u_neuron.act_out, Q = \neuron7.u_neuron.Out).
+Adding SRST signal on $flatten\neuron7.$procdff$614 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron7.$procmux$601_Y, Q = \neuron7.X_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$618 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron7.X_reg [23:0] \x_in_7 [7:0] }, Q = \neuron7.X_reg).
+Adding SRST signal on $flatten\neuron7.$procdff$613 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron7.$procmux$606_Y, Q = \neuron7.W_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$620 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron7.W_reg [23:0] \w_in_7 [7:0] }, Q = \neuron7.W_reg).
+Adding EN signal on $flatten\neuron6.\u_neuron.$procdff$612 ($adff) from module neuron_wrapper_8neurons (D = \neuron6.u_neuron.ADDER_TREE[1].sum_stage, Q = \neuron6.u_neuron.acc).
+Adding EN signal on $flatten\neuron6.\u_neuron.$procdff$611 ($adff) from module neuron_wrapper_8neurons (D = \neuron6.u_neuron.act_out, Q = \neuron6.u_neuron.Out).
+Adding SRST signal on $flatten\neuron6.$procdff$614 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron6.$procmux$601_Y, Q = \neuron6.X_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$624 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron6.X_reg [23:0] \x_in_6 [7:0] }, Q = \neuron6.X_reg).
+Adding SRST signal on $flatten\neuron6.$procdff$613 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron6.$procmux$606_Y, Q = \neuron6.W_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$626 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron6.W_reg [23:0] \w_in_6 [7:0] }, Q = \neuron6.W_reg).
+Adding EN signal on $flatten\neuron5.\u_neuron.$procdff$612 ($adff) from module neuron_wrapper_8neurons (D = \neuron5.u_neuron.ADDER_TREE[1].sum_stage, Q = \neuron5.u_neuron.acc).
+Adding EN signal on $flatten\neuron5.\u_neuron.$procdff$611 ($adff) from module neuron_wrapper_8neurons (D = \neuron5.u_neuron.act_out, Q = \neuron5.u_neuron.Out).
+Adding SRST signal on $flatten\neuron5.$procdff$614 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron5.$procmux$601_Y, Q = \neuron5.X_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$630 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron5.X_reg [23:0] \x_in_5 [7:0] }, Q = \neuron5.X_reg).
+Adding SRST signal on $flatten\neuron5.$procdff$613 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron5.$procmux$606_Y, Q = \neuron5.W_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$632 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron5.W_reg [23:0] \w_in_5 [7:0] }, Q = \neuron5.W_reg).
+Adding EN signal on $flatten\neuron4.\u_neuron.$procdff$612 ($adff) from module neuron_wrapper_8neurons (D = \neuron4.u_neuron.ADDER_TREE[1].sum_stage, Q = \neuron4.u_neuron.acc).
+Adding EN signal on $flatten\neuron4.\u_neuron.$procdff$611 ($adff) from module neuron_wrapper_8neurons (D = \neuron4.u_neuron.act_out, Q = \neuron4.u_neuron.Out).
+Adding SRST signal on $flatten\neuron4.$procdff$614 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron4.$procmux$601_Y, Q = \neuron4.X_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$636 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron4.X_reg [23:0] \x_in_4 [7:0] }, Q = \neuron4.X_reg).
+Adding SRST signal on $flatten\neuron4.$procdff$613 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron4.$procmux$606_Y, Q = \neuron4.W_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$638 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron4.W_reg [23:0] \w_in_4 [7:0] }, Q = \neuron4.W_reg).
+Adding EN signal on $flatten\neuron3.\u_neuron.$procdff$612 ($adff) from module neuron_wrapper_8neurons (D = \neuron3.u_neuron.ADDER_TREE[1].sum_stage, Q = \neuron3.u_neuron.acc).
+Adding EN signal on $flatten\neuron3.\u_neuron.$procdff$611 ($adff) from module neuron_wrapper_8neurons (D = \neuron3.u_neuron.act_out, Q = \neuron3.u_neuron.Out).
+Adding SRST signal on $flatten\neuron3.$procdff$614 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron3.$procmux$601_Y, Q = \neuron3.X_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$642 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron3.X_reg [23:0] \x_in_3 [7:0] }, Q = \neuron3.X_reg).
+Adding SRST signal on $flatten\neuron3.$procdff$613 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron3.$procmux$606_Y, Q = \neuron3.W_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$644 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron3.W_reg [23:0] \w_in_3 [7:0] }, Q = \neuron3.W_reg).
+Adding EN signal on $flatten\neuron2.\u_neuron.$procdff$612 ($adff) from module neuron_wrapper_8neurons (D = \neuron2.u_neuron.ADDER_TREE[1].sum_stage, Q = \neuron2.u_neuron.acc).
+Adding EN signal on $flatten\neuron2.\u_neuron.$procdff$611 ($adff) from module neuron_wrapper_8neurons (D = \neuron2.u_neuron.act_out, Q = \neuron2.u_neuron.Out).
+Adding SRST signal on $flatten\neuron2.$procdff$614 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron2.$procmux$601_Y, Q = \neuron2.X_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$648 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron2.X_reg [23:0] \x_in_2 [7:0] }, Q = \neuron2.X_reg).
+Adding SRST signal on $flatten\neuron2.$procdff$613 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron2.$procmux$606_Y, Q = \neuron2.W_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$650 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron2.W_reg [23:0] \w_in_2 [7:0] }, Q = \neuron2.W_reg).
+Adding EN signal on $flatten\neuron1.\u_neuron.$procdff$612 ($adff) from module neuron_wrapper_8neurons (D = \neuron1.u_neuron.ADDER_TREE[1].sum_stage, Q = \neuron1.u_neuron.acc).
+Adding EN signal on $flatten\neuron1.\u_neuron.$procdff$611 ($adff) from module neuron_wrapper_8neurons (D = \neuron1.u_neuron.act_out, Q = \neuron1.u_neuron.Out).
+Adding SRST signal on $flatten\neuron1.$procdff$614 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron1.$procmux$601_Y, Q = \neuron1.X_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$654 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron1.X_reg [23:0] \x_in_1 [7:0] }, Q = \neuron1.X_reg).
+Adding SRST signal on $flatten\neuron1.$procdff$613 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron1.$procmux$606_Y, Q = \neuron1.W_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$656 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron1.W_reg [23:0] \w_in_1 [7:0] }, Q = \neuron1.W_reg).
+Adding EN signal on $flatten\neuron0.\u_neuron.$procdff$612 ($adff) from module neuron_wrapper_8neurons (D = \neuron0.u_neuron.ADDER_TREE[1].sum_stage, Q = \neuron0.u_neuron.acc).
+Adding EN signal on $flatten\neuron0.\u_neuron.$procdff$611 ($adff) from module neuron_wrapper_8neurons (D = \neuron0.u_neuron.act_out, Q = \neuron0.u_neuron.Out).
+Adding SRST signal on $flatten\neuron0.$procdff$614 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron0.$procmux$601_Y, Q = \neuron0.X_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$660 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron0.X_reg [23:0] \x_in_0 [7:0] }, Q = \neuron0.X_reg).
+Adding SRST signal on $flatten\neuron0.$procdff$613 ($dff) from module neuron_wrapper_8neurons (D = $flatten\neuron0.$procmux$606_Y, Q = \neuron0.W_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$662 ($sdff) from module neuron_wrapper_8neurons (D = { \neuron0.W_reg [23:0] \w_in_0 [7:0] }, Q = \neuron0.W_reg).
+
+12.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+Removed 48 unused cells and 48 unused wires.
+<suppressed ~49 debug messages>
+
+12.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+12.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \neuron_wrapper_8neurons..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+12.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \neuron_wrapper_8neurons.
+Performed a total of 0 changes.
+
+12.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+12.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.8.16. Finished OPT passes. (There is nothing left to do.)
+
+12.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 8 bits (of 16) from wire neuron_wrapper_8neurons.$flatten\neuron0.\u_neuron.$auto$wreduce.cc:461:run$615.
+Removed top 8 bits (of 16) from wire neuron_wrapper_8neurons.$flatten\neuron1.\u_neuron.$auto$wreduce.cc:461:run$615.
+Removed top 8 bits (of 16) from wire neuron_wrapper_8neurons.$flatten\neuron2.\u_neuron.$auto$wreduce.cc:461:run$615.
+Removed top 8 bits (of 16) from wire neuron_wrapper_8neurons.$flatten\neuron3.\u_neuron.$auto$wreduce.cc:461:run$615.
+Removed top 8 bits (of 16) from wire neuron_wrapper_8neurons.$flatten\neuron4.\u_neuron.$auto$wreduce.cc:461:run$615.
+Removed top 8 bits (of 16) from wire neuron_wrapper_8neurons.$flatten\neuron5.\u_neuron.$auto$wreduce.cc:461:run$615.
+Removed top 8 bits (of 16) from wire neuron_wrapper_8neurons.$flatten\neuron6.\u_neuron.$auto$wreduce.cc:461:run$615.
+Removed top 8 bits (of 16) from wire neuron_wrapper_8neurons.$flatten\neuron7.\u_neuron.$auto$wreduce.cc:461:run$615.
+
+12.10. Executing PEEPOPT pass (run peephole optimizers).
+
+12.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~1 debug messages>
+
+12.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module neuron_wrapper_8neurons:
+  creating $macc model for $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  creating $macc model for $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  creating $macc model for $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595 ($add).
+  creating $macc model for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  creating $macc model for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  creating $macc model for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  creating $macc model for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  creating $macc model for $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  creating $macc model for $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  creating $macc model for $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595 ($add).
+  creating $macc model for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  creating $macc model for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  creating $macc model for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  creating $macc model for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  creating $macc model for $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  creating $macc model for $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  creating $macc model for $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595 ($add).
+  creating $macc model for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  creating $macc model for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  creating $macc model for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  creating $macc model for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  creating $macc model for $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  creating $macc model for $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  creating $macc model for $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595 ($add).
+  creating $macc model for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  creating $macc model for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  creating $macc model for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  creating $macc model for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  creating $macc model for $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  creating $macc model for $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  creating $macc model for $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595 ($add).
+  creating $macc model for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  creating $macc model for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  creating $macc model for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  creating $macc model for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  creating $macc model for $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  creating $macc model for $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  creating $macc model for $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595 ($add).
+  creating $macc model for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  creating $macc model for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  creating $macc model for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  creating $macc model for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  creating $macc model for $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  creating $macc model for $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  creating $macc model for $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595 ($add).
+  creating $macc model for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  creating $macc model for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  creating $macc model for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  creating $macc model for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  creating $macc model for $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  creating $macc model for $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  creating $macc model for $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595 ($add).
+  creating $macc model for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  creating $macc model for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  creating $macc model for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  creating $macc model for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  merging $macc model for $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 into $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 into $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 into $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 into $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 into $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 into $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 into $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 into $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 into $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 into $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 into $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 into $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 into $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 into $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 into $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 into $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 into $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 into $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 into $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 into $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 into $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 into $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 into $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 into $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 into $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 into $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 into $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 into $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 into $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 into $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 into $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 into $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 into $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 into $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 into $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 into $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 into $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 into $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 into $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 into $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 into $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 into $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 into $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 into $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 into $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 into $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 into $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  merging $macc model for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 into $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595.
+  creating $macc cell for $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595: $auto$alumacc.cc:365:replace_macc$672
+  creating $macc cell for $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595: $auto$alumacc.cc:365:replace_macc$673
+  creating $macc cell for $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595: $auto$alumacc.cc:365:replace_macc$674
+  creating $macc cell for $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595: $auto$alumacc.cc:365:replace_macc$675
+  creating $macc cell for $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595: $auto$alumacc.cc:365:replace_macc$676
+  creating $macc cell for $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595: $auto$alumacc.cc:365:replace_macc$677
+  creating $macc cell for $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595: $auto$alumacc.cc:365:replace_macc$678
+  creating $macc cell for $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:305$595: $auto$alumacc.cc:365:replace_macc$679
+  creating $alu model for $flatten\neuron0.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583 ($gt): new $alu
+  creating $alu model for $flatten\neuron0.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584 ($lt): new $alu
+  creating $alu model for $flatten\neuron1.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583 ($gt): new $alu
+  creating $alu model for $flatten\neuron1.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584 ($lt): new $alu
+  creating $alu model for $flatten\neuron2.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583 ($gt): new $alu
+  creating $alu model for $flatten\neuron2.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584 ($lt): new $alu
+  creating $alu model for $flatten\neuron3.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583 ($gt): new $alu
+  creating $alu model for $flatten\neuron3.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584 ($lt): new $alu
+  creating $alu model for $flatten\neuron4.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583 ($gt): new $alu
+  creating $alu model for $flatten\neuron4.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584 ($lt): new $alu
+  creating $alu model for $flatten\neuron5.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583 ($gt): new $alu
+  creating $alu model for $flatten\neuron5.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584 ($lt): new $alu
+  creating $alu model for $flatten\neuron6.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583 ($gt): new $alu
+  creating $alu model for $flatten\neuron6.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584 ($lt): new $alu
+  creating $alu model for $flatten\neuron7.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583 ($gt): new $alu
+  creating $alu model for $flatten\neuron7.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584 ($lt): new $alu
+  creating $alu cell for $flatten\neuron7.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584: $auto$alumacc.cc:485:replace_alu$696
+  creating $alu cell for $flatten\neuron7.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583: $auto$alumacc.cc:485:replace_alu$709
+  creating $alu cell for $flatten\neuron6.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584: $auto$alumacc.cc:485:replace_alu$716
+  creating $alu cell for $flatten\neuron6.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583: $auto$alumacc.cc:485:replace_alu$729
+  creating $alu cell for $flatten\neuron5.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584: $auto$alumacc.cc:485:replace_alu$736
+  creating $alu cell for $flatten\neuron5.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583: $auto$alumacc.cc:485:replace_alu$749
+  creating $alu cell for $flatten\neuron4.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584: $auto$alumacc.cc:485:replace_alu$756
+  creating $alu cell for $flatten\neuron4.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583: $auto$alumacc.cc:485:replace_alu$769
+  creating $alu cell for $flatten\neuron3.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584: $auto$alumacc.cc:485:replace_alu$776
+  creating $alu cell for $flatten\neuron3.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583: $auto$alumacc.cc:485:replace_alu$789
+  creating $alu cell for $flatten\neuron2.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584: $auto$alumacc.cc:485:replace_alu$796
+  creating $alu cell for $flatten\neuron2.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583: $auto$alumacc.cc:485:replace_alu$809
+  creating $alu cell for $flatten\neuron1.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584: $auto$alumacc.cc:485:replace_alu$816
+  creating $alu cell for $flatten\neuron1.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583: $auto$alumacc.cc:485:replace_alu$829
+  creating $alu cell for $flatten\neuron0.\u_neuron.$lt$rtl/neuron_wrapper_8neurons.v:336$584: $auto$alumacc.cc:485:replace_alu$836
+  creating $alu cell for $flatten\neuron0.\u_neuron.$gt$rtl/neuron_wrapper_8neurons.v:335$583: $auto$alumacc.cc:485:replace_alu$849
+  created 16 $alu and 8 $macc cells.
+
+12.13. Executing SHARE pass (SAT-based resource sharing).
+Found 32 cells in module neuron_wrapper_8neurons that may be considered for resource sharing.
+  Analyzing resource sharing options for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul):
+    Found cell that is never activated: $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594
+    Found cell that is never activated: $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul):
+    Found cell that is never activated: $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul):
+    Found cell that is never activated: $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593
+    Found cell that is never activated: $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul):
+    Found cell that is never activated: $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul):
+    Found cell that is never activated: $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594
+    Found cell that is never activated: $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul):
+    Found cell that is never activated: $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul):
+    Found cell that is never activated: $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593
+    Found cell that is never activated: $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul):
+    Found cell that is never activated: $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul):
+    Found cell that is never activated: $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594
+    Found cell that is never activated: $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul):
+    Found cell that is never activated: $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul):
+    Found cell that is never activated: $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593
+    Found cell that is never activated: $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul):
+    Found cell that is never activated: $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul):
+    Found cell that is never activated: $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594
+    Found cell that is never activated: $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul):
+    Found cell that is never activated: $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul):
+    Found cell that is never activated: $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593
+    Found cell that is never activated: $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul):
+    Found cell that is never activated: $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul):
+    Found cell that is never activated: $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594
+    Found cell that is never activated: $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul):
+    Found cell that is never activated: $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul):
+    Found cell that is never activated: $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593
+    Found cell that is never activated: $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul):
+    Found cell that is never activated: $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul):
+    Found cell that is never activated: $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594
+    Found cell that is never activated: $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul):
+    Found cell that is never activated: $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul):
+    Found cell that is never activated: $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593
+    Found cell that is never activated: $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul):
+    Found cell that is never activated: $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul):
+    Found cell that is never activated: $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594
+    Found cell that is never activated: $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul):
+    Found cell that is never activated: $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul):
+    Found cell that is never activated: $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593
+    Found cell that is never activated: $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul):
+    Found cell that is never activated: $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul):
+    Found cell that is never activated: $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594
+    Found cell that is never activated: $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul):
+    Found cell that is never activated: $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul):
+    Found cell that is never activated: $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593
+    Found cell that is never activated: $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul):
+    Found cell that is never activated: $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589
+    Cell is never active. Sharing is pointless, we simply remove it.
+Removing 48 cells in module neuron_wrapper_8neurons:
+  Removing cell $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  Removing cell $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  Removing cell $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  Removing cell $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  Removing cell $flatten\neuron0.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  Removing cell $flatten\neuron0.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  Removing cell $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  Removing cell $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  Removing cell $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  Removing cell $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  Removing cell $flatten\neuron1.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  Removing cell $flatten\neuron1.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  Removing cell $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  Removing cell $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  Removing cell $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  Removing cell $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  Removing cell $flatten\neuron2.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  Removing cell $flatten\neuron2.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  Removing cell $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  Removing cell $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  Removing cell $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  Removing cell $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  Removing cell $flatten\neuron3.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  Removing cell $flatten\neuron3.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  Removing cell $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  Removing cell $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  Removing cell $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  Removing cell $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  Removing cell $flatten\neuron4.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  Removing cell $flatten\neuron4.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  Removing cell $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  Removing cell $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  Removing cell $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  Removing cell $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  Removing cell $flatten\neuron5.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  Removing cell $flatten\neuron5.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  Removing cell $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  Removing cell $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  Removing cell $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  Removing cell $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  Removing cell $flatten\neuron6.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  Removing cell $flatten\neuron6.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+  Removing cell $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$589 ($mul).
+  Removing cell $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$590 ($mul).
+  Removing cell $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$593 ($add).
+  Removing cell $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$591 ($mul).
+  Removing cell $flatten\neuron7.\u_neuron.$mul$rtl/neuron_wrapper_8neurons.v:289$592 ($mul).
+  Removing cell $flatten\neuron7.\u_neuron.$add$rtl/neuron_wrapper_8neurons.v:301$594 ($add).
+
+12.14. Executing OPT pass (performing simple optimizations).
+
+12.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+<suppressed ~8 debug messages>
+
+12.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \neuron_wrapper_8neurons..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+12.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \neuron_wrapper_8neurons.
+Performed a total of 0 changes.
+
+12.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+Removed 8 unused cells and 24 unused wires.
+<suppressed ~9 debug messages>
+
+12.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+12.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \neuron_wrapper_8neurons..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+12.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \neuron_wrapper_8neurons.
+Performed a total of 0 changes.
+
+12.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+12.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.14.16. Finished OPT passes. (There is nothing left to do.)
+
+12.15. Executing MEMORY pass.
+
+12.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+12.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+12.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+12.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+12.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+12.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+12.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+12.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+12.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+12.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+12.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+12.17. Executing OPT pass (performing simple optimizations).
+
+12.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+<suppressed ~8 debug messages>
+
+12.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+Removed 56 unused cells and 56 unused wires.
+<suppressed ~57 debug messages>
+
+12.17.5. Finished fast OPT passes.
+
+12.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+12.19. Executing OPT pass (performing simple optimizations).
+
+12.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \neuron_wrapper_8neurons..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+12.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \neuron_wrapper_8neurons.
+Performed a total of 0 changes.
+
+12.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+Removed a total of 0 cells.
+
+12.19.6. Executing OPT_SHARE pass.
+
+12.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+
+12.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.19.10. Finished OPT passes. (There is nothing left to do.)
+
+12.20. Executing TECHMAP pass (map to technology primitives).
+
+12.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+12.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $or.
+Using extmapper maccmap for cells of type $macc.
+  add \neuron6.W_reg [7:0] * \neuron6.X_reg [7:0] (8x8 bits, signed)
+  add \neuron6.W_reg [23:16] * \neuron6.X_reg [23:16] (8x8 bits, signed)
+  add \neuron6.W_reg [15:8] * \neuron6.X_reg [15:8] (8x8 bits, signed)
+  add \neuron6.W_reg [31:24] * \neuron6.X_reg [31:24] (8x8 bits, signed)
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $sdffe.
+  add \neuron0.W_reg [7:0] * \neuron0.X_reg [7:0] (8x8 bits, signed)
+  add \neuron0.W_reg [23:16] * \neuron0.X_reg [23:16] (8x8 bits, signed)
+  add \neuron0.W_reg [15:8] * \neuron0.X_reg [15:8] (8x8 bits, signed)
+  add \neuron0.W_reg [31:24] * \neuron0.X_reg [31:24] (8x8 bits, signed)
+Using template $paramod$dab6169b2c646fd744827f2141b78f93fabad1a7\_90_alu for cells of type $alu.
+Using template $paramod$003256218b736a5f72fe70a6e5006b2214b99da4\_90_alu for cells of type $alu.
+  add \neuron4.W_reg [7:0] * \neuron4.X_reg [7:0] (8x8 bits, signed)
+  add \neuron4.W_reg [23:16] * \neuron4.X_reg [23:16] (8x8 bits, signed)
+  add \neuron4.W_reg [15:8] * \neuron4.X_reg [15:8] (8x8 bits, signed)
+  add \neuron4.W_reg [31:24] * \neuron4.X_reg [31:24] (8x8 bits, signed)
+  add \neuron7.W_reg [7:0] * \neuron7.X_reg [7:0] (8x8 bits, signed)
+  add \neuron7.W_reg [23:16] * \neuron7.X_reg [23:16] (8x8 bits, signed)
+  add \neuron7.W_reg [15:8] * \neuron7.X_reg [15:8] (8x8 bits, signed)
+  add \neuron7.W_reg [31:24] * \neuron7.X_reg [31:24] (8x8 bits, signed)
+  add \neuron2.W_reg [7:0] * \neuron2.X_reg [7:0] (8x8 bits, signed)
+  add \neuron2.W_reg [23:16] * \neuron2.X_reg [23:16] (8x8 bits, signed)
+  add \neuron2.W_reg [15:8] * \neuron2.X_reg [15:8] (8x8 bits, signed)
+  add \neuron2.W_reg [31:24] * \neuron2.X_reg [31:24] (8x8 bits, signed)
+  add \neuron5.W_reg [7:0] * \neuron5.X_reg [7:0] (8x8 bits, signed)
+  add \neuron5.W_reg [23:16] * \neuron5.X_reg [23:16] (8x8 bits, signed)
+  add \neuron5.W_reg [15:8] * \neuron5.X_reg [15:8] (8x8 bits, signed)
+  add \neuron5.W_reg [31:24] * \neuron5.X_reg [31:24] (8x8 bits, signed)
+  add \neuron3.W_reg [7:0] * \neuron3.X_reg [7:0] (8x8 bits, signed)
+  add \neuron3.W_reg [23:16] * \neuron3.X_reg [23:16] (8x8 bits, signed)
+  add \neuron3.W_reg [15:8] * \neuron3.X_reg [15:8] (8x8 bits, signed)
+  add \neuron3.W_reg [31:24] * \neuron3.X_reg [31:24] (8x8 bits, signed)
+  add \neuron1.W_reg [7:0] * \neuron1.X_reg [7:0] (8x8 bits, signed)
+  add \neuron1.W_reg [23:16] * \neuron1.X_reg [23:16] (8x8 bits, signed)
+  add \neuron1.W_reg [15:8] * \neuron1.X_reg [15:8] (8x8 bits, signed)
+  add \neuron1.W_reg [31:24] * \neuron1.X_reg [31:24] (8x8 bits, signed)
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000001 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010000 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001111 for cells of type $fa.
+Using template $paramod$6df0329addda9228fcc2546de2aaf14ad26c98e1\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000010000 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001001 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~3918 debug messages>
+
+12.21. Executing OPT pass (performing simple optimizations).
+
+12.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+<suppressed ~8392 debug messages>
+
+12.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+<suppressed ~9348 debug messages>
+Removed a total of 3116 cells.
+
+12.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+Removed 874 unused cells and 3950 unused wires.
+<suppressed ~875 debug messages>
+
+12.21.5. Finished fast OPT passes.
+
+12.22. Executing ABC pass (technology mapping using ABC).
+
+12.22.1. Extracting gate netlist of module `\neuron_wrapper_8neurons' to `<abc-temp-dir>/input.blif'..
+Extracted 16402 gates and 17044 wires to a netlist network with 640 inputs and 192 outputs.
+
+12.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+12.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               MUX cells:        7
+ABC RESULTS:               NOT cells:      290
+ABC RESULTS:             ORNOT cells:      238
+ABC RESULTS:               AND cells:     1764
+ABC RESULTS:              NAND cells:      754
+ABC RESULTS:              XNOR cells:     1435
+ABC RESULTS:                OR cells:     1896
+ABC RESULTS:               NOR cells:      585
+ABC RESULTS:            ANDNOT cells:     5101
+ABC RESULTS:               XOR cells:     4118
+ABC RESULTS:        internal signals:    16212
+ABC RESULTS:           input signals:      640
+ABC RESULTS:          output signals:      192
+Removing temp directory.
+
+12.23. Executing OPT pass (performing simple optimizations).
+
+12.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module neuron_wrapper_8neurons.
+
+12.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\neuron_wrapper_8neurons'.
+<suppressed ~72 debug messages>
+Removed a total of 24 cells.
+
+12.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \neuron_wrapper_8neurons..
+Removed 0 unused cells and 3074 unused wires.
+<suppressed ~1 debug messages>
+
+12.23.5. Finished fast OPT passes.
+
+12.24. Executing HIERARCHY pass (managing design hierarchy).
+
+12.24.1. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+
+12.24.2. Analyzing design hierarchy..
+Top module:  \neuron_wrapper_8neurons
+Removed 0 unused modules.
+
+12.25. Printing statistics.
+
+=== neuron_wrapper_8neurons ===
+
+   Number of wires:              16240
+   Number of wire bits:          20448
+   Number of public wires:         268
+   Number of public wire bits:    4476
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              16868
+     $_ANDNOT_                    5101
+     $_AND_                       1740
+     $_DFFE_PP0P_                  192
+     $_MUX_                          7
+     $_NAND_                       754
+     $_NOR_                        585
+     $_NOT_                        290
+     $_ORNOT_                      238
+     $_OR_                        1896
+     $_SDFFE_PP0P_                 512
+     $_XNOR_                      1435
+     $_XOR_                       4118
+
+12.26. Executing CHECK pass (checking for obvious problems).
+Checking module neuron_wrapper_8neurons...
+Found and reported 0 problems.
+Removed 0 unused cells and 200 unused wires.
+
+13. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+  cell DFFRNQ_X1 (noninv, pins=4, area=1.28) is a direct match for cell type $_DFF_PN0_.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+  cell DFFSNQ_X1 (noninv, pins=4, area=1.28) is a direct match for cell type $_DFF_PN1_.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFRNQ_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+!SE*D' in pin attribute of cell 'SDFFSNQ_X1' - skipping.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    unmapped dff cell: $_DFF_P_
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \DFFRNQ_X1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RN( R));
+    \DFFSNQ_X1 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SN( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+13.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\neuron_wrapper_8neurons':
+  mapped 704 $_DFF_PN0_ cells to \DFFRNQ_X1 cells.
+
+14. Executing ABC pass (technology mapping using ABC).
+
+14.1. Extracting gate netlist of module `\neuron_wrapper_8neurons' to `<abc-temp-dir>/input.blif'..
+Extracted 17572 gates and 18408 wires to a netlist network with 835 inputs and 896 outputs.
+
+14.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.02 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRNQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFSNQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLTIE" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILL_X16" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LHQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRNQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFSNQ_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X12".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped cell "TIEH" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "TIEL" due to dont_use attribute.
+ABC: Library "NanGate_15nm_OCL" from "/home/juliana/venv_pytorch/lib/python3.12/site-packages/MAxPy/pdk/NanGate15nm.lib" has 55 cells (12 skipped: 5 seq; 6 tri-state; 1 no func; 9 dont_use).  Time =     0.04 sec
+ABC: Memory =    3.72 MB. Time =     0.04 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+14.1.2. Re-integrating ABC results.
+ABC RESULTS:           MUX2_X1 cells:        1
+ABC RESULTS:           NOR4_X1 cells:       22
+ABC RESULTS:            OR4_X1 cells:       12
+ABC RESULTS:           NOR3_X1 cells:      508
+ABC RESULTS:           AND4_X1 cells:      486
+ABC RESULTS:          NAND4_X1 cells:      123
+ABC RESULTS:           AND3_X1 cells:      346
+ABC RESULTS:          AOI22_X1 cells:      511
+ABC RESULTS:           AND2_X1 cells:      437
+ABC RESULTS:          OAI22_X1 cells:       24
+ABC RESULTS:          XNOR2_X1 cells:     2726
+ABC RESULTS:           XOR2_X1 cells:     1304
+ABC RESULTS:            OR2_X1 cells:      312
+ABC RESULTS:          NAND3_X1 cells:      358
+ABC RESULTS:           NOR2_X1 cells:     2200
+ABC RESULTS:          OAI21_X1 cells:     1335
+ABC RESULTS:            OR3_X1 cells:      334
+ABC RESULTS:          NAND2_X1 cells:     3412
+ABC RESULTS:          AOI21_X1 cells:     1775
+ABC RESULTS:            INV_X1 cells:     1166
+ABC RESULTS:        internal signals:    16677
+ABC RESULTS:           input signals:      835
+ABC RESULTS:          output signals:      896
+Removing temp directory.
+Removed 0 unused cells and 18231 unused wires.
+
+15. Executing Verilog backend.
+Dumping module `\neuron_wrapper_8neurons'.
+
+Warnings: 44 unique messages, 150 total
+End of script. Logfile hash: 9c3e8b1289, CPU: user 7.23s system 0.21s, MEM: 94.13 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 43% 2x abc (5 sec), 14% 24x opt_expr (1 sec), ...
+Synth command exit code: 0
